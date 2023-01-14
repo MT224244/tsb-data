@@ -3,17 +3,45 @@
         "id": 1,
         "item": "minecraft:carrot_on_a_stick",
         "name": {
-            "text": "見通しの書"
+            "text": "見通しの書",
+            "color": "green"
         },
         "lore": [
             {
-                "text": "視界に捉えたMobの耐性情報を表示する"
+                "text": "敵を視界に捉えて使用することで、",
+                "color": "white"
+            },
+            [
+                {
+                    "text": "その敵の",
+                    "color": "white"
+                },
+                {
+                    "text": "現在の体力",
+                    "color": "gold"
+                },
+                {
+                    "text": "と",
+                    "color": "white"
+                },
+                {
+                    "text": "ダメージの通りやすさ",
+                    "color": "gold"
+                },
+                {
+                    "text": "を表示する。",
+                    "color": "white"
+                }
+            ],
+            {
+                "text": "\"まずは敵を知るところから\"",
+                "color": "gray"
             }
         ],
         "slot": "auto",
         "trigger": "onClick",
         "mpCost": 5,
-        "localCooldown": 200,
+        "localCooldown": 40,
         "canUsedGod": "ALL"
     },
     {
@@ -67,7 +95,103 @@
             "Flora",
             "Urban",
             "Nyaptov",
-            "Wi-ki"
+            "Wi-ki",
+            "Rumor"
+        ]
+    },
+    {
+        "id": 5,
+        "item": "minecraft:carrot_on_a_stick",
+        "name": {
+            "text": "マスケット銃(マッチロック)",
+            "color": "red"
+        },
+        "lore": [
+            {
+                "text": "マッチロック式の銃、俗に言う火縄銃。"
+            },
+            {
+                "text": "命中精度は悪い。"
+            }
+        ],
+        "costText": [
+            {
+                "translate": "item.minecraft.gunpowder"
+            },
+            {
+                "text": " x1"
+            }
+        ],
+        "slot": "auto",
+        "trigger": "onClick",
+        "condition": {
+            "text": "右クリック"
+        },
+        "attackInfo": {
+            "damage": [
+                400
+            ],
+            "attackType": [
+                "Physical"
+            ],
+            "elementType": [
+                "None"
+            ],
+            "bypassResist": false,
+            "isRangeAttack": "never"
+        },
+        "mpCost": 0,
+        "localCooldown": 600,
+        "canUsedGod": [
+            "Urban",
+            "Wi-ki",
+            "Rumor"
+        ]
+    },
+    {
+        "id": 7,
+        "item": "minecraft:carrot_on_a_stick",
+        "name": {
+            "text": "窒素固定器",
+            "color": "light_purple"
+        },
+        "lore": [
+            {
+                "text": "水入り瓶を消費し窒素を固定する。",
+                "color": "white"
+            },
+            {
+                "text": "信仰神によって効果が変わる。",
+                "color": "white"
+            },
+            {
+                "text": "その神器は平時には空気からパンを生み出し、",
+                "color": "dark_purple",
+                "italic": "true"
+            },
+            {
+                "text": "戦時には空気から火薬を生み出した。",
+                "color": "dark_purple",
+                "italic": "true"
+            }
+        ],
+        "costText": [
+            {
+                "translate": "item.minecraft.potion"
+            },
+            {
+                "text": " x1"
+            }
+        ],
+        "slot": "auto",
+        "trigger": "onClick",
+        "mpCost": 50,
+        "canUsedGod": [
+            "Flora",
+            "Urban",
+            "Nyaptov",
+            "Wi-ki",
+            "Rumor"
         ]
     },
     {
@@ -90,6 +214,7 @@
         "trigger": "onClick",
         "mpCost": 80,
         "canUsedGod": [
+            "Flora",
             "Urban",
             "Wi-ki",
             "Rumor"
@@ -113,8 +238,10 @@
         "trigger": "onClick",
         "mpCost": 0,
         "canUsedGod": [
+            "Flora",
             "Urban",
             "Nyaptov",
+            "Wi-ki",
             "Rumor"
         ]
     },
@@ -133,11 +260,13 @@
                 "text": "「キマってきた？」"
             }
         ],
+        "remainingCount": 5,
         "slot": "auto",
         "trigger": "itemUse",
         "mpCost": 0,
         "canUsedGod": [
             "Flora",
+            "Urban",
             "Wi-ki"
         ]
     },
@@ -169,8 +298,10 @@
         "trigger": "onClick",
         "mpCost": 0,
         "canUsedGod": [
+            "Flora",
             "Urban",
             "Nyaptov",
+            "Wi-ki",
             "Rumor"
         ]
     },
@@ -194,8 +325,8 @@
         "mpCost": 5,
         "canUsedGod": [
             "Flora",
-            "Urban",
-            "Wi-ki"
+            "Wi-ki",
+            "Rumor"
         ]
     },
     {
@@ -219,6 +350,7 @@
         "canUsedGod": [
             "Flora",
             "Nyaptov",
+            "Wi-ki",
             "Rumor"
         ]
     },
@@ -243,6 +375,7 @@
         "mpCost": 10,
         "canUsedGod": [
             "Flora",
+            "Nyaptov",
             "Wi-ki",
             "Rumor"
         ]
@@ -274,8 +407,7 @@
         "mpCost": 0,
         "localCooldown": 100,
         "canUsedGod": [
-            "Flora",
-            "Nyaptov",
+            "Wi-ki",
             "Rumor"
         ]
     },
@@ -299,7 +431,8 @@
         "mpCost": 150,
         "canUsedGod": [
             "Flora",
-            "Nyaptov"
+            "Wi-ki",
+            "Rumor"
         ]
     },
     {
@@ -360,11 +493,14 @@
                 }
             ]
         ],
+        "remainingCount": 10,
         "slot": "auto",
         "trigger": "itemUse",
         "mpCost": 0,
         "canUsedGod": [
             "Flora",
+            "Urban",
+            "Nyaptov",
             "Wi-ki",
             "Rumor"
         ]
@@ -444,7 +580,7 @@
         "trigger": "onAttackByMelee",
         "attackInfo": {
             "damage": [
-                30
+                80
             ],
             "attackType": [
                 "Physical"
@@ -458,8 +594,8 @@
         },
         "mpCost": 15,
         "canUsedGod": [
-            "Flora",
             "Urban",
+            "Nyaptov",
             "Rumor"
         ],
         "customNbt": {
@@ -488,7 +624,7 @@
                     "color": "white"
                 },
                 {
-                    "text": "5ダメージ",
+                    "text": "28ダメージ",
                     "color": "red"
                 },
                 {
@@ -504,7 +640,7 @@
         },
         "attackInfo": {
             "damage": [
-                5
+                28
             ],
             "attackType": [
                 "Physical"
@@ -543,6 +679,7 @@
             "Flora",
             "Urban",
             "Nyaptov",
+            "Wi-ki",
             "Rumor"
         ]
     },
@@ -575,7 +712,7 @@
         "trigger": "onAttack",
         "attackInfo": {
             "damage": [
-                25
+                50
             ],
             "attackType": [
                 "Physical"
@@ -589,8 +726,9 @@
         "localCooldown": 20,
         "canUsedGod": [
             "Flora",
+            "Urban",
             "Nyaptov",
-            "Wi-ki"
+            "Rumor"
         ],
         "customNbt": {
             "type": "compound",
@@ -645,8 +783,8 @@
         "trigger": "onClick",
         "attackInfo": {
             "damage": [
-                40,
-                80
+                100,
+                200
             ],
             "attackType": [
                 "Magic"
@@ -660,6 +798,7 @@
         "mpCost": 40,
         "localCooldown": 200,
         "canUsedGod": [
+            "Flora",
             "Nyaptov",
             "Wi-ki",
             "Rumor"
@@ -693,8 +832,8 @@
         "trigger": "onAttackByMelee",
         "attackInfo": {
             "damage": [
-                10,
-                25
+                45,
+                65
             ],
             "attackType": [
                 "Physical"
@@ -708,7 +847,8 @@
         "mpCost": 25,
         "canUsedGod": [
             "Flora",
-            "Wi-ki"
+            "Urban",
+            "Rumor"
         ]
     },
     {
@@ -731,8 +871,8 @@
         },
         "attackInfo": {
             "damage": [
-                25,
-                50
+                125,
+                250
             ],
             "attackType": [
                 "Magic"
@@ -746,8 +886,8 @@
         "mpCost": 80,
         "specialCooldown": 60,
         "canUsedGod": [
+            "Flora",
             "Urban",
-            "Nyaptov",
             "Wi-ki"
         ]
     },
@@ -793,8 +933,8 @@
         },
         "attackInfo": {
             "damage": [
-                30,
-                60
+                160,
+                270
             ],
             "attackType": [
                 "Magic"
@@ -808,7 +948,8 @@
         "mpCost": 35,
         "localCooldown": 60,
         "canUsedGod": [
-            "Urban",
+            "Flora",
+            "Nyaptov",
             "Wi-ki",
             "Rumor"
         ]
@@ -841,6 +982,7 @@
         "slot": "auto",
         "trigger": "onClick",
         "mpCost": 0,
+        "localCooldown": 38,
         "canUsedGod": [
             "Flora",
             "Rumor"
@@ -895,7 +1037,7 @@
         "remainingCount": 1,
         "slot": "auto",
         "trigger": "onClick",
-        "mpCost": 30,
+        "mpCost": 0,
         "canUsedGod": "ALL"
     },
     {
@@ -913,7 +1055,8 @@
         "remainingCount": 1,
         "slot": "auto",
         "trigger": "onClick",
-        "mpCost": 40,
+        "mpCost": 0,
+        "mpRequire": 120,
         "canUsedGod": "ALL"
     },
     {
@@ -931,7 +1074,8 @@
         "remainingCount": 1,
         "slot": "auto",
         "trigger": "onClick",
-        "mpCost": 40,
+        "mpCost": 0,
+        "mpRequire": 150,
         "canUsedGod": "ALL"
     },
     {
@@ -949,7 +1093,27 @@
         "remainingCount": 1,
         "slot": "auto",
         "trigger": "onClick",
-        "mpCost": 50,
+        "mpCost": 0,
+        "mpRequire": 180,
+        "canUsedGod": "ALL"
+    },
+    {
+        "id": 94,
+        "item": "minecraft:carrot_on_a_stick",
+        "name": {
+            "text": "ネザライト装備セット",
+            "italic": false
+        },
+        "lore": [
+            {
+                "text": "エンチャント不可のネザライト装備を装着する"
+            }
+        ],
+        "remainingCount": 1,
+        "slot": "auto",
+        "trigger": "onClick",
+        "mpCost": 0,
+        "mpRequire": 210,
         "canUsedGod": "ALL"
     },
     {
@@ -968,7 +1132,7 @@
         "trigger": "onClick",
         "attackInfo": {
             "damage": [
-                80
+                380
             ],
             "attackType": [
                 "Magic"
@@ -1018,6 +1182,7 @@
                 }
             ]
         ],
+        "remainingCount": 666,
         "slot": "auto",
         "trigger": "itemUse",
         "mpCost": 0,
@@ -1043,7 +1208,7 @@
         "trigger": "onAttackByMelee",
         "attackInfo": {
             "damage": [
-                8
+                28
             ],
             "attackType": [
                 "Physical"
@@ -1055,9 +1220,9 @@
         },
         "mpCost": 5,
         "canUsedGod": [
+            "Flora",
             "Urban",
-            "Nyaptov",
-            "Wi-ki"
+            "Rumor"
         ]
     },
     {
@@ -1086,9 +1251,8 @@
         "mpCost": 50,
         "localCooldown": 10,
         "canUsedGod": [
-            "Flora",
             "Urban",
-            "Wi-ki",
+            "Nyaptov",
             "Rumor"
         ]
     },
@@ -1146,7 +1310,7 @@
         },
         "attackInfo": {
             "damage": [
-                50
+                165
             ],
             "attackType": [
                 "Magic"
@@ -1160,7 +1324,9 @@
         "mpCost": 20,
         "localCooldown": 50,
         "canUsedGod": [
-            "Urban",
+            "Flora",
+            "Nyaptov",
+            "Wi-ki",
             "Rumor"
         ]
     },
@@ -1193,7 +1359,7 @@
         "canUsedGod": [
             "Flora",
             "Urban",
-            "Wi-ki"
+            "Rumor"
         ]
     },
     {
@@ -1205,7 +1371,7 @@
         },
         "lore": [
             {
-                "text": "MP20回復"
+                "text": "MPを40回復する"
             }
         ],
         "remainingCount": 1,
@@ -1232,7 +1398,7 @@
         },
         "lore": [
             {
-                "text": "MP40回復"
+                "text": "MPを100回復する"
             }
         ],
         "remainingCount": 1,
@@ -1259,7 +1425,7 @@
         },
         "lore": [
             {
-                "text": "MP80回復"
+                "text": "MPを45%回復する"
             }
         ],
         "remainingCount": 1,
@@ -1286,7 +1452,7 @@
         },
         "lore": [
             {
-                "text": "MP全回復"
+                "text": "MPを75%回復する"
             }
         ],
         "remainingCount": 1,
@@ -1313,7 +1479,7 @@
         },
         "lore": [
             {
-                "text": "HPを10回復、MPを20回復"
+                "text": "HPを6、MPを30回復する"
             }
         ],
         "remainingCount": 1,
@@ -1340,7 +1506,7 @@
         },
         "lore": [
             {
-                "text": "HPを20回復、MPを40回復"
+                "text": "HPを15、MPを75回復する"
             }
         ],
         "remainingCount": 1,
@@ -1367,7 +1533,7 @@
         },
         "lore": [
             {
-                "text": "HPを30回復、MPを80回復"
+                "text": "HPを18%、MPを32%回復する"
             }
         ],
         "remainingCount": 1,
@@ -1394,7 +1560,7 @@
         },
         "lore": [
             {
-                "text": "HPとMPを全回復"
+                "text": "HPを40%、MPを55%回復する"
             }
         ],
         "remainingCount": 1,
@@ -1408,6 +1574,114 @@
                 "HideFlags": {
                     "type": "int",
                     "value": 32
+                }
+            }
+        }
+    },
+    {
+        "id": 143,
+        "item": "minecraft:potion",
+        "name": {
+            "text": "ネクター",
+            "color": "red"
+        },
+        "lore": [
+            {
+                "text": "HPを8回復する"
+            }
+        ],
+        "remainingCount": 1,
+        "slot": "auto",
+        "trigger": "itemUse",
+        "mpCost": 0,
+        "canUsedGod": "ALL",
+        "customNbt": {
+            "type": "compound",
+            "value": {
+                "CustomPotionColor": {
+                    "type": "int",
+                    "value": 15220575
+                }
+            }
+        }
+    },
+    {
+        "id": 144,
+        "item": "minecraft:potion",
+        "name": {
+            "text": "ハイネクター",
+            "color": "red"
+        },
+        "lore": [
+            {
+                "text": "HPを20回復する"
+            }
+        ],
+        "remainingCount": 1,
+        "slot": "auto",
+        "trigger": "itemUse",
+        "mpCost": 0,
+        "canUsedGod": "ALL",
+        "customNbt": {
+            "type": "compound",
+            "value": {
+                "CustomPotionColor": {
+                    "type": "int",
+                    "value": 15220575
+                }
+            }
+        }
+    },
+    {
+        "id": 145,
+        "item": "minecraft:potion",
+        "name": {
+            "text": "アウレネクター",
+            "color": "red"
+        },
+        "lore": [
+            {
+                "text": "HPを23%回復する"
+            }
+        ],
+        "remainingCount": 1,
+        "slot": "auto",
+        "trigger": "itemUse",
+        "mpCost": 0,
+        "canUsedGod": "ALL",
+        "customNbt": {
+            "type": "compound",
+            "value": {
+                "CustomPotionColor": {
+                    "type": "int",
+                    "value": 15220575
+                }
+            }
+        }
+    },
+    {
+        "id": 146,
+        "item": "minecraft:potion",
+        "name": {
+            "text": "ミスティカネクター",
+            "color": "red"
+        },
+        "lore": [
+            {
+                "text": "HPを50%回復する"
+            }
+        ],
+        "remainingCount": 1,
+        "slot": "auto",
+        "trigger": "itemUse",
+        "mpCost": 0,
+        "canUsedGod": "ALL",
+        "customNbt": {
+            "type": "compound",
+            "value": {
+                "CustomPotionColor": {
+                    "type": "int",
+                    "value": 15220575
                 }
             }
         }
@@ -1430,7 +1704,9 @@
         "mpCost": 40,
         "localCooldown": 600,
         "canUsedGod": [
+            "Flora",
             "Nyaptov",
+            "Wi-ki",
             "Rumor"
         ]
     },
@@ -1560,7 +1836,9 @@
         "mpCost": 0,
         "canUsedGod": [
             "Flora",
+            "Urban",
             "Nyaptov",
+            "Wi-ki",
             "Rumor"
         ],
         "customNbt": {
@@ -1630,7 +1908,9 @@
         "mpCost": 0,
         "canUsedGod": [
             "Flora",
+            "Urban",
             "Nyaptov",
+            "Wi-ki",
             "Rumor"
         ],
         "customNbt": {
@@ -1700,7 +1980,9 @@
         "mpCost": 0,
         "canUsedGod": [
             "Flora",
+            "Urban",
             "Nyaptov",
+            "Wi-ki",
             "Rumor"
         ],
         "customNbt": {
@@ -1770,7 +2052,9 @@
         "mpCost": 0,
         "canUsedGod": [
             "Flora",
+            "Urban",
             "Nyaptov",
+            "Wi-ki",
             "Rumor"
         ],
         "customNbt": {
@@ -1801,6 +2085,41 @@
                 }
             }
         }
+    },
+    {
+        "id": 172,
+        "item": "minecraft:carrot_on_a_stick",
+        "name": {
+            "text": "つらら",
+            "color": "yellow"
+        },
+        "lore": [
+            {
+                "text": "おっきなつららがてきをひきよせやっつける"
+            }
+        ],
+        "slot": "auto",
+        "trigger": "onClick",
+        "attackInfo": {
+            "damage": [
+                "つよい"
+            ],
+            "attackType": [
+                "Magic"
+            ],
+            "elementType": [
+                "Water"
+            ],
+            "isRangeAttack": "every",
+            "attackRange": 4
+        },
+        "mpCost": 300,
+        "specialCooldown": 6000,
+        "canUsedGod": [
+            "Flora",
+            "Nyaptov",
+            "Wi-ki"
+        ]
     },
     {
         "id": 183,
@@ -1842,7 +2161,12 @@
         "slot": "auto",
         "trigger": "onClick",
         "mpCost": 0,
-        "canUsedGod": "ALL"
+        "canUsedGod": [
+            "Flora",
+            "Urban",
+            "Wi-ki",
+            "Rumor"
+        ]
     },
     {
         "id": 184,
@@ -1881,6 +2205,7 @@
                 }
             ]
         ],
+        "remainingCount": 1,
         "slot": "auto",
         "trigger": "itemUse",
         "mpCost": 0,
@@ -1903,6 +2228,7 @@
         "mpCost": 20,
         "canUsedGod": [
             "Flora",
+            "Wi-ki",
             "Rumor"
         ]
     },
@@ -1958,7 +2284,8 @@
         "trigger": "onClick",
         "mpCost": 0,
         "canUsedGod": [
-            "Urban",
+            "Flora",
+            "Nyaptov",
             "Wi-ki",
             "Rumor"
         ]
@@ -1986,6 +2313,7 @@
         "mpCost": 40,
         "canUsedGod": [
             "Flora",
+            "Nyaptov",
             "Wi-ki",
             "Rumor"
         ]
@@ -2005,8 +2333,12 @@
         "slot": "auto",
         "trigger": "onClick",
         "mpCost": 20,
+        "localCooldown": 8,
+        "disableCooldownMessage": true,
         "canUsedGod": [
             "Flora",
+            "Urban",
+            "Nyaptov",
             "Wi-ki",
             "Rumor"
         ]
@@ -2025,9 +2357,12 @@
         ],
         "slot": "auto",
         "trigger": "onClick",
-        "mpCost": 30,
+        "mpCost": 25,
+        "localCooldown": 8,
+        "disableCooldownMessage": true,
         "canUsedGod": [
             "Flora",
+            "Nyaptov",
             "Wi-ki",
             "Rumor"
         ]
@@ -2047,9 +2382,12 @@
         ],
         "slot": "auto",
         "trigger": "onClick",
-        "mpCost": 40,
+        "mpCost": 30,
+        "localCooldown": 8,
+        "disableCooldownMessage": true,
         "canUsedGod": [
             "Flora",
+            "Nyaptov",
             "Wi-ki",
             "Rumor"
         ]
@@ -2074,6 +2412,8 @@
         "trigger": "onDamage",
         "mpCost": 0,
         "canUsedGod": [
+            "Flora",
+            "Nyaptov",
             "Wi-ki",
             "Rumor"
         ]
@@ -2094,8 +2434,11 @@
         "trigger": "passive",
         "mpCost": 0,
         "canUsedGod": [
+            "Flora",
             "Urban",
-            "Nyaptov"
+            "Nyaptov",
+            "Wi-ki",
+            "Rumor"
         ],
         "customNbt": {
             "type": "compound",
@@ -2153,19 +2496,55 @@
     {
         "id": 210,
         "item": "carrot_on_a_stick",
-        "name": {
-            "text": "テラブレード",
-            "color": "gold"
-        },
+        "name": [
+            {
+                "text": "テラ",
+                "color": "#29D656",
+                "italic": false
+            },
+            {
+                "text": "ダブ",
+                "color": "#22B19A",
+                "italic": false
+            },
+            {
+                "text": "リス",
+                "color": "#238db6",
+                "italic": false
+            }
+        ],
         "lore": [
             {
+                "text": "目の前に武器の幻影を作り出し、魔法弾を連射する。",
+                "color": "white",
+                "italic": false
+            },
+            [
+                {
+                    "text": "もちろん、剣としての斬れ味も",
+                    "color": "white",
+                    "italic": false
+                },
+                {
+                    "text": "抜群",
+                    "color": "gold",
+                    "italic": false
+                },
+                {
+                    "text": "。",
+                    "color": "white",
+                    "italic": false
+                }
+            ],
+            {
                 "text": "\"大地の力を解き放て！\"",
-                "color": "gray"
+                "color": "gray",
+                "italic": false
             }
         ],
         "attackInfo": {
             "damage": [
-                30
+                "70x6"
             ],
             "attackType": [
                 "Physical"
@@ -2177,16 +2556,10 @@
         },
         "slot": "auto",
         "trigger": "onClick",
-        "mpCost": 7,
-        "localCooldown": 3,
+        "mpCost": 15,
+        "localCooldown": 30,
         "disableCooldownMessage": true,
-        "canUsedGod": [
-            "Flora",
-            "Urban",
-            "Nyaptov",
-            "Wi-ki",
-            "Rumor"
-        ],
+        "canUsedGod": "ALL",
         "customNbt": {
             "type": "compound",
             "value": {
@@ -2249,7 +2622,7 @@
         "mpCost": 80,
         "attackInfo": {
             "damage": [
-                200
+                1500
             ],
             "attackType": [
                 "Physical"
@@ -2291,6 +2664,8 @@
         },
         "mpCost": 15,
         "canUsedGod": [
+            "Flora",
+            "Urban",
             "Wi-ki",
             "Rumor"
         ]
@@ -2307,12 +2682,17 @@
                 "text": "にゃー"
             }
         ],
+        "remainingCount": 1,
         "slot": "auto",
         "trigger": "itemUse",
         "mpCost": 10000,
         "mpRequire": 100,
         "canUsedGod": [
-            "Nyaptov"
+            "Flora",
+            "Urban",
+            "Nyaptov",
+            "Wi-ki",
+            "Rumor"
         ]
     },
     {
@@ -2340,7 +2720,7 @@
             ],
             "bypassResist": false
         },
-        "mpCost": 250,
+        "mpCost": 120,
         "localCooldown": 600,
         "canUsedGod": [
             "Urban",
@@ -2364,8 +2744,9 @@
         "trigger": "onAttackByMelee",
         "mpCost": 0,
         "canUsedGod": [
+            "Flora",
             "Urban",
-            "Wi-ki"
+            "Rumor"
         ]
     },
     {
@@ -2450,9 +2831,8 @@
         "trigger": "onClick",
         "mpCost": 25,
         "canUsedGod": [
-            "Urban",
-            "Rumor",
-            "Rumor"
+            "Flora",
+            "Urban"
         ]
     },
     {
@@ -2539,9 +2919,29 @@
         "mpCost": 25,
         "canUsedGod": [
             "Urban",
-            "Wi-ki",
             "Rumor"
         ]
+    },
+    {
+        "id": 233,
+        "item": "minecraft:carrot_on_a_stick",
+        "name": {
+            "text": "大逆転",
+            "color": "gold"
+        },
+        "lore": [
+            {
+                "text": "プレイヤー全員のMPを反転する"
+            }
+        ],
+        "slot": "auto",
+        "trigger": "onClick",
+        "condition": {
+            "text": "自身の体力が30%以下の時"
+        },
+        "mpCost": 0,
+        "localCooldown": 2400,
+        "canUsedGod": "ALL"
     },
     {
         "id": 236,
@@ -2565,7 +2965,9 @@
         "mpCost": 0,
         "canUsedGod": [
             "Flora",
+            "Urban",
             "Nyaptov",
+            "Wi-ki",
             "Rumor"
         ]
     },
@@ -2621,8 +3023,11 @@
         "trigger": "onKilledByMelee",
         "mpCost": 0,
         "canUsedGod": [
+            "Flora",
             "Urban",
-            "Wi-ki"
+            "Nyaptov",
+            "Wi-ki",
+            "Rumor"
         ]
     },
     {
@@ -2640,6 +3045,7 @@
                 "text": "とても美味しそうだ。"
             }
         ],
+        "remainingCount": 3,
         "slot": "auto",
         "trigger": "itemUse",
         "mpCost": 0,
@@ -2653,16 +3059,44 @@
             "color": "green"
         },
         "lore": [
-            {
-                "text": "MPを全て消費し、強力な攻撃をぶちかます。",
-                "color": "white"
-            }
+            [
+                {
+                    "text": "MPを全て消費",
+                    "color": "red"
+                },
+                {
+                    "text": "し、",
+                    "color": "white"
+                },
+                {
+                    "text": "超強力",
+                    "color": "gold"
+                },
+                {
+                    "text": "な攻撃をぶちかます。",
+                    "color": "white"
+                }
+            ],
+            [
+                {
+                    "text": "天使に対してはダメージが",
+                    "color": "white"
+                },
+                {
+                    "text": "半減",
+                    "color": "red"
+                },
+                {
+                    "text": "する。",
+                    "color": "white"
+                }
+            ]
         ],
-        "remainingCount": 1,
+        "remainingCount": 5,
         "slot": "mainhand",
         "trigger": "onAttackByMelee",
         "attackInfo": {
-            "damage": "{消費MP×2}",
+            "damage": "{消費MP×10}",
             "attackType": [
                 "Magic"
             ],
@@ -2670,9 +3104,11 @@
         },
         "mpCost": 99999,
         "mpRequire": 0,
+        "localCooldown": 1200,
+        "specialCooldown": 600,
         "canUsedGod": [
+            "Flora",
             "Nyaptov",
-            "Wi-ki",
             "Rumor"
         ],
         "customNbt": {
@@ -2747,7 +3183,10 @@
         "mpCost": 0,
         "canUsedGod": [
             "Flora",
-            "Wi-ki"
+            "Urban",
+            "Nyaptov",
+            "Wi-ki",
+            "Rumor"
         ]
     },
     {
@@ -2777,9 +3216,22 @@
         "remainingCount": 200,
         "slot": "mainhand",
         "trigger": "onAttackByProjectile",
+        "attackInfo": {
+            "damage": [
+                40
+            ],
+            "attackType": [
+                "Physical"
+            ],
+            "elementType": [
+                "None"
+            ],
+            "isRangeAttack": "never"
+        },
         "mpCost": 0,
         "canUsedGod": [
             "Flora",
+            "Urban",
             "Wi-ki",
             "Rumor"
         ],
@@ -2838,8 +3290,8 @@
         "trigger": "onAttackByProjectile",
         "attackInfo": {
             "damage": [
-                60,
-                120
+                120,
+                240
             ],
             "attackType": [
                 "Magic"
@@ -2853,7 +3305,8 @@
         "canUsedGod": [
             "Flora",
             "Urban",
-            "Wi-ki"
+            "Wi-ki",
+            "Rumor"
         ],
         "customNbt": {
             "type": "compound",
@@ -2900,21 +3353,21 @@
         "trigger": "onAttackByProjectile",
         "attackInfo": {
             "damage": [
-                50,
-                60
+                120,
+                180
             ],
             "attackType": [
                 "Magic"
             ],
             "elementType": [
-                "Thunder"
+                "Fire"
             ],
             "isRangeAttack": "never"
         },
         "mpCost": 50,
         "canUsedGod": [
+            "Flora",
             "Urban",
-            "Nyaptov",
             "Rumor"
         ],
         "customNbt": {
@@ -2965,8 +3418,54 @@
         "trigger": "onClick",
         "mpCost": 0,
         "canUsedGod": [
+            "Flora",
             "Urban",
             "Nyaptov"
+        ]
+    },
+    {
+        "id": 253,
+        "item": "glass_pane",
+        "name": {
+            "text": "ホーリー・バリア",
+            "color": "white"
+        },
+        "lore": [
+            {
+                "text": "罠カード",
+                "color": "light_purple"
+            },
+            {
+                "text": "(1)相手モンスターの攻撃時に発動する。"
+            },
+            {
+                "text": "発動プレイヤーを攻撃対象に"
+            },
+            {
+                "text": "しているモンスターを全て破壊する。"
+            }
+        ],
+        "remainingCount": 1,
+        "slot": "hotbar",
+        "trigger": "onDamageFromEntity",
+        "attackInfo": {
+            "attackType": [
+                "Magic"
+            ],
+            "elementType": [
+                "None"
+            ],
+            "bypassResist": true,
+            "isRangeAttack": "every"
+        },
+        "mpCost": 0,
+        "specialCooldown": 16000,
+        "canUsedGod": [
+            "Flora",
+            "Urban",
+            "Nyaptov",
+            "Wi-ki",
+            "Rumor"
         ]
     },
     {
@@ -2987,32 +3486,6 @@
         "mpCost": 0,
         "canUsedGod": [
             "Nyaptov"
-        ]
-    },
-    {
-        "id": 259,
-        "item": "minecraft:carrot_on_a_stick",
-        "name": [
-            {
-                "text": "即席プリーストセット レベル1",
-                "color": "green"
-            }
-        ],
-        "lore": [
-            {
-                "text": "\"これで君も今日からプリースト!\"",
-                "italic": true,
-                "color": "gray"
-            }
-        ],
-        "remainingCount": 1,
-        "slot": "auto",
-        "trigger": "onClick",
-        "mpCost": 0,
-        "canUsedGod": [
-            "Flora",
-            "Nyaptov",
-            "Wi-ki"
         ]
     },
     {
@@ -3039,7 +3512,7 @@
                     "color": "white"
                 },
                 {
-                    "text": "6.6",
+                    "text": "5.7",
                     "color": "#6e99ff"
                 },
                 {
@@ -3055,8 +3528,10 @@
         "disableCooldownMessage": true,
         "canUsedGod": [
             "Flora",
+            "Urban",
             "Nyaptov",
-            "Wi-ki"
+            "Wi-ki",
+            "Rumor"
         ]
     },
     {
@@ -3112,8 +3587,10 @@
         "specialCooldown": 3600,
         "canUsedGod": [
             "Flora",
+            "Urban",
             "Nyaptov",
-            "Wi-ki"
+            "Wi-ki",
+            "Rumor"
         ]
     },
     {
@@ -3140,7 +3617,7 @@
                     "color": "white"
                 },
                 {
-                    "text": "27.3",
+                    "text": "146.4",
                     "color": "#6e99ff"
                 },
                 {
@@ -3167,7 +3644,7 @@
         "trigger": "onClick",
         "attackInfo": {
             "damage": [
-                "27.3"
+                "146.4"
             ],
             "attackType": [
                 "Magic"
@@ -3180,34 +3657,10 @@
         "localCooldown": 600,
         "canUsedGod": [
             "Flora",
+            "Urban",
             "Nyaptov",
-            "Wi-ki"
-        ]
-    },
-    {
-        "id": 263,
-        "item": "minecraft:carrot_on_a_stick",
-        "name": [
-            {
-                "text": "即席プリーストセット レベル5",
-                "color": "green"
-            }
-        ],
-        "lore": [
-            {
-                "text": "\"これで君も今日から中級プリースト!\"",
-                "italic": true,
-                "color": "gray"
-            }
-        ],
-        "remainingCount": 1,
-        "slot": "auto",
-        "trigger": "onClick",
-        "mpCost": 0,
-        "canUsedGod": [
-            "Flora",
-            "Nyaptov",
-            "Wi-ki"
+            "Wi-ki",
+            "Rumor"
         ]
     },
     {
@@ -3234,7 +3687,7 @@
                     "color": "white"
                 },
                 {
-                    "text": "11.6",
+                    "text": "7.5",
                     "color": "#6e99ff"
                 },
                 {
@@ -3251,7 +3704,8 @@
         "canUsedGod": [
             "Flora",
             "Nyaptov",
-            "Wi-ki"
+            "Wi-ki",
+            "Rumor"
         ]
     },
     {
@@ -3308,7 +3762,8 @@
         "canUsedGod": [
             "Flora",
             "Nyaptov",
-            "Wi-ki"
+            "Wi-ki",
+            "Rumor"
         ]
     },
     {
@@ -3335,7 +3790,7 @@
                     "color": "white"
                 },
                 {
-                    "text": "53.8",
+                    "text": "439.2",
                     "color": "#6e99ff"
                 },
                 {
@@ -3362,7 +3817,7 @@
         "trigger": "onClick",
         "attackInfo": {
             "damage": [
-                "53.8"
+                "439.2"
             ],
             "attackType": [
                 "Magic"
@@ -3376,33 +3831,8 @@
         "canUsedGod": [
             "Flora",
             "Nyaptov",
-            "Wi-ki"
-        ]
-    },
-    {
-        "id": 267,
-        "item": "minecraft:carrot_on_a_stick",
-        "name": [
-            {
-                "text": "即席プリーストセット レベル10",
-                "color": "green"
-            }
-        ],
-        "lore": [
-            {
-                "text": "\"これで君も今日から上級プリースト!\"",
-                "italic": true,
-                "color": "gray"
-            }
-        ],
-        "remainingCount": 1,
-        "slot": "auto",
-        "trigger": "onClick",
-        "mpCost": 0,
-        "canUsedGod": [
-            "Flora",
-            "Nyaptov",
-            "Wi-ki"
+            "Wi-ki",
+            "Rumor"
         ]
     },
     {
@@ -3429,7 +3859,7 @@
                     "color": "white"
                 },
                 {
-                    "text": "20.6",
+                    "text": "9.6",
                     "color": "#6e99ff"
                 },
                 {
@@ -3444,9 +3874,9 @@
         "localCooldown": 20,
         "disableCooldownMessage": true,
         "canUsedGod": [
-            "Flora",
             "Nyaptov",
-            "Wi-ki"
+            "Wi-ki",
+            "Rumor"
         ]
     },
     {
@@ -3501,9 +3931,9 @@
         "mpCost": 0,
         "specialCooldown": 3600,
         "canUsedGod": [
-            "Flora",
             "Nyaptov",
-            "Wi-ki"
+            "Wi-ki",
+            "Rumor"
         ]
     },
     {
@@ -3530,7 +3960,7 @@
                     "color": "white"
                 },
                 {
-                    "text": "95.3",
+                    "text": "1171.3",
                     "color": "#6e99ff"
                 },
                 {
@@ -3557,7 +3987,7 @@
         "trigger": "onClick",
         "attackInfo": {
             "damage": [
-                "95.3"
+                "1171.3"
             ],
             "attackType": [
                 "Magic"
@@ -3569,9 +3999,9 @@
         "mpCost": 30,
         "localCooldown": 600,
         "canUsedGod": [
-            "Flora",
             "Nyaptov",
-            "Wi-ki"
+            "Wi-ki",
+            "Rumor"
         ]
     },
     {
@@ -3624,7 +4054,7 @@
         "trigger": "onAttackByMelee",
         "attackInfo": {
             "damage": [
-                100
+                555
             ],
             "attackType": [
                 "Physical"
@@ -3638,6 +4068,7 @@
         "mpRequire": 100,
         "canUsedGod": [
             "Flora",
+            "Urban",
             "Nyaptov"
         ]
     },
@@ -3657,7 +4088,9 @@
         "slot": "legs",
         "trigger": "onDamage",
         "mpCost": 0,
+        "localCooldown": 40,
         "canUsedGod": [
+            "Urban",
             "Wi-ki",
             "Rumor"
         ],
@@ -3685,7 +4118,10 @@
         },
         "lore": [
             {
-                "text": "朝を知らせるラッパ。この音色を聞いたら活動を始めなければならない。"
+                "text": "朝を知らせるラッパ。"
+            },
+            {
+                "text": "この音色を聞いたら活動を始めなければならない。"
             }
         ],
         "slot": "auto",
@@ -3775,7 +4211,7 @@
         "trigger": "onAttackByMelee",
         "attackInfo": {
             "damage": [
-                28
+                80
             ],
             "attackType": [
                 "Physical"
@@ -3788,8 +4224,8 @@
         "mpCost": 0,
         "localCooldown": 100,
         "canUsedGod": [
-            "Nyaptov",
-            "Wi-ki"
+            "Urban",
+            "Rumor"
         ]
     },
     {
@@ -3812,6 +4248,7 @@
         "trigger": "onClick",
         "mpCost": 50,
         "canUsedGod": [
+            "Urban",
             "Nyaptov",
             "Wi-ki",
             "Rumor"
@@ -3833,9 +4270,9 @@
         "trigger": "onKilledByMelee",
         "mpCost": 0,
         "canUsedGod": [
+            "Flora",
             "Urban",
-            "Nyaptov",
-            "Wi-ki"
+            "Rumor"
         ],
         "customNbt": {
             "type": "compound",
@@ -3875,24 +4312,26 @@
         },
         "lore": [
             {
-                "text": "付近の敵に魔法攻撃を行う眷属たちを呼び出す。",
+                "text": "魔法攻撃を行う眷属を3体召喚する。",
                 "color": "white"
             },
             {
-                "text": "\"私と一緒に戦ってくれるかい？\"",
+                "text": "既に召喚した状態では使用できない。",
+                "color": "white"
+            },
+            {
+                "text": "\"ふよふよ漂う、ふしぎなヤツ\"",
                 "color": "gray"
             }
         ],
         "attackInfo": {
             "damage": [
-                30,
-                35
+                40
             ],
             "attackType": [
                 "Magic"
             ],
             "elementType": [
-                "None",
                 "Fire",
                 "Water",
                 "Thunder"
@@ -3901,11 +4340,12 @@
         },
         "slot": "auto",
         "trigger": "onClick",
-        "mpCost": 50,
-        "localCooldown": 200,
+        "mpCost": 100,
+        "localCooldown": 600,
+        "disableCooldownMessage": true,
         "canUsedGod": [
-            "Flora",
             "Nyaptov",
+            "Wi-ki",
             "Rumor"
         ]
     },
@@ -3974,8 +4414,8 @@
         "trigger": "onAttackByMelee",
         "attackInfo": {
             "damage": [
-                10,
-                15
+                40,
+                50
             ],
             "attackType": [
                 "Physical"
@@ -3987,7 +4427,11 @@
         },
         "mpCost": 5,
         "localCooldown": 8,
-        "canUsedGod": "ALL"
+        "canUsedGod": [
+            "Urban",
+            "Nyaptov",
+            "Rumor"
+        ]
     },
     {
         "id": 313,
@@ -4008,8 +4452,8 @@
         "trigger": "onAttackByMelee",
         "attackInfo": {
             "damage": [
-                23,
-                30
+                90,
+                120
             ],
             "attackType": [
                 "Physical"
@@ -4022,7 +4466,6 @@
         "mpCost": 7,
         "localCooldown": 8,
         "canUsedGod": [
-            "Flora",
             "Urban",
             "Nyaptov",
             "Rumor"
@@ -4047,8 +4490,8 @@
         "trigger": "onAttackByMelee",
         "attackInfo": {
             "damage": [
-                32,
-                50
+                280,
+                320
             ],
             "attackType": [
                 "Physical"
@@ -4061,10 +4504,8 @@
         "mpCost": 10,
         "localCooldown": 8,
         "canUsedGod": [
-            "Flora",
             "Urban",
-            "Nyaptov",
-            "Rumor"
+            "Nyaptov"
         ]
     },
     {
@@ -4086,8 +4527,8 @@
         "trigger": "onAttackByMelee",
         "attackInfo": {
             "damage": [
-                10,
-                15
+                40,
+                50
             ],
             "attackType": [
                 "Physical"
@@ -4120,8 +4561,8 @@
         "trigger": "onAttackByMelee",
         "attackInfo": {
             "damage": [
-                23,
-                30
+                90,
+                120
             ],
             "attackType": [
                 "Physical"
@@ -4135,8 +4576,8 @@
         "localCooldown": 8,
         "canUsedGod": [
             "Flora",
+            "Urban",
             "Nyaptov",
-            "Wi-ki",
             "Rumor"
         ]
     },
@@ -4159,8 +4600,8 @@
         "trigger": "onAttackByMelee",
         "attackInfo": {
             "damage": [
-                32,
-                50
+                280,
+                320
             ],
             "attackType": [
                 "Physical"
@@ -4174,9 +4615,7 @@
         "localCooldown": 8,
         "canUsedGod": [
             "Flora",
-            "Nyaptov",
-            "Wi-ki",
-            "Rumor"
+            "Urban"
         ]
     },
     {
@@ -4198,8 +4637,8 @@
         "trigger": "onAttackByMelee",
         "attackInfo": {
             "damage": [
-                10,
-                15
+                40,
+                50
             ],
             "attackType": [
                 "Physical"
@@ -4232,8 +4671,8 @@
         "trigger": "onAttackByMelee",
         "attackInfo": {
             "damage": [
-                23,
-                30
+                90,
+                120
             ],
             "attackType": [
                 "Physical"
@@ -4248,7 +4687,7 @@
         "canUsedGod": [
             "Flora",
             "Urban",
-            "Wi-ki",
+            "Nyaptov",
             "Rumor"
         ]
     },
@@ -4271,8 +4710,8 @@
         "trigger": "onAttackByMelee",
         "attackInfo": {
             "damage": [
-                32,
-                50
+                280,
+                320
             ],
             "attackType": [
                 "Physical"
@@ -4287,7 +4726,8 @@
         "canUsedGod": [
             "Flora",
             "Urban",
-            "Wi-ki"
+            "Nyaptov",
+            "Rumor"
         ]
     },
     {
@@ -4362,7 +4802,7 @@
         "localCooldown": 40,
         "canUsedGod": [
             "Flora",
-            "Urban",
+            "Nyaptov",
             "Wi-ki"
         ]
     },
@@ -4401,9 +4841,9 @@
         "trigger": "onAttackByProjectile",
         "mpCost": 20,
         "canUsedGod": [
-            "Flora",
+            "Urban",
             "Nyaptov",
-            "Wi-ki"
+            "Rumor"
         ]
     },
     {
@@ -4437,9 +4877,9 @@
         "trigger": "onAttackByProjectile",
         "mpCost": 40,
         "canUsedGod": [
-            "Flora",
+            "Urban",
             "Nyaptov",
-            "Wi-ki"
+            "Rumor"
         ]
     },
     {
@@ -4473,7 +4913,7 @@
         "trigger": "onAttackByMelee",
         "attackInfo": {
             "damage": [
-                3
+                28
             ],
             "attackType": [
                 "Physical"
@@ -4487,7 +4927,7 @@
         "mpCost": 1,
         "canUsedGod": [
             "Urban",
-            "Wi-ki"
+            "Rumor"
         ]
     },
     {
@@ -4525,7 +4965,8 @@
         "canUsedGod": [
             "Urban",
             "Nyaptov",
-            "Wi-ki"
+            "Wi-ki",
+            "Rumor"
         ]
     },
     {
@@ -4549,7 +4990,8 @@
         "mpCost": 50,
         "canUsedGod": [
             "Urban",
-            "Wi-ki"
+            "Wi-ki",
+            "Rumor"
         ]
     },
     {
@@ -4571,7 +5013,7 @@
         "trigger": "onAttackByMelee",
         "attackInfo": {
             "damage": [
-                30
+                550
             ],
             "attackType": [
                 "Physical"
@@ -4584,8 +5026,8 @@
         "mpCost": 30,
         "localCooldown": 60,
         "canUsedGod": [
-            "Flora",
             "Urban",
+            "Nyaptov",
             "Rumor"
         ],
         "customNbt": {
@@ -4647,7 +5089,7 @@
         "trigger": "onClick",
         "attackInfo": {
             "damage": [
-                20
+                70
             ],
             "attackType": [
                 "Physical"
@@ -4661,7 +5103,9 @@
         "mpCost": 20,
         "localCooldown": 10,
         "canUsedGod": [
+            "Flora",
             "Urban",
+            "Nyaptov",
             "Wi-ki",
             "Rumor"
         ]
@@ -4683,6 +5127,7 @@
         "mpCost": 20,
         "canUsedGod": [
             "Flora",
+            "Nyaptov",
             "Wi-ki",
             "Rumor"
         ]
@@ -4851,7 +5296,7 @@
         "trigger": "onAttackByMelee",
         "attackInfo": {
             "damage": [
-                90
+                900
             ],
             "attackType": [
                 "Physical"
@@ -4862,10 +5307,10 @@
             "isRangeAttack": "never"
         },
         "mpCost": 0,
-        "localCooldown": 15,
+        "localCooldown": 10,
         "canUsedGod": [
-            "Urban",
-            "Wi-ki"
+            "Flora",
+            "Urban"
         ]
     },
     {
@@ -4898,15 +5343,54 @@
         },
         "mpCost": 0,
         "canUsedGod": [
+            "Flora",
+            "Urban"
+        ]
+    },
+    {
+        "id": 368,
+        "item": "minecraft:carrot_on_a_stick",
+        "name": {
+            "text": "ファイアスペル",
+            "color": "red"
+        },
+        "lore": [
+            {
+                "text": "火の術式を宿した杖。"
+            },
+            {
+                "text": "敵に魔法火属性ダメージを与える"
+            }
+        ],
+        "slot": "auto",
+        "trigger": "onClick",
+        "attackInfo": {
+            "damage": [
+                15
+            ],
+            "attackType": [
+                "Magic"
+            ],
+            "elementType": [
+                "Fire"
+            ],
+            "isRangeAttack": "never",
+            "attackRange": 5
+        },
+        "mpCost": 4,
+        "localCooldown": 6,
+        "canUsedGod": [
+            "Flora",
             "Urban",
-            "Wi-ki"
+            "Nyaptov",
+            "Rumor"
         ]
     },
     {
         "id": 369,
         "item": "minecraft:carrot_on_a_stick",
         "name": {
-            "text": "ファイヤーマジック",
+            "text": "ファイアマジック",
             "color": "red"
         },
         "lore": [
@@ -4914,14 +5398,14 @@
                 "text": "炎の術式を宿した杖。"
             },
             {
-                "text": "敵にやや協力な魔法火属性ダメージを与える"
+                "text": "敵にやや強力な魔法火属性ダメージを与える"
             }
         ],
         "slot": "auto",
         "trigger": "onClick",
         "attackInfo": {
             "damage": [
-                26
+                100
             ],
             "attackType": [
                 "Magic"
@@ -4960,7 +5444,7 @@
         "trigger": "onClick",
         "attackInfo": {
             "damage": [
-                90
+                360
             ],
             "attackType": [
                 "Magic"
@@ -4974,7 +5458,6 @@
         "mpCost": 43,
         "localCooldown": 40,
         "canUsedGod": [
-            "Flora",
             "Urban",
             "Nyaptov",
             "Rumor"
@@ -4999,7 +5482,7 @@
         "trigger": "onClick",
         "attackInfo": {
             "damage": [
-                7
+                13
             ],
             "attackType": [
                 "Magic"
@@ -5033,7 +5516,7 @@
         "trigger": "onClick",
         "attackInfo": {
             "damage": [
-                15.2
+                20
             ],
             "attackType": [
                 "Magic"
@@ -5072,7 +5555,7 @@
         "trigger": "onClick",
         "attackInfo": {
             "damage": [
-                20.3
+                100
             ],
             "attackType": [
                 "Magic"
@@ -5087,9 +5570,7 @@
         "localCooldown": 20,
         "canUsedGod": [
             "Flora",
-            "Nyaptov",
-            "Wi-ki",
-            "Rumor"
+            "Wi-ki"
         ]
     },
     {
@@ -5111,7 +5592,7 @@
         "trigger": "onClick",
         "attackInfo": {
             "damage": [
-                6
+                11
             ],
             "attackType": [
                 "Magic"
@@ -5145,7 +5626,7 @@
         "trigger": "onClick",
         "attackInfo": {
             "damage": [
-                26
+                80
             ],
             "attackType": [
                 "Magic"
@@ -5160,9 +5641,9 @@
         "localCooldown": 15,
         "canUsedGod": [
             "Flora",
-            "Urban",
             "Nyaptov",
-            "Wi-ki"
+            "Wi-ki",
+            "Rumor"
         ]
     },
     {
@@ -5184,7 +5665,7 @@
         "trigger": "onClick",
         "attackInfo": {
             "damage": [
-                50
+                300
             ],
             "attackType": [
                 "Magic"
@@ -5199,9 +5680,9 @@
         "localCooldown": 20,
         "canUsedGod": [
             "Flora",
-            "Urban",
             "Nyaptov",
-            "Wi-ki"
+            "Wi-ki",
+            "Rumor"
         ]
     },
     {
@@ -5228,7 +5709,7 @@
         "trigger": "onClick",
         "attackInfo": {
             "damage": [
-                124
+                580
             ],
             "attackType": [
                 "Magic"
@@ -5243,6 +5724,7 @@
         "localCooldown": 60,
         "canUsedGod": [
             "Flora",
+            "Nyaptov",
             "Wi-ki",
             "Rumor"
         ]
@@ -5280,7 +5762,7 @@
         "trigger": "onAttackByMelee",
         "attackInfo": {
             "damage": [
-                30
+                42
             ],
             "attackType": [
                 "Magic"
@@ -5293,6 +5775,7 @@
         "mpCost": 18,
         "canUsedGod": [
             "Flora",
+            "Urban",
             "Nyaptov",
             "Rumor"
         ],
@@ -5346,7 +5829,7 @@
         "trigger": "onClick",
         "attackInfo": {
             "damage": [
-                30
+                113
             ],
             "attackType": [
                 "Magic"
@@ -5361,7 +5844,9 @@
         "specialCooldown": 120,
         "canUsedGod": [
             "Flora",
-            "Nyaptov"
+            "Urban",
+            "Nyaptov",
+            "Rumor"
         ]
     },
     {
@@ -5379,12 +5864,17 @@
                 "text": "自分の真上のブロック上にテレポートする事ができる羽"
             }
         ],
-        "remainingCount": 10,
+        "remainingCount": 25,
         "slot": "auto",
         "trigger": "onClick",
         "mpCost": 20,
         "localCooldown": 200,
-        "canUsedGod": "ALL"
+        "canUsedGod": [
+            "Flora",
+            "Nyaptov",
+            "Wi-ki",
+            "Rumor"
+        ]
     },
     {
         "id": 431,
@@ -5447,7 +5937,11 @@
         "trigger": "itemUse",
         "mpCost": 10,
         "canUsedGod": [
-            "Nyaptov"
+            "Flora",
+            "Urban",
+            "Nyaptov",
+            "Wi-ki",
+            "Rumor"
         ]
     },
     {
@@ -5475,7 +5969,7 @@
         "slot": "mainhand",
         "trigger": "onAttackByMelee",
         "attackInfo": {
-            "damage": "16.5",
+            "damage": "39.5",
             "attackType": [
                 "Physical"
             ],
@@ -5486,8 +5980,9 @@
         },
         "mpCost": 0,
         "canUsedGod": [
+            "Flora",
             "Urban",
-            "Wi-ki"
+            "Rumor"
         ]
     },
     {
@@ -5495,7 +5990,7 @@
         "item": "minecraft:cooked_beef",
         "name": [
             {
-                "text": "winner",
+                "text": "kinoko",
                 "color": "yellow",
                 "obfuscated": true,
                 "bold": true
@@ -5551,7 +6046,7 @@
         "item": "minecraft:cooked_chicken",
         "name": [
             {
-                "text": "loser_",
+                "text": "tknoko",
                 "color": "dark_green",
                 "obfuscated": true,
                 "bold": true
@@ -5562,7 +6057,7 @@
                 "obfuscated": false
             },
             {
-                "text": "maamaa",
+                "text": "umauma",
                 "color": "dark_green",
                 "obfuscated": true
             }
@@ -5570,7 +6065,7 @@
         "lore": [
             [
                 {
-                    "text": "(量が少なくて)食べやすい。しかもうまい！"
+                    "text": "食べやすい。しかもうまい！"
                 }
             ]
         ],
@@ -5647,11 +6142,11 @@
         },
         "lore": [
             {
-                "text": "出目が4・5・6のみのサイコロ"
+                "text": "4・5・6しか出ない変なサイコロ。"
             },
             [
                 {
-                    "text": "振ることで近くの敵1体に"
+                    "text": "サイコロは近くの敵1体に"
                 },
                 {
                     "text": "火 ",
@@ -5666,20 +6161,23 @@
                     "color": "yellow"
                 },
                 {
-                    "text": "の属性から",
+                    "text": "属性の攻撃を行う。",
                     "color": "white"
                 }
             ],
             {
-                "text": "ランダムな属性の出た目 * 5ダメージを与える"
+                "text": "攻撃回数は出目によって変わる。"
+            },
+            {
+                "text": "\"バレバレのイカサマ\"",
+                "color": "gray"
             }
         ],
         "slot": "auto",
         "trigger": "onClick",
         "attackInfo": {
             "damage": [
-                28,
-                42
+                "50×4~6"
             ],
             "attackType": [
                 "Magic"
@@ -5694,7 +6192,9 @@
         },
         "mpCost": 12,
         "localCooldown": 14,
+        "disableCooldownMessage": true,
         "canUsedGod": [
+            "Flora",
             "Wi-ki",
             "Rumor"
         ]
@@ -5715,7 +6215,7 @@
         "trigger": "onClick",
         "attackInfo": {
             "damage": [
-                130
+                1029
             ],
             "attackType": [
                 "Magic"
@@ -5729,14 +6229,14 @@
         "mpCost": 25,
         "localCooldown": 50,
         "canUsedGod": [
-            "Urban",
+            "Flora",
             "Wi-ki",
             "Rumor"
         ]
     },
     {
         "id": 468,
-        "item": "minecraft:dead_bush",
+        "item": "minecraft:stick",
         "name": {
             "text": "瞬獄殺",
             "color": "dark_red",
@@ -5749,7 +6249,7 @@
                     "color": "white"
                 },
                 {
-                    "text": "体力が20以下",
+                    "text": "体力が30以下",
                     "color": "light_purple"
                 },
                 {
@@ -5787,7 +6287,7 @@
         "trigger": "passive",
         "attackInfo": {
             "damage": [
-                20
+                30
             ],
             "attackType": [
                 "Physical"
@@ -5804,6 +6304,7 @@
         "disableCooldownMessage": true,
         "canUsedGod": [
             "Urban",
+            "Nyaptov",
             "Wi-ki"
         ]
     },
@@ -5847,8 +6348,8 @@
         "trigger": "onClick",
         "attackInfo": {
             "damage": [
-                5,
-                8
+                11,
+                16
             ],
             "attackType": [
                 "Physical"
@@ -5861,8 +6362,8 @@
         },
         "mpCost": 1,
         "canUsedGod": [
+            "Flora",
             "Urban",
-            "Wi-ki",
             "Rumor"
         ],
         "customNbt": {
@@ -5922,6 +6423,54 @@
         "canUsedGod": "ALL"
     },
     {
+        "id": 515,
+        "item": "minecraft:potion",
+        "name": [
+            {
+                "text": "時刻みの薬",
+                "color": "white"
+            }
+        ],
+        "lore": [
+            [
+                {
+                    "text": "時間を封じ込めた薬"
+                }
+            ],
+            [
+                {
+                    "text": "朝と夜で効果が違う"
+                }
+            ],
+            [
+                {
+                    "text": "朝：火炎耐性、移動速度、採掘速度上昇",
+                    "color": "yellow"
+                }
+            ],
+            [
+                {
+                    "text": "夜：低速落下、跳躍、暗視",
+                    "color": "yellow"
+                }
+            ]
+        ],
+        "remainingCount": 10,
+        "slot": "auto",
+        "trigger": "itemUse",
+        "mpCost": 0,
+        "canUsedGod": "ALL",
+        "customNbt": {
+            "type": "compound",
+            "value": {
+                "CustomPotionColor": {
+                    "type": "int",
+                    "value": 16777215
+                }
+            }
+        }
+    },
+    {
         "id": 522,
         "item": "minecraft:carrot_on_a_stick",
         "name": [
@@ -5945,11 +6494,11 @@
         "lore": [
             [
                 {
-                    "text": "全てのプレイヤーの",
+                    "text": "全てのプレイヤーについて",
                     "color": "white"
                 },
                 {
-                    "text": "HPを全回復",
+                    "text": "失ったHPの75%を回復",
                     "color": "light_purple"
                 },
                 {
@@ -5994,7 +6543,7 @@
         "trigger": "onClick",
         "attackInfo": {
             "damage": [
-                150
+                1700
             ],
             "attackType": [
                 "Magic"
@@ -6008,7 +6557,12 @@
         "mpCost": 99999,
         "mpRequire": 0,
         "specialCooldown": 3600,
-        "canUsedGod": "ALL"
+        "canUsedGod": [
+            "Flora",
+            "Urban",
+            "Wi-ki",
+            "Rumor"
+        ]
     },
     {
         "id": 529,
@@ -6047,6 +6601,7 @@
         "mpCost": 0,
         "canUsedGod": [
             "Flora",
+            "Urban",
             "Nyaptov",
             "Rumor"
         ]
@@ -6085,7 +6640,9 @@
         },
         "mpCost": 0,
         "canUsedGod": [
+            "Flora",
             "Urban",
+            "Nyaptov",
             "Wi-ki",
             "Rumor"
         ],
@@ -6143,7 +6700,9 @@
         },
         "mpCost": 0,
         "canUsedGod": [
+            "Flora",
             "Urban",
+            "Nyaptov",
             "Wi-ki",
             "Rumor"
         ],
@@ -6201,7 +6760,9 @@
         },
         "mpCost": 0,
         "canUsedGod": [
+            "Flora",
             "Urban",
+            "Nyaptov",
             "Wi-ki",
             "Rumor"
         ],
@@ -6268,7 +6829,9 @@
         },
         "mpCost": 0,
         "canUsedGod": [
+            "Flora",
             "Urban",
+            "Nyaptov",
             "Wi-ki",
             "Rumor"
         ],
@@ -6322,12 +6885,12 @@
             ]
         ],
         "slot": "head",
-        "trigger": "onDamage",
+        "trigger": "onDamageFromEntity",
         "condition": {
             "text": "繋がる総てを身に纏う"
         },
         "attackInfo": {
-            "damage": 20,
+            "damage": 600,
             "attackType": [
                 "Magic"
             ],
@@ -6337,8 +6900,8 @@
         },
         "mpCost": 5,
         "canUsedGod": [
+            "Flora",
             "Urban",
-            "Nyaptov",
             "Wi-ki"
         ],
         "customNbt": {
@@ -6350,18 +6913,18 @@
                         {
                             "type": "compound",
                             "value": {
-                                "Amount": {
-                                    "type": "int",
-                                    "value": 3
+                                "Slot": {
+                                    "type": "string",
+                                    "value": "head"
                                 }
                             }
                         },
                         {
                             "type": "compound",
                             "value": {
-                                "Amount": {
-                                    "type": "int",
-                                    "value": 1
+                                "Slot": {
+                                    "type": "string",
+                                    "value": "head"
                                 }
                             }
                         }
@@ -6400,12 +6963,12 @@
             ]
         ],
         "slot": "chest",
-        "trigger": "onDamage",
+        "trigger": "onDamageFromEntity",
         "condition": {
             "text": "繋がる総てを身に纏う"
         },
         "attackInfo": {
-            "damage": 20,
+            "damage": 600,
             "attackType": [
                 "Magic"
             ],
@@ -6415,16 +6978,35 @@
         },
         "mpCost": 5,
         "canUsedGod": [
+            "Flora",
             "Urban",
-            "Nyaptov",
             "Wi-ki"
         ],
         "customNbt": {
             "type": "compound",
             "value": {
-                "Unbreakable": {
-                    "type": "byte",
-                    "value": 1
+                "AttributeModifiers": {
+                    "type": "list",
+                    "value": [
+                        {
+                            "type": "compound",
+                            "value": {
+                                "Slot": {
+                                    "type": "string",
+                                    "value": "chest"
+                                }
+                            }
+                        },
+                        {
+                            "type": "compound",
+                            "value": {
+                                "Slot": {
+                                    "type": "string",
+                                    "value": "chest"
+                                }
+                            }
+                        }
+                    ]
                 }
             }
         }
@@ -6459,12 +7041,12 @@
             ]
         ],
         "slot": "legs",
-        "trigger": "onDamage",
+        "trigger": "onDamageFromEntity",
         "condition": {
             "text": "繋がる総てを身に纏う"
         },
         "attackInfo": {
-            "damage": 20,
+            "damage": 600,
             "attackType": [
                 "Magic"
             ],
@@ -6474,16 +7056,35 @@
         },
         "mpCost": 5,
         "canUsedGod": [
+            "Flora",
             "Urban",
-            "Nyaptov",
             "Wi-ki"
         ],
         "customNbt": {
             "type": "compound",
             "value": {
-                "Unbreakable": {
-                    "type": "byte",
-                    "value": 1
+                "AttributeModifiers": {
+                    "type": "list",
+                    "value": [
+                        {
+                            "type": "compound",
+                            "value": {
+                                "Slot": {
+                                    "type": "string",
+                                    "value": "legs"
+                                }
+                            }
+                        },
+                        {
+                            "type": "compound",
+                            "value": {
+                                "Slot": {
+                                    "type": "string",
+                                    "value": "legs"
+                                }
+                            }
+                        }
+                    ]
                 }
             }
         }
@@ -6518,12 +7119,12 @@
             ]
         ],
         "slot": "feet",
-        "trigger": "onDamage",
+        "trigger": "onDamageFromEntity",
         "condition": {
             "text": "繋がる総てを身に纏う"
         },
         "attackInfo": {
-            "damage": 20,
+            "damage": 600,
             "attackType": [
                 "Magic"
             ],
@@ -6533,16 +7134,35 @@
         },
         "mpCost": 5,
         "canUsedGod": [
+            "Flora",
             "Urban",
-            "Nyaptov",
             "Wi-ki"
         ],
         "customNbt": {
             "type": "compound",
             "value": {
-                "Unbreakable": {
-                    "type": "byte",
-                    "value": 1
+                "AttributeModifiers": {
+                    "type": "list",
+                    "value": [
+                        {
+                            "type": "compound",
+                            "value": {
+                                "Slot": {
+                                    "type": "string",
+                                    "value": "feet"
+                                }
+                            }
+                        },
+                        {
+                            "type": "compound",
+                            "value": {
+                                "Slot": {
+                                    "type": "string",
+                                    "value": "feet"
+                                }
+                            }
+                        }
+                    ]
                 }
             }
         }
@@ -6590,6 +7210,7 @@
         },
         "mpCost": 5,
         "canUsedGod": [
+            "Flora",
             "Nyaptov",
             "Wi-ki"
         ],
@@ -6655,7 +7276,9 @@
             "bypassResist": true
         },
         "mpCost": 5,
+        "localCooldown": 5,
         "canUsedGod": [
+            "Flora",
             "Nyaptov",
             "Wi-ki"
         ],
@@ -6668,9 +7291,9 @@
                         {
                             "type": "compound",
                             "value": {
-                                "Slot": {
-                                    "type": "string",
-                                    "value": "chest"
+                                "Amount": {
+                                    "type": "int",
+                                    "value": 8
                                 }
                             }
                         }
@@ -6722,6 +7345,7 @@
         },
         "mpCost": 5,
         "canUsedGod": [
+            "Flora",
             "Nyaptov",
             "Wi-ki"
         ],
@@ -6734,9 +7358,9 @@
                         {
                             "type": "compound",
                             "value": {
-                                "Slot": {
-                                    "type": "string",
-                                    "value": "legs"
+                                "Amount": {
+                                    "type": "int",
+                                    "value": 8
                                 }
                             }
                         }
@@ -6788,6 +7412,7 @@
         },
         "mpCost": 5,
         "canUsedGod": [
+            "Flora",
             "Nyaptov",
             "Wi-ki"
         ],
@@ -6800,9 +7425,27 @@
                         {
                             "type": "compound",
                             "value": {
-                                "Slot": {
-                                    "type": "string",
-                                    "value": "feet"
+                                "Amount": {
+                                    "type": "int",
+                                    "value": 3
+                                }
+                            }
+                        },
+                        {
+                            "type": "compound",
+                            "value": {
+                                "Amount": {
+                                    "type": "int",
+                                    "value": 4
+                                }
+                            }
+                        },
+                        {
+                            "type": "compound",
+                            "value": {
+                                "Amount": {
+                                    "type": "double",
+                                    "value": 0.3
                                 }
                             }
                         }
@@ -6845,6 +7488,7 @@
         "slot": "head",
         "trigger": "equipping",
         "mpCost": 20,
+        "localCooldown": 100,
         "canUsedGod": [
             "Flora",
             "Nyaptov",
@@ -7130,8 +7774,8 @@
         "trigger": "keepSneak",
         "attackInfo": {
             "damage": [
-                15,
-                30
+                45,
+                65
             ],
             "attackType": [
                 "Magic"
@@ -7204,7 +7848,7 @@
         "mpCost": 20,
         "canUsedGod": [
             "Urban",
-            "Nyaptov"
+            "Rumor"
         ]
     },
     {
@@ -7251,7 +7895,7 @@
         "trigger": "onClick",
         "attackInfo": {
             "damage": [
-                40
+                20
             ],
             "attackType": [
                 "Physical"
@@ -7265,7 +7909,7 @@
         "mpCost": 0,
         "canUsedGod": [
             "Urban",
-            "Nyaptov"
+            "Wi-ki"
         ]
     },
     {
@@ -7313,7 +7957,7 @@
         "mpCost": 40,
         "canUsedGod": [
             "Urban",
-            "Nyaptov"
+            "Wi-ki"
         ]
     },
     {
@@ -7321,24 +7965,25 @@
         "item": "minecraft:carrot_on_a_stick",
         "name": {
             "text": "ルナフレア",
-            "color": "dark_green",
-            "underlined": true
+            "color": "#e10643"
         },
         "lore": [
             {
-                "text": "その月光はすべてを焼き尽くす。",
-                "color": "yellow"
+                "text": "狙った箇所に魔法弾の雨を降らす。",
+                "color": "white",
+                "italic": false
             },
             {
-                "text": "敵を狙うことで発動できる",
-                "color": "yellow"
+                "text": "\"月の裁き\"",
+                "color": "gray",
+                "italic": false
             }
         ],
         "slot": "auto",
         "trigger": "onClick",
         "attackInfo": {
             "damage": [
-                20
+                "80-100×10"
             ],
             "attackType": [
                 "Magic"
@@ -7346,14 +7991,15 @@
             "elementType": [
                 "None"
             ],
-            "isRangeAttack": "never",
-            "attackRange": 30
+            "isRangeAttack": "every",
+            "attackRange": 20
         },
-        "mpCost": 5,
+        "mpCost": 20,
+        "localCooldown": 20,
+        "disableCooldownMessage": true,
         "canUsedGod": [
-            "Flora",
-            "Urban",
-            "Nyaptov"
+            "Nyaptov",
+            "Wi-ki"
         ]
     },
     {
@@ -7376,7 +8022,7 @@
         "trigger": "onClick",
         "attackInfo": {
             "damage": [
-                30
+                50
             ],
             "attackType": [
                 "Physical"
@@ -7390,7 +8036,54 @@
         "mpCost": 60,
         "localCooldown": 20,
         "canUsedGod": [
-            "Nyaptov"
+            "Nyaptov",
+            "Wi-ki",
+            "Rumor"
+        ]
+    },
+    {
+        "id": 613,
+        "item": "minecraft:carrot_on_a_stick",
+        "name": {
+            "text": "コール:フルストゥーカ",
+            "color": "#FF70E2"
+        },
+        "lore": [
+            {
+                "text": "フルストゥーカを召喚する"
+            },
+            {
+                "text": "謎の『S.U.S.H.I.』と呼ばれる物"
+            },
+            {
+                "text": "未知の細胞培養基材かなにかでできているが"
+            },
+            {
+                "text": "食べれるのかいささか不明である"
+            },
+            {
+                "text": "これが食べ物だとでもいうのだろうか..."
+            }
+        ],
+        "slot": "auto",
+        "trigger": "onClick",
+        "attackInfo": {
+            "damage": [
+                "???"
+            ],
+            "attackType": [
+                "Physical"
+            ],
+            "elementType": [
+                "Thunder"
+            ]
+        },
+        "mpCost": 200,
+        "specialCooldown": 3600,
+        "canUsedGod": [
+            "Flora",
+            "Nyaptov",
+            "Rumor"
         ]
     },
     {
@@ -7582,7 +8275,6 @@
         "trigger": "equipping",
         "mpCost": 0,
         "canUsedGod": [
-            "Flora",
             "Urban",
             "Nyaptov",
             "Rumor"
@@ -7593,6 +8285,15 @@
                 "AttributeModifiers": {
                     "type": "list",
                     "value": [
+                        {
+                            "type": "compound",
+                            "value": {
+                                "Slot": {
+                                    "type": "string",
+                                    "value": "head"
+                                }
+                            }
+                        },
                         {
                             "type": "compound",
                             "value": {
@@ -7628,7 +8329,6 @@
         "trigger": "equipping",
         "mpCost": 0,
         "canUsedGod": [
-            "Flora",
             "Urban",
             "Nyaptov",
             "Rumor"
@@ -7679,7 +8379,6 @@
         "trigger": "equipping",
         "mpCost": 0,
         "canUsedGod": [
-            "Flora",
             "Urban",
             "Nyaptov",
             "Rumor"
@@ -7730,7 +8429,6 @@
         "trigger": "equipping",
         "mpCost": 0,
         "canUsedGod": [
-            "Flora",
             "Urban",
             "Nyaptov",
             "Rumor"
@@ -7741,6 +8439,15 @@
                 "AttributeModifiers": {
                     "type": "list",
                     "value": [
+                        {
+                            "type": "compound",
+                            "value": {
+                                "Slot": {
+                                    "type": "string",
+                                    "value": "feet"
+                                }
+                            }
+                        },
                         {
                             "type": "compound",
                             "value": {
@@ -7785,6 +8492,15 @@
                 "AttributeModifiers": {
                     "type": "list",
                     "value": [
+                        {
+                            "type": "compound",
+                            "value": {
+                                "Slot": {
+                                    "type": "string",
+                                    "value": "head"
+                                }
+                            }
+                        },
                         {
                             "type": "compound",
                             "value": {
@@ -7902,7 +8618,7 @@
                             "value": {
                                 "Slot": {
                                     "type": "string",
-                                    "value": "chest"
+                                    "value": "legs"
                                 }
                             }
                         }
@@ -7949,6 +8665,15 @@
                                     "value": "feet"
                                 }
                             }
+                        },
+                        {
+                            "type": "compound",
+                            "value": {
+                                "Slot": {
+                                    "type": "string",
+                                    "value": "feet"
+                                }
+                            }
                         }
                     ]
                 }
@@ -7983,6 +8708,15 @@
                 "AttributeModifiers": {
                     "type": "list",
                     "value": [
+                        {
+                            "type": "compound",
+                            "value": {
+                                "Slot": {
+                                    "type": "string",
+                                    "value": "head"
+                                }
+                            }
+                        },
                         {
                             "type": "compound",
                             "value": {
@@ -8139,6 +8873,15 @@
                                     "value": "feet"
                                 }
                             }
+                        },
+                        {
+                            "type": "compound",
+                            "value": {
+                                "Slot": {
+                                    "type": "string",
+                                    "value": "feet"
+                                }
+                            }
                         }
                     ]
                 }
@@ -8166,6 +8909,7 @@
         "mpCost": 0,
         "canUsedGod": [
             "Flora",
+            "Urban",
             "Nyaptov",
             "Wi-ki"
         ],
@@ -8232,6 +8976,7 @@
         "mpCost": 0,
         "canUsedGod": [
             "Flora",
+            "Urban",
             "Nyaptov",
             "Wi-ki"
         ],
@@ -8294,6 +9039,7 @@
         "mpCost": 0,
         "canUsedGod": [
             "Flora",
+            "Urban",
             "Nyaptov",
             "Wi-ki"
         ],
@@ -8356,6 +9102,7 @@
         "mpCost": 0,
         "canUsedGod": [
             "Flora",
+            "Urban",
             "Nyaptov",
             "Wi-ki"
         ],
@@ -8407,18 +9154,18 @@
         "lore": [
             [
                 {
+                    "text": "荊の鎧を全て纒いし時、血吸いの荊が目を覚ます",
+                    "color": "#1D5923"
+                }
+            ],
+            [
+                {
                     "text": "水耐性+5% ",
                     "color": "aqua"
                 },
                 {
                     "text": "雷耐性+5%",
                     "color": "yellow"
-                }
-            ],
-            [
-                {
-                    "text": "荊の鎧を全て纒いし時、血吸いの荊が目を覚ます",
-                    "color": "#1D5923"
                 }
             ]
         ],
@@ -8427,8 +9174,8 @@
         "mpCost": 0,
         "canUsedGod": [
             "Flora",
-            "Wi-ki",
-            "Rumor"
+            "Urban",
+            "Wi-ki"
         ],
         "customNbt": {
             "type": "compound",
@@ -8469,18 +9216,18 @@
         "lore": [
             [
                 {
+                    "text": "荊の鎧を全て纒いし時、血吸いの荊が目を覚ます",
+                    "color": "#1D5923"
+                }
+            ],
+            [
+                {
                     "text": "水耐性+5% ",
                     "color": "aqua"
                 },
                 {
                     "text": "雷耐性+5%",
                     "color": "yellow"
-                }
-            ],
-            [
-                {
-                    "text": "荊の鎧を全て纒いし時、血吸いの荊が目を覚ます",
-                    "color": "#1D5923"
                 }
             ]
         ],
@@ -8489,8 +9236,8 @@
         "mpCost": 0,
         "canUsedGod": [
             "Flora",
-            "Wi-ki",
-            "Rumor"
+            "Urban",
+            "Wi-ki"
         ],
         "customNbt": {
             "type": "compound",
@@ -8531,18 +9278,18 @@
         "lore": [
             [
                 {
+                    "text": "荊の鎧を全て纒いし時、血吸いの荊が目を覚ます",
+                    "color": "#1D5923"
+                }
+            ],
+            [
+                {
                     "text": "水耐性+5% ",
                     "color": "aqua"
                 },
                 {
                     "text": "雷耐性+5%",
                     "color": "yellow"
-                }
-            ],
-            [
-                {
-                    "text": "荊の鎧を全て纒いし時、血吸いの荊が目を覚ます",
-                    "color": "#1D5923"
                 }
             ]
         ],
@@ -8551,8 +9298,8 @@
         "mpCost": 0,
         "canUsedGod": [
             "Flora",
-            "Wi-ki",
-            "Rumor"
+            "Urban",
+            "Wi-ki"
         ],
         "customNbt": {
             "type": "compound",
@@ -8593,18 +9340,18 @@
         "lore": [
             [
                 {
+                    "text": "荊の鎧を全て纒いし時、血吸いの荊が目を覚ます",
+                    "color": "#1D5923"
+                }
+            ],
+            [
+                {
                     "text": "水耐性+5% ",
                     "color": "aqua"
                 },
                 {
                     "text": "雷耐性+5%",
                     "color": "yellow"
-                }
-            ],
-            [
-                {
-                    "text": "荊の鎧を全て纒いし時、血吸いの荊が目を覚ます",
-                    "color": "#1D5923"
                 }
             ]
         ],
@@ -8613,7 +9360,343 @@
         "mpCost": 0,
         "canUsedGod": [
             "Flora",
-            "Wi-ki",
+            "Urban",
+            "Wi-ki"
+        ],
+        "customNbt": {
+            "type": "compound",
+            "value": {
+                "AttributeModifiers": {
+                    "type": "list",
+                    "value": [
+                        {
+                            "type": "compound",
+                            "value": {
+                                "Slot": {
+                                    "type": "string",
+                                    "value": "feet"
+                                }
+                            }
+                        },
+                        {
+                            "type": "compound",
+                            "value": {
+                                "Slot": {
+                                    "type": "string",
+                                    "value": "feet"
+                                }
+                            }
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "id": 664,
+        "item": "minecraft:leather_helmet",
+        "name": {
+            "text": "魂炎纏",
+            "color": "#01A7AC",
+            "bold": true
+        },
+        "lore": [
+            {
+                "text": "魂炎を纏う者に代償を。",
+                "color": "aqua"
+            },
+            {
+                "text": "代償背負いし者へ力を。",
+                "color": "aqua"
+            },
+            [
+                {
+                    "text": "物理攻撃+5% ",
+                    "color": "dark_green"
+                },
+                {
+                    "text": "火耐性+10% 火攻撃+10% ",
+                    "color": "red"
+                }
+            ],
+            [
+                {
+                    "text": "MP回復量+8% ",
+                    "color": "green"
+                },
+                {
+                    "text": "最大体力-10%",
+                    "color": "dark_red"
+                }
+            ]
+        ],
+        "slot": "head",
+        "trigger": "equipping",
+        "mpCost": 0,
+        "canUsedGod": [
+            "Urban",
+            "Nyaptov",
+            "Rumor"
+        ],
+        "customNbt": {
+            "type": "compound",
+            "value": {
+                "AttributeModifiers": {
+                    "type": "list",
+                    "value": [
+                        {
+                            "type": "compound",
+                            "value": {
+                                "Slot": {
+                                    "type": "string",
+                                    "value": "head"
+                                }
+                            }
+                        },
+                        {
+                            "type": "compound",
+                            "value": {
+                                "Slot": {
+                                    "type": "string",
+                                    "value": "head"
+                                }
+                            }
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "id": 665,
+        "item": "minecraft:leather_chestplate",
+        "name": {
+            "text": "魂炎纏",
+            "color": "#01A7AC",
+            "bold": true
+        },
+        "lore": [
+            [
+                {
+                    "text": "魂炎を纏う者に代償を。",
+                    "color": "aqua"
+                }
+            ],
+            [
+                {
+                    "text": "代償背負いし者へ力を。",
+                    "color": "aqua"
+                }
+            ],
+            [
+                {
+                    "text": "物理攻撃+5% ",
+                    "color": "dark_green"
+                },
+                {
+                    "text": "火耐性+10% 火攻撃+10% ",
+                    "color": "red"
+                }
+            ],
+            [
+                {
+                    "text": "MP回復量+8% ",
+                    "color": "green"
+                },
+                {
+                    "text": "最大体力-10%",
+                    "color": "dark_red"
+                }
+            ],
+            [
+                {
+                    "text": "魂炎を完全に纏いし時",
+                    "color": "#01A7AC"
+                }
+            ],
+            [
+                {
+                    "text": "火攻撃+10% ",
+                    "color": "red"
+                },
+                {
+                    "text": "MP回復量+8% ",
+                    "color": "green"
+                },
+                {
+                    "text": "最大体力-10%",
+                    "color": "dark_red"
+                }
+            ],
+            [
+                {
+                    "text": "の効果を追加で得て",
+                    "color": "#01A7AC"
+                }
+            ],
+            [
+                {
+                    "text": "近接攻撃時に魂炎で対象を攻撃する。",
+                    "color": "#01A7AC"
+                }
+            ]
+        ],
+        "slot": "chest",
+        "trigger": "equipping",
+        "mpCost": 0,
+        "canUsedGod": [
+            "Urban",
+            "Nyaptov",
+            "Rumor"
+        ],
+        "customNbt": {
+            "type": "compound",
+            "value": {
+                "AttributeModifiers": {
+                    "type": "list",
+                    "value": [
+                        {
+                            "type": "compound",
+                            "value": {
+                                "Slot": {
+                                    "type": "string",
+                                    "value": "chest"
+                                }
+                            }
+                        },
+                        {
+                            "type": "compound",
+                            "value": {
+                                "Slot": {
+                                    "type": "string",
+                                    "value": "chest"
+                                }
+                            }
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "id": 666,
+        "item": "minecraft:leather_leggings",
+        "name": {
+            "text": "魂炎纏",
+            "color": "#01A7AC",
+            "bold": true
+        },
+        "lore": [
+            {
+                "text": "魂炎を纏う者に代償を。",
+                "color": "aqua"
+            },
+            {
+                "text": "代償背負いし者へ力を。",
+                "color": "aqua"
+            },
+            [
+                {
+                    "text": "物理攻撃+5% ",
+                    "color": "dark_green"
+                },
+                {
+                    "text": "火耐性+10% 火攻撃+10% ",
+                    "color": "red"
+                }
+            ],
+            [
+                {
+                    "text": "MP回復量+8% ",
+                    "color": "green"
+                },
+                {
+                    "text": "最大体力-10%",
+                    "color": "dark_red"
+                }
+            ]
+        ],
+        "slot": "legs",
+        "trigger": "equipping",
+        "mpCost": 0,
+        "canUsedGod": [
+            "Urban",
+            "Nyaptov",
+            "Rumor"
+        ],
+        "customNbt": {
+            "type": "compound",
+            "value": {
+                "AttributeModifiers": {
+                    "type": "list",
+                    "value": [
+                        {
+                            "type": "compound",
+                            "value": {
+                                "Slot": {
+                                    "type": "string",
+                                    "value": "legs"
+                                }
+                            }
+                        },
+                        {
+                            "type": "compound",
+                            "value": {
+                                "Slot": {
+                                    "type": "string",
+                                    "value": "legs"
+                                }
+                            }
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "id": 667,
+        "item": "minecraft:leather_boots",
+        "name": {
+            "text": "魂炎纏",
+            "color": "#01A7AC",
+            "bold": true
+        },
+        "lore": [
+            {
+                "text": "魂炎を纏う者に代償を。",
+                "color": "aqua"
+            },
+            {
+                "text": "代償背負いし者へ力を。",
+                "color": "aqua"
+            },
+            [
+                {
+                    "text": "物理攻撃+5% ",
+                    "color": "dark_green"
+                },
+                {
+                    "text": "火耐性+10% 火攻撃+10% ",
+                    "color": "red"
+                }
+            ],
+            [
+                {
+                    "text": "MP回復量+8% ",
+                    "color": "green"
+                },
+                {
+                    "text": "最大体力-10%",
+                    "color": "dark_red"
+                }
+            ]
+        ],
+        "slot": "feet",
+        "trigger": "equipping",
+        "mpCost": 0,
+        "canUsedGod": [
+            "Urban",
+            "Nyaptov",
             "Rumor"
         ],
         "customNbt": {
@@ -8662,7 +9745,7 @@
                 "color": "#00acf6"
             },
             {
-                "text": "ダメージが2倍になる",
+                "text": "ダメージが1.5倍になる",
                 "color": "#008bff"
             }
         ],
@@ -8670,8 +9753,8 @@
         "trigger": "onAttackByMelee",
         "attackInfo": {
             "damage": [
-                20,
-                60
+                150,
+                450
             ],
             "attackType": [
                 "Magic"
@@ -8685,7 +9768,7 @@
         "localCooldown": 20,
         "canUsedGod": [
             "Flora",
-            "Wi-ki",
+            "Urban",
             "Rumor"
         ]
     },
@@ -8699,14 +9782,38 @@
         "lore": [
             [
                 {
-                    "text": "魔法属性攻撃力+5% 魔法耐性+2.5% ",
+                    "text": "魔法使いが普段身に着けている帽子",
+                    "color": "#651DA3"
+                }
+            ],
+            [
+                {
+                    "text": "魔法耐性+2.5% 魔法攻撃+2.5%",
                     "color": "dark_purple"
                 }
             ],
             [
                 {
-                    "text": "MP回復量+5%",
+                    "text": "MP回復量+2.5%",
                     "color": "green"
+                }
+            ],
+            [
+                {
+                    "text": "物理耐性",
+                    "color": "dark_green"
+                },
+                {
+                    "text": "-2.5% ",
+                    "color": "dark_red"
+                },
+                {
+                    "text": "物理攻撃",
+                    "color": "dark_green"
+                },
+                {
+                    "text": "-2.5%",
+                    "color": "dark_red"
                 }
             ]
         ],
@@ -8716,7 +9823,8 @@
         "canUsedGod": [
             "Flora",
             "Nyaptov",
-            "Wi-ki"
+            "Wi-ki",
+            "Rumor"
         ],
         "customNbt": {
             "type": "compound",
@@ -8724,6 +9832,15 @@
                 "AttributeModifiers": {
                     "type": "list",
                     "value": [
+                        {
+                            "type": "compound",
+                            "value": {
+                                "Slot": {
+                                    "type": "string",
+                                    "value": "head"
+                                }
+                            }
+                        },
                         {
                             "type": "compound",
                             "value": {
@@ -8748,14 +9865,38 @@
         "lore": [
             [
                 {
-                    "text": "魔法属性攻撃力+5% 魔法耐性+2.5% ",
+                    "text": "魔法使いが普段身に着けているローブ",
+                    "color": "#651DA3"
+                }
+            ],
+            [
+                {
+                    "text": "魔法耐性+2.5% 魔法攻撃+2.5%",
                     "color": "dark_purple"
                 }
             ],
             [
                 {
-                    "text": "MP回復量+5%",
+                    "text": "MP回復量+2.5%",
                     "color": "green"
+                }
+            ],
+            [
+                {
+                    "text": "物理耐性",
+                    "color": "dark_green"
+                },
+                {
+                    "text": "-2.5% ",
+                    "color": "dark_red"
+                },
+                {
+                    "text": "物理攻撃",
+                    "color": "dark_green"
+                },
+                {
+                    "text": "-2.5%",
+                    "color": "dark_red"
                 }
             ]
         ],
@@ -8765,7 +9906,8 @@
         "canUsedGod": [
             "Flora",
             "Nyaptov",
-            "Wi-ki"
+            "Wi-ki",
+            "Rumor"
         ],
         "customNbt": {
             "type": "compound",
@@ -8806,14 +9948,38 @@
         "lore": [
             [
                 {
-                    "text": "魔法属性攻撃力+5% 魔法耐性+2.5% ",
+                    "text": "魔法使いが普段身に着けているローブ",
+                    "color": "#651DA3"
+                }
+            ],
+            [
+                {
+                    "text": "魔法耐性+2.5% 魔法攻撃+2.5%",
                     "color": "dark_purple"
                 }
             ],
             [
                 {
-                    "text": "MP回復量+5%",
+                    "text": "MP回復量+2.5%",
                     "color": "green"
+                }
+            ],
+            [
+                {
+                    "text": "物理耐性",
+                    "color": "dark_green"
+                },
+                {
+                    "text": "-2.5% ",
+                    "color": "dark_red"
+                },
+                {
+                    "text": "物理攻撃",
+                    "color": "dark_green"
+                },
+                {
+                    "text": "-2.5%",
+                    "color": "dark_red"
                 }
             ]
         ],
@@ -8823,7 +9989,8 @@
         "canUsedGod": [
             "Flora",
             "Nyaptov",
-            "Wi-ki"
+            "Wi-ki",
+            "Rumor"
         ],
         "customNbt": {
             "type": "compound",
@@ -8864,14 +10031,38 @@
         "lore": [
             [
                 {
-                    "text": "魔法属性攻撃力+5% 魔法耐性+2.5% ",
+                    "text": "魔法使いが普段身に着けている靴",
+                    "color": "#651DA3"
+                }
+            ],
+            [
+                {
+                    "text": "魔法耐性+2.5% 魔法攻撃+2.5%",
                     "color": "dark_purple"
                 }
             ],
             [
                 {
-                    "text": "MP回復量+5%",
+                    "text": "MP回復量+2.5%",
                     "color": "green"
+                }
+            ],
+            [
+                {
+                    "text": "物理耐性",
+                    "color": "dark_green"
+                },
+                {
+                    "text": "-2.5% ",
+                    "color": "dark_red"
+                },
+                {
+                    "text": "物理攻撃",
+                    "color": "dark_green"
+                },
+                {
+                    "text": "-2.5%",
+                    "color": "dark_red"
                 }
             ]
         ],
@@ -8881,7 +10072,8 @@
         "canUsedGod": [
             "Flora",
             "Nyaptov",
-            "Wi-ki"
+            "Wi-ki",
+            "Rumor"
         ],
         "customNbt": {
             "type": "compound",
@@ -8889,6 +10081,15 @@
                 "AttributeModifiers": {
                     "type": "list",
                     "value": [
+                        {
+                            "type": "compound",
+                            "value": {
+                                "Slot": {
+                                    "type": "string",
+                                    "value": "feet"
+                                }
+                            }
+                        },
                         {
                             "type": "compound",
                             "value": {
@@ -8913,14 +10114,38 @@
         "lore": [
             [
                 {
-                    "text": "魔法属性攻撃力+7.5% 魔法耐性+5% ",
+                    "text": "魔導士が普段身に着けている帽子",
+                    "color": "#360F57"
+                }
+            ],
+            [
+                {
+                    "text": "魔法耐性+5% 魔法攻撃+5%",
                     "color": "dark_purple"
                 }
             ],
             [
                 {
-                    "text": "MP回復量+7.5%",
+                    "text": "MP回復量+5%",
                     "color": "green"
+                }
+            ],
+            [
+                {
+                    "text": "物理耐性",
+                    "color": "dark_green"
+                },
+                {
+                    "text": "-5% ",
+                    "color": "dark_red"
+                },
+                {
+                    "text": "物理攻撃",
+                    "color": "dark_green"
+                },
+                {
+                    "text": "-5%",
+                    "color": "dark_red"
                 }
             ]
         ],
@@ -8930,7 +10155,8 @@
         "canUsedGod": [
             "Flora",
             "Nyaptov",
-            "Wi-ki"
+            "Wi-ki",
+            "Rumor"
         ],
         "customNbt": {
             "type": "compound",
@@ -8971,14 +10197,38 @@
         "lore": [
             [
                 {
-                    "text": "魔法属性攻撃力+7.5% 魔法耐性+5% ",
+                    "text": "魔導士が普段身に着けているローブ",
+                    "color": "#360F57"
+                }
+            ],
+            [
+                {
+                    "text": "魔法耐性+5% 魔法攻撃+5%",
                     "color": "dark_purple"
                 }
             ],
             [
                 {
-                    "text": "MP回復量+7.5%",
+                    "text": "MP回復量+5%",
                     "color": "green"
+                }
+            ],
+            [
+                {
+                    "text": "物理耐性",
+                    "color": "dark_green"
+                },
+                {
+                    "text": "-5% ",
+                    "color": "dark_red"
+                },
+                {
+                    "text": "物理攻撃",
+                    "color": "dark_green"
+                },
+                {
+                    "text": "-5%",
+                    "color": "dark_red"
                 }
             ]
         ],
@@ -8988,7 +10238,8 @@
         "canUsedGod": [
             "Flora",
             "Nyaptov",
-            "Wi-ki"
+            "Wi-ki",
+            "Rumor"
         ],
         "customNbt": {
             "type": "compound",
@@ -9029,14 +10280,38 @@
         "lore": [
             [
                 {
-                    "text": "魔法属性攻撃力+7.5% 魔法耐性+5% ",
+                    "text": "魔導士が普段身に着けているローブ",
+                    "color": "#360F57"
+                }
+            ],
+            [
+                {
+                    "text": "魔法耐性+5% 魔法攻撃+5%",
                     "color": "dark_purple"
                 }
             ],
             [
                 {
-                    "text": "MP回復量+7.5%",
+                    "text": "MP回復量+5%",
                     "color": "green"
+                }
+            ],
+            [
+                {
+                    "text": "物理耐性",
+                    "color": "dark_green"
+                },
+                {
+                    "text": "-5% ",
+                    "color": "dark_red"
+                },
+                {
+                    "text": "物理攻撃",
+                    "color": "dark_green"
+                },
+                {
+                    "text": "-5%",
+                    "color": "dark_red"
                 }
             ]
         ],
@@ -9046,7 +10321,8 @@
         "canUsedGod": [
             "Flora",
             "Nyaptov",
-            "Wi-ki"
+            "Wi-ki",
+            "Rumor"
         ],
         "customNbt": {
             "type": "compound",
@@ -9087,14 +10363,38 @@
         "lore": [
             [
                 {
-                    "text": "魔法属性攻撃力+7.5% 魔法耐性+5% ",
+                    "text": "魔導士が普段身に着けている靴",
+                    "color": "#360F57"
+                }
+            ],
+            [
+                {
+                    "text": "魔法耐性+5% 魔法攻撃+5%",
                     "color": "dark_purple"
                 }
             ],
             [
                 {
-                    "text": "MP回復量+7.5%",
+                    "text": "MP回復量+5%",
                     "color": "green"
+                }
+            ],
+            [
+                {
+                    "text": "物理耐性",
+                    "color": "dark_green"
+                },
+                {
+                    "text": "-5% ",
+                    "color": "dark_red"
+                },
+                {
+                    "text": "物理攻撃",
+                    "color": "dark_green"
+                },
+                {
+                    "text": "-5%",
+                    "color": "dark_red"
                 }
             ]
         ],
@@ -9104,7 +10404,8 @@
         "canUsedGod": [
             "Flora",
             "Nyaptov",
-            "Wi-ki"
+            "Wi-ki",
+            "Rumor"
         ],
         "customNbt": {
             "type": "compound",
@@ -9412,9 +10713,9 @@
         "trigger": "onDamageFromEntity",
         "mpCost": 2,
         "canUsedGod": [
-            "Flora",
             "Nyaptov",
-            "Wi-ki"
+            "Wi-ki",
+            "Rumor"
         ],
         "customNbt": {
             "type": "compound",
@@ -9422,6 +10723,15 @@
                 "AttributeModifiers": {
                     "type": "list",
                     "value": [
+                        {
+                            "type": "compound",
+                            "value": {
+                                "Slot": {
+                                    "type": "string",
+                                    "value": "feet"
+                                }
+                            }
+                        },
                         {
                             "type": "compound",
                             "value": {
@@ -9467,7 +10777,7 @@
                 "bold": true
             },
             {
-                "text": "天使に対しては最大10ダメージ",
+                "text": "天使には1%分のダメージを与える",
                 "color": "blue"
             }
         ],
@@ -9487,10 +10797,11 @@
             "isRangeAttack": "never"
         },
         "mpCost": 30,
-        "localCooldown": 60,
+        "specialCooldown": 100,
         "canUsedGod": [
+            "Flora",
             "Urban",
-            "Wi-ki",
+            "Nyaptov",
             "Rumor"
         ]
     },
@@ -9526,7 +10837,7 @@
         "trigger": "onAttackByMelee",
         "attackInfo": {
             "damage": [
-                "§cダメージ§f=§3防具+防具強度×2.5"
+                "§cダメージ§f=§3(防具+防具強度)×20"
             ],
             "attackType": [
                 "Physical"
@@ -9540,7 +10851,7 @@
         "localCooldown": 15,
         "canUsedGod": [
             "Urban",
-            "Wi-ki",
+            "Nyaptov",
             "Rumor"
         ],
         "customNbt": {
@@ -9571,34 +10882,6 @@
             "color": "#2970FF"
         },
         "lore": [
-            [
-                {
-                    "text": "我は",
-                    "color": "#91CFFF",
-                    "bold": true,
-                    "italic": true
-                },
-                {
-                    "text": "狂飆",
-                    "color": "#2970FF",
-                    "bold": true,
-                    "italic": true
-                },
-                {
-                    "text": " 並べて薙ぎ",
-                    "color": "#91CFFF",
-                    "bold": true,
-                    "italic": true
-                }
-            ],
-            [
-                {
-                    "text": "楽土が辻の淵と成らん",
-                    "color": "#91CFFF",
-                    "bold": true,
-                    "italic": true
-                }
-            ],
             {
                 "text": "攻撃対象を吹き飛ばす刀",
                 "color": "#7AB4FF"
@@ -9616,8 +10899,8 @@
         "trigger": "onAttackByMelee",
         "attackInfo": {
             "damage": [
-                28,
-                45
+                252,
+                278
             ],
             "attackType": [
                 "Physical"
@@ -9631,8 +10914,3035 @@
         "localCooldown": 24,
         "canUsedGod": [
             "Flora",
+            "Urban",
+            "Rumor"
+        ]
+    },
+    {
+        "id": 756,
+        "item": "minecraft:stick",
+        "name": {
+            "text": "冰刀 桜吹雪",
+            "color": "aqua"
+        },
+        "lore": [
+            {
+                "text": "氷桜を模った蒼い刀",
+                "color": "white"
+            },
+            [
+                {
+                    "text": "氷の様に冷酷に",
+                    "color": "aqua"
+                }
+            ],
+            [
+                {
+                    "text": "桜の様に美しく敵を斬る",
+                    "color": "#F38AFF"
+                }
+            ],
+            [
+                {
+                    "text": ""
+                }
+            ],
+            [
+                {
+                    "text": "攻撃時、確率で",
+                    "color": "white"
+                },
+                {
+                    "text": "氷桜",
+                    "color": "aqua"
+                },
+                {
+                    "text": "を展開する。",
+                    "color": "white"
+                }
+            ],
+            [
+                {
+                    "text": "氷桜",
+                    "color": "aqua"
+                },
+                {
+                    "text": "展開時",
+                    "color": "white"
+                }
+            ],
+            [
+                {
+                    "text": "周囲のMobに本来の70%分のダメージを与える。",
+                    "color": "white"
+                }
+            ]
+        ],
+        "slot": "mainhand",
+        "trigger": "onAttackByMelee",
+        "attackInfo": {
+            "damage": [
+                400,
+                500
+            ],
+            "attackType": [
+                "Physical"
+            ],
+            "elementType": [
+                "Water"
+            ],
+            "isRangeAttack": "probability"
+        },
+        "mpCost": 12,
+        "localCooldown": 6,
+        "disableCooldownMessage": true,
+        "canUsedGod": [
+            "Flora",
+            "Urban",
+            "Nyaptov",
+            "Rumor"
+        ]
+    },
+    {
+        "id": 771,
+        "item": "minecraft:potion",
+        "name": [
+            {
+                "text": "牛乳パック",
+                "color": "white"
+            }
+        ],
+        "lore": [
+            [
+                {
+                    "text": "おいしい牛乳"
+                }
+            ],
+            [
+                {
+                    "text": "何回かに分けて使える"
+                }
+            ]
+        ],
+        "remainingCount": 10,
+        "slot": "auto",
+        "trigger": "itemUse",
+        "mpCost": 0,
+        "canUsedGod": "ALL",
+        "customNbt": {
+            "type": "compound",
+            "value": {
+                "CustomPotionColor": {
+                    "type": "int",
+                    "value": 16777215
+                }
+            }
+        }
+    },
+    {
+        "id": 776,
+        "item": "minecraft:leather_chestplate",
+        "name": {
+            "text": "翡翠の鎧",
+            "color": "#38b48b"
+        },
+        "lore": [
+            [
+                {
+                    "text": "美しい渓流で取れた翡翠で作られた鎧",
+                    "color": "#38B48B"
+                }
+            ],
+            [
+                {
+                    "text": "装着者は水の加護を得る",
+                    "color": "#38B48B"
+                }
+            ],
+            [
+                {
+                    "text": "水耐性+5% 水攻撃+5% ",
+                    "color": "aqua"
+                },
+                {
+                    "text": "MP回復量+4% ",
+                    "color": "green"
+                }
+            ],
+            [
+                {
+                    "text": "雷耐性-5%",
+                    "color": "dark_red"
+                }
+            ]
+        ],
+        "slot": "chest",
+        "trigger": "equipping",
+        "mpCost": 0,
+        "canUsedGod": [
+            "Flora",
+            "Nyaptov",
+            "Rumor"
+        ],
+        "customNbt": {
+            "type": "compound",
+            "value": {
+                "AttributeModifiers": {
+                    "type": "list",
+                    "value": [
+                        {
+                            "type": "compound",
+                            "value": {
+                                "Slot": {
+                                    "type": "string",
+                                    "value": "chest"
+                                }
+                            }
+                        },
+                        {
+                            "type": "compound",
+                            "value": {
+                                "Slot": {
+                                    "type": "string",
+                                    "value": "chest"
+                                }
+                            }
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "id": 777,
+        "item": "minecraft:leather_leggings",
+        "name": {
+            "text": "翡翠の鎧",
+            "color": "#38b48b"
+        },
+        "lore": [
+            [
+                {
+                    "text": "美しい渓流で取れた翡翠で作られた鎧",
+                    "color": "#38B48B"
+                }
+            ],
+            [
+                {
+                    "text": "装着者は水の加護を得る",
+                    "color": "#38B48B"
+                }
+            ],
+            [
+                {
+                    "text": "水耐性+5% 水攻撃+5% ",
+                    "color": "aqua"
+                },
+                {
+                    "text": "MP回復量+4% ",
+                    "color": "green"
+                }
+            ],
+            [
+                {
+                    "text": "雷耐性-5%",
+                    "color": "dark_red"
+                }
+            ]
+        ],
+        "slot": "legs",
+        "trigger": "equipping",
+        "mpCost": 0,
+        "canUsedGod": [
+            "Flora",
+            "Nyaptov",
+            "Rumor"
+        ],
+        "customNbt": {
+            "type": "compound",
+            "value": {
+                "AttributeModifiers": {
+                    "type": "list",
+                    "value": [
+                        {
+                            "type": "compound",
+                            "value": {
+                                "Slot": {
+                                    "type": "string",
+                                    "value": "legs"
+                                }
+                            }
+                        },
+                        {
+                            "type": "compound",
+                            "value": {
+                                "Slot": {
+                                    "type": "string",
+                                    "value": "legs"
+                                }
+                            }
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "id": 793,
+        "item": "minecraft:carrot_on_a_stick",
+        "name": {
+            "text": "QUEEN BEE",
+            "color": "gold",
+            "bold": true,
+            "italic": false,
+            "underlined": true
+        },
+        "lore": [
+            {
+                "text": "生体誘導式携行ロケットランチャー",
+                "color": "yellow"
+            },
+            {
+                "text": "蜂を利用した自律誘導を行う",
+                "color": "yellow"
+            },
+            {
+                "text": "高い追尾性能と高い攻撃力を誇る",
+                "color": "yellow"
+            }
+        ],
+        "slot": "auto",
+        "trigger": "onClick",
+        "attackInfo": {
+            "damage": [
+                360
+            ],
+            "attackType": [
+                "Physical"
+            ],
+            "elementType": [
+                "None"
+            ],
+            "isRangeAttack": "never"
+        },
+        "mpCost": 90,
+        "localCooldown": 200,
+        "canUsedGod": [
+            "Flora",
+            "Urban",
+            "Wi-ki"
+        ]
+    },
+    {
+        "id": 796,
+        "item": "minecraft:carrot_on_a_stick",
+        "name": {
+            "text": "Log4Shell",
+            "color": "white"
+        },
+        "lore": [
+            {
+                "text": "原木を消費して弾丸を発射する。"
+            },
+            {
+                "text": "${jndi:ldap://tsb.com/sacred_tresure}",
+                "color": "dark_purple",
+                "italic": false
+            }
+        ],
+        "costText": [
+            {
+                "text": "原木"
+            },
+            {
+                "text": " x1"
+            }
+        ],
+        "slot": "auto",
+        "trigger": "onClick",
+        "attackInfo": {
+            "damage": [
+                45
+            ],
+            "attackType": [
+                "Physical"
+            ],
+            "elementType": [
+                "None"
+            ],
+            "isRangeAttack": "never",
+            "attackRange": 30
+        },
+        "mpCost": 0,
+        "localCooldown": 20,
+        "canUsedGod": "ALL"
+    },
+    {
+        "id": 801,
+        "item": "nether_star",
+        "name": {
+            "text": "謎の赤い秘石",
+            "color": "red",
+            "bold": true,
+            "italic": false
+        },
+        "lore": [
+            {
+                "text": "赤い卵型の宝石だ。中に人型の何かが入っているようだ",
+                "color": "dark_aqua",
+                "italic": false
+            },
+            {
+                "text": "ダメージを受けた時、回復する",
+                "color": "dark_aqua",
+                "italic": false
+            }
+        ],
+        "remainingCount": 100,
+        "slot": "offhand",
+        "trigger": "onDamage",
+        "mpCost": 20,
+        "localCooldown": 60,
+        "disableCooldownMessage": true,
+        "canUsedGod": [
+            "Urban",
+            "Wi-ki",
+            "Rumor"
+        ]
+    },
+    {
+        "id": 822,
+        "item": "carrot_on_a_stick",
+        "name": {
+            "text": "星の音",
+            "color": "aqua"
+        },
+        "lore": [
+            [
+                {
+                    "text": "「やがて星となって再会しよう。」",
+                    "color": "gray"
+                }
+            ],
+            [
+                {}
+            ],
+            [
+                {
+                    "text": "前方に星を発射する",
+                    "color": "gray"
+                }
+            ],
+            [
+                {
+                    "text": "使用時のMPの割合により",
+                    "color": "gray"
+                }
+            ],
+            [
+                {
+                    "text": "発射する星の数が変化する",
+                    "color": "gray"
+                }
+            ]
+        ],
+        "slot": "auto",
+        "trigger": "onClick",
+        "attackInfo": {
+            "damage": [
+                800,
+                1200
+            ],
+            "attackType": [
+                "Magic"
+            ],
+            "elementType": [
+                "None"
+            ],
+            "isRangeAttack": "never",
+            "attackRange": 30
+        },
+        "mpCost": 60,
+        "localCooldown": 30,
+        "canUsedGod": [
+            "Flora",
+            "Urban",
+            "Nyaptov",
+            "Wi-ki",
+            "Rumor"
+        ]
+    },
+    {
+        "id": 826,
+        "item": "minecraft:carrot_on_a_stick",
+        "name": {
+            "text": "∞のじゃがいも袋",
+            "color": "#a24924"
+        },
+        "lore": [
+            {
+                "text": "無限にじゃがいもが出てくる袋",
+                "color": "dark_aqua",
+                "bold": true,
+                "italic": false
+            }
+        ],
+        "costText": [
+            {
+                "translate": "item.minecraft.bone_meal"
+            },
+            {
+                "text": " x1 (25%)"
+            }
+        ],
+        "slot": "auto",
+        "trigger": "onClick",
+        "mpCost": 10,
+        "localCooldown": 6,
+        "disableCooldownMessage": true,
+        "canUsedGod": "ALL"
+    },
+    {
+        "id": 837,
+        "item": "minecraft:carrot_on_a_stick",
+        "name": {
+            "text": "『世界』のナイフ",
+            "color": "yellow",
+            "bold": true
+        },
+        "lore": [
+            [
+                {
+                    "text": "20本",
+                    "color": "gold"
+                },
+                {
+                    "text": "の超高速のナイフを放つ",
+                    "color": "white"
+                }
+            ],
+            [
+                {
+                    "text": "近くの敵に使うと、"
+                },
+                {
+                    "text": "とっておきの処刑",
+                    "color": "red"
+                },
+                {
+                    "text": "を発動する"
+                }
+            ],
+            [
+                {
+                    "text": "もっと恐ろしいものの片鱗を味わったぜ…",
+                    "color": "gray",
+                    "strikethrough": true
+                }
+            ]
+        ],
+        "slot": "auto",
+        "trigger": "onClick",
+        "attackInfo": {
+            "damage": [
+                "141*20"
+            ],
+            "attackType": [
+                "Physical"
+            ],
+            "elementType": [
+                "None"
+            ],
+            "isRangeAttack": "never"
+        },
+        "mpCost": 180,
+        "localCooldown": 200,
+        "disableCooldownMessage": true,
+        "canUsedGod": [
+            "Urban",
+            "Nyaptov",
+            "Rumor"
+        ]
+    },
+    {
+        "id": 840,
+        "item": "carrot_on_a_stick",
+        "name": {
+            "text": "ハニービーステッキ",
+            "color": "#FFBD24"
+        },
+        "lore": [
+            {
+                "text": "ハチミツを大量に内包した杖",
+                "color": "yellow"
+            },
+            {
+                "text": "周囲のプレイヤーを回復し",
+                "color": "#FFBD24"
+            },
+            {
+                "text": "周囲のMobにダメージと鈍足を付与する",
+                "color": "yellow"
+            }
+        ],
+        "slot": "auto",
+        "trigger": "onClick",
+        "attackInfo": {
+            "damage": [
+                800
+            ],
+            "attackType": [
+                "Magic"
+            ],
+            "elementType": [
+                "Water"
+            ],
+            "isRangeAttack": "every",
+            "attackRange": 5
+        },
+        "mpCost": 60,
+        "localCooldown": 100,
+        "canUsedGod": [
+            "Flora",
+            "Nyaptov",
+            "Rumor"
+        ]
+    },
+    {
+        "id": 844,
+        "item": "minecraft:heart_of_the_sea",
+        "name": {
+            "text": "閉じた恋の瞳",
+            "color": "green"
+        },
+        "lore": [
+            {
+                "text": "頭上の敵を無意識の内に攻撃する。",
+                "color": "green"
+            }
+        ],
+        "slot": "hotbar",
+        "trigger": "passive",
+        "condition": {
+            "text": "頭上に敵Mobが来たとき。"
+        },
+        "attackInfo": {
+            "damage": 600,
+            "attackType": [
+                "Magic"
+            ],
+            "elementType": [
+                "Thunder"
+            ],
+            "isRangeAttack": "every",
+            "attackRange": 3
+        },
+        "mpCost": 45,
+        "localCooldown": 300,
+        "disableCooldownMessage": true,
+        "canUsedGod": [
+            "Flora",
+            "Nyaptov",
+            "Wi-ki",
+            "Rumor"
+        ]
+    },
+    {
+        "id": 860,
+        "item": "elytra",
+        "name": {
+            "text": "えんじぇるうぃんぐ",
+            "color": "#FFFFFF"
+        },
+        "lore": [
+            {
+                "text": "まだ未熟な羽のため、飛べないが、跳ぶことはできる",
+                "color": "white"
+            }
+        ],
+        "slot": "chest",
+        "trigger": "passive",
+        "mpCost": 0,
+        "canUsedGod": [
+            "Flora",
+            "Nyaptov",
+            "Rumor"
+        ],
+        "customNbt": {
+            "type": "compound",
+            "value": {
+                "AttributeModifiers": {
+                    "type": "list",
+                    "value": [
+                        {
+                            "type": "compound",
+                            "value": {
+                                "Slot": {
+                                    "type": "string",
+                                    "value": "chest"
+                                }
+                            }
+                        },
+                        {
+                            "type": "compound",
+                            "value": {
+                                "Slot": {
+                                    "type": "string",
+                                    "value": "chest"
+                                }
+                            }
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "id": 870,
+        "item": "minecraft:carrot_on_a_stick",
+        "name": {
+            "text": "浄刀『サムライ』",
+            "color": "green",
+            "bold": true,
+            "underlined": true
+        },
+        "lore": [
+            {
+                "text": "神聖な鉱石から作られたと言われる刀"
+            },
+            {
+                "text": "侍の魂を感じる..."
+            }
+        ],
+        "slot": "auto",
+        "trigger": "onClick",
+        "attackInfo": {
+            "damage": [
+                130
+            ],
+            "attackType": [
+                "Physical"
+            ],
+            "elementType": [
+                "Thunder"
+            ],
+            "isRangeAttack": "every",
+            "attackRange": 4
+        },
+        "mpCost": 7,
+        "canUsedGod": [
+            "Flora",
+            "Urban",
             "Nyaptov",
             "Wi-ki"
+        ]
+    },
+    {
+        "id": 876,
+        "item": "minecraft:ender_eye",
+        "name": {
+            "text": "UNI",
+            "color": "dark_gray",
+            "bold": true,
+            "underlined": true
+        },
+        "lore": [
+            [
+                {
+                    "text": "UNIは棘皮動物に属す、",
+                    "bold": false
+                },
+                {
+                    "text": "ヒトデやなまこの仲間",
+                    "bold": true
+                }
+            ],
+            {
+                "text": "コンブを主食とし、餌を食べて身を太らせる",
+                "bold": false
+            },
+            {
+                "text": "また、このUNIは棘を発射し、身を守る習性がある"
+            },
+            {
+                "text": "棘がなくなってもコンブを食べれば再生する。",
+                "bold": true,
+                "underlined": true
+            }
+        ],
+        "remainingCount": 50,
+        "slot": "mainhand",
+        "trigger": "onClick",
+        "attackInfo": {
+            "damage": [
+                2,
+                20
+            ],
+            "attackType": [
+                "Physical"
+            ],
+            "elementType": [
+                "Water"
+            ],
+            "isRangeAttack": "never",
+            "attackRange": 10
+        },
+        "mpCost": 1,
+        "disableCooldownMessage": true,
+        "canUsedGod": [
+            "Flora",
+            "Urban",
+            "Nyaptov"
+        ],
+        "customNbt": {
+            "type": "compound",
+            "value": {
+                "AttributeModifiers": {
+                    "type": "list",
+                    "value": [
+                        {
+                            "type": "compound",
+                            "value": {
+                                "Slot": {
+                                    "type": "string",
+                                    "value": "mainhand"
+                                }
+                            }
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "id": 877,
+        "item": "minecraft:carrot_on_a_stick",
+        "name": {
+            "text": "空腹のUNI",
+            "color": "dark_gray",
+            "bold": true,
+            "underlined": true
+        },
+        "lore": [
+            [
+                {
+                    "text": "UNIは棘皮動物に属す、",
+                    "bold": false
+                },
+                {
+                    "text": "ヒトデやなまこの仲間",
+                    "bold": true
+                }
+            ],
+            {
+                "text": "コンブを主食とし、餌を食べて身を太らせる",
+                "bold": false
+            },
+            {
+                "text": "食べる速度は非常に遅い",
+                "color": "dark_purple",
+                "bold": false,
+                "italic": true
+            }
+        ],
+        "costText": [
+            {
+                "translate": "block.minecraft.kelp"
+            },
+            {
+                "text": " x1"
+            }
+        ],
+        "remainingCount": 2,
+        "slot": "mainhand",
+        "trigger": "onClick",
+        "mpCost": 0,
+        "localCooldown": 40,
+        "canUsedGod": [
+            "Flora",
+            "Urban",
+            "Nyaptov"
+        ]
+    },
+    {
+        "id": 897,
+        "item": "minecraft:stick",
+        "name": {
+            "text": "雷のブローチ",
+            "color": "yellow"
+        },
+        "lore": [
+            {
+                "text": "攻撃を与えたとき、対象に"
+            },
+            {
+                "text": "現在体力に依存した割合攻撃を追加で与える"
+            }
+        ],
+        "remainingCount": 60,
+        "slot": "hotbar",
+        "trigger": "onAttackByMelee",
+        "mpCost": 20,
+        "localCooldown": 100,
+        "disableCooldownMessage": true,
+        "canUsedGod": [
+            "Flora",
+            "Urban",
+            "Wi-ki",
+            "Rumor"
+        ]
+    },
+    {
+        "id": 898,
+        "item": "stick",
+        "name": {
+            "text": "疾風のペンダント",
+            "color": "aqua"
+        },
+        "lore": [
+            {
+                "text": "風の力を蓄えたペンダント"
+            },
+            {
+                "text": "付けると体が軽くなる"
+            }
+        ],
+        "slot": "hotbar",
+        "trigger": "equipping",
+        "mpCost": 0,
+        "canUsedGod": [
+            "Flora",
+            "Nyaptov"
+        ],
+        "customNbt": {
+            "type": "compound",
+            "value": {
+                "Enchantments": {
+                    "type": "list",
+                    "value": [
+                        {}
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "id": 899,
+        "item": "stick",
+        "name": {
+            "text": "火炎のリング",
+            "color": "red"
+        },
+        "lore": [
+            {
+                "text": "火炎の力を蓄えた指輪"
+            },
+            {
+                "text": "付けると力が湧いてくる"
+            }
+        ],
+        "slot": "hotbar",
+        "trigger": "equipping",
+        "mpCost": 0,
+        "canUsedGod": [
+            "Urban",
+            "Rumor"
+        ]
+    },
+    {
+        "id": 905,
+        "item": "carrot_on_a_stick",
+        "name": {
+            "text": "転移の書",
+            "color": "light_purple"
+        },
+        "lore": [
+            {
+                "text": "自分を転移させる弾を発射する"
+            },
+            {
+                "text": "発動中にもう一度神器を使うと転移できる"
+            }
+        ],
+        "slot": "auto",
+        "trigger": "onClick",
+        "mpCost": 50,
+        "localCooldown": 90,
+        "disableCooldownMessage": true,
+        "canUsedGod": [
+            "Wi-ki",
+            "Rumor"
+        ]
+    },
+    {
+        "id": 907,
+        "item": "minecraft:carrot_on_a_stick",
+        "name": {
+            "text": "彩雨の杖",
+            "color": "blue"
+        },
+        "lore": [
+            {
+                "text": "鮮やかに彩られた雨乞いに使われた杖。",
+                "color": "aqua"
+            },
+            {
+                "text": "ひとたび振るえば辺りに祝福の雨を降らすという。",
+                "color": "aqua"
+            },
+            {
+                "text": "雨は癒やしをもたらし、時には罪を洗い流す。",
+                "color": "aqua"
+            },
+            {
+                "text": "使用時、雨の降るエリアを設置する。",
+                "color": "blue"
+            },
+            {
+                "text": "エリア内の存在に対して",
+                "color": "blue"
+            },
+            {
+                "text": "敵Mobにはダメージを与え",
+                "color": "blue"
+            },
+            {
+                "text": "プレイヤーなら体力を12.0回復する。",
+                "color": "blue"
+            },
+            {
+                "text": "この回復には水攻撃補正が追加で乗る。",
+                "color": "blue"
+            }
+        ],
+        "slot": "auto",
+        "trigger": "onClick",
+        "attackInfo": {
+            "damage": [
+                1200
+            ],
+            "attackType": [
+                "Magic"
+            ],
+            "elementType": [
+                "Water"
+            ],
+            "isRangeAttack": "every",
+            "attackRange": 9
+        },
+        "mpCost": 180,
+        "specialCooldown": 2400,
+        "canUsedGod": [
+            "Flora",
+            "Nyaptov",
+            "Wi-ki",
+            "Rumor"
+        ]
+    },
+    {
+        "id": 910,
+        "item": "minecraft:stick",
+        "name": {
+            "text": "イグナイト",
+            "color": "red",
+            "bold": true
+        },
+        "lore": [
+            {
+                "text": "その火はあらゆる物を切り裂き"
+            },
+            {
+                "text": "その輝きは闇夜を払うだろう。"
+            },
+            {
+                "text": "攻撃時、前方に斬撃を放つ"
+            }
+        ],
+        "slot": "mainhand",
+        "trigger": "onAttackByMelee",
+        "attackInfo": {
+            "damage": [
+                200,
+                800
+            ],
+            "attackType": [
+                "Physical"
+            ],
+            "elementType": [
+                "Fire"
+            ],
+            "isRangeAttack": "every",
+            "attackRange": 3
+        },
+        "mpCost": 30,
+        "localCooldown": 20,
+        "canUsedGod": [
+            "Urban",
+            "Rumor"
+        ]
+    },
+    {
+        "id": 911,
+        "item": "netherite_helmet",
+        "name": {
+            "text": "リアクティブアーマー(頭)",
+            "color": "red",
+            "bold": true
+        },
+        "lore": [
+            {
+                "text": "爆発によりダメージを軽減する鎧",
+                "color": "white"
+            },
+            {
+                "text": "ただし爆発は自分以外の周囲を巻き込む",
+                "color": "white"
+            }
+        ],
+        "slot": "head",
+        "trigger": "onDamageFromEntity",
+        "condition": {
+            "text": "敵から攻撃を受けた時強制発動"
+        },
+        "attackInfo": {
+            "damage": [
+                500
+            ],
+            "attackType": [
+                "Physical"
+            ],
+            "elementType": [
+                "Fire"
+            ],
+            "isRangeAttack": "every",
+            "attackRange": 3
+        },
+        "mpCost": 30,
+        "localCooldown": 900,
+        "canUsedGod": [
+            "Urban",
+            "Rumor"
+        ],
+        "customNbt": {
+            "type": "compound",
+            "value": {
+                "AttributeModifiers": {
+                    "type": "list",
+                    "value": [
+                        {
+                            "type": "compound",
+                            "value": {
+                                "Slot": {
+                                    "type": "string",
+                                    "value": "head"
+                                }
+                            }
+                        },
+                        {
+                            "type": "compound",
+                            "value": {
+                                "Slot": {
+                                    "type": "string",
+                                    "value": "head"
+                                }
+                            }
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "id": 912,
+        "item": "netherite_chestplate",
+        "name": {
+            "text": "リアクティブアーマー(胴)",
+            "color": "red",
+            "bold": true
+        },
+        "lore": [
+            {
+                "text": "爆発によりダメージを軽減する鎧",
+                "color": "white"
+            },
+            {
+                "text": "ただし爆発は自分以外の周囲を巻き込む",
+                "color": "white"
+            }
+        ],
+        "slot": "chest",
+        "trigger": "onDamageFromEntity",
+        "condition": {
+            "text": "敵から攻撃を受けた時強制発動"
+        },
+        "attackInfo": {
+            "damage": [
+                500
+            ],
+            "attackType": [
+                "Physical"
+            ],
+            "elementType": [
+                "Fire"
+            ],
+            "isRangeAttack": "every",
+            "attackRange": 3
+        },
+        "mpCost": 30,
+        "localCooldown": 900,
+        "canUsedGod": [
+            "Urban",
+            "Rumor"
+        ],
+        "customNbt": {
+            "type": "compound",
+            "value": {
+                "AttributeModifiers": {
+                    "type": "list",
+                    "value": [
+                        {
+                            "type": "compound",
+                            "value": {
+                                "Slot": {
+                                    "type": "string",
+                                    "value": "chest"
+                                }
+                            }
+                        },
+                        {
+                            "type": "compound",
+                            "value": {
+                                "Slot": {
+                                    "type": "string",
+                                    "value": "chest"
+                                }
+                            }
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "id": 913,
+        "item": "netherite_leggings",
+        "name": {
+            "text": "リアクティブアーマー(足)",
+            "color": "red",
+            "bold": true
+        },
+        "lore": [
+            {
+                "text": "爆発によりダメージを軽減する鎧",
+                "color": "white"
+            },
+            {
+                "text": "ただし爆発は自分以外の周囲を巻き込む",
+                "color": "white"
+            }
+        ],
+        "slot": "legs",
+        "trigger": "onDamageFromEntity",
+        "condition": {
+            "text": "敵から攻撃を受けた時強制発動"
+        },
+        "attackInfo": {
+            "damage": [
+                500
+            ],
+            "attackType": [
+                "Physical"
+            ],
+            "elementType": [
+                "Fire"
+            ],
+            "isRangeAttack": "every",
+            "attackRange": 3
+        },
+        "mpCost": 30,
+        "localCooldown": 900,
+        "canUsedGod": [
+            "Urban",
+            "Rumor"
+        ],
+        "customNbt": {
+            "type": "compound",
+            "value": {
+                "AttributeModifiers": {
+                    "type": "list",
+                    "value": [
+                        {
+                            "type": "compound",
+                            "value": {
+                                "Slot": {
+                                    "type": "string",
+                                    "value": "legs"
+                                }
+                            }
+                        },
+                        {
+                            "type": "compound",
+                            "value": {
+                                "Slot": {
+                                    "type": "string",
+                                    "value": "legs"
+                                }
+                            }
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "id": 914,
+        "item": "netherite_boots",
+        "name": {
+            "text": "リアクティブアーマー(靴)",
+            "color": "red",
+            "bold": true
+        },
+        "lore": [
+            {
+                "text": "爆発によりダメージを軽減する鎧",
+                "color": "white"
+            },
+            {
+                "text": "ただし爆発は自分以外の周囲を巻き込む",
+                "color": "white"
+            }
+        ],
+        "slot": "feet",
+        "trigger": "onDamageFromEntity",
+        "condition": {
+            "text": "敵から攻撃を受けた時強制発動"
+        },
+        "attackInfo": {
+            "damage": [
+                500
+            ],
+            "attackType": [
+                "Physical"
+            ],
+            "elementType": [
+                "Fire"
+            ],
+            "isRangeAttack": "every",
+            "attackRange": 3
+        },
+        "mpCost": 30,
+        "localCooldown": 900,
+        "canUsedGod": [
+            "Urban",
+            "Rumor"
+        ],
+        "customNbt": {
+            "type": "compound",
+            "value": {
+                "AttributeModifiers": {
+                    "type": "list",
+                    "value": [
+                        {
+                            "type": "compound",
+                            "value": {
+                                "Slot": {
+                                    "type": "string",
+                                    "value": "feet"
+                                }
+                            }
+                        },
+                        {
+                            "type": "compound",
+                            "value": {
+                                "Slot": {
+                                    "type": "string",
+                                    "value": "feet"
+                                }
+                            }
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "id": 915,
+        "item": "minecraft:leather_helmet",
+        "name": {
+            "text": "炎を追う狩人の帽子",
+            "color": "red"
+        },
+        "lore": [
+            [
+                {
+                    "text": "2部位装備:",
+                    "color": "white"
+                }
+            ],
+            [
+                {
+                    "text": "火耐性+10% 火攻撃+10% ",
+                    "color": "red"
+                },
+                {
+                    "text": "水耐性-10% ",
+                    "color": "dark_red"
+                },
+                {
+                    "text": "移動速度+5%",
+                    "color": "white"
+                }
+            ],
+            [
+                {
+                    "text": "4部位装備:",
+                    "color": "white"
+                }
+            ],
+            [
+                {
+                    "text": "火耐性+15% 火攻撃+15% ",
+                    "color": "red"
+                },
+                {
+                    "text": "水耐性-10% ",
+                    "color": "dark_red"
+                },
+                {
+                    "text": "移動速度+10%",
+                    "color": "white"
+                }
+            ],
+            [
+                {
+                    "text": "「森で緑を纏い、狩りをする者がいた。",
+                    "color": "white",
+                    "italic": "true"
+                }
+            ],
+            [
+                {
+                    "text": "その者は獣を必要な数だけ狩り暮らしていた。」",
+                    "color": "white",
+                    "italic": "true"
+                }
+            ]
+        ],
+        "slot": "head",
+        "trigger": "equipping",
+        "mpCost": 0,
+        "canUsedGod": [
+            "Urban",
+            "Nyaptov",
+            "Rumor"
+        ],
+        "customNbt": {
+            "type": "compound",
+            "value": {
+                "AttributeModifiers": {
+                    "type": "list",
+                    "value": [
+                        {
+                            "type": "compound",
+                            "value": {
+                                "Slot": {
+                                    "type": "string",
+                                    "value": "head"
+                                }
+                            }
+                        },
+                        {
+                            "type": "compound",
+                            "value": {
+                                "Slot": {
+                                    "type": "string",
+                                    "value": "head"
+                                }
+                            }
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "id": 916,
+        "item": "minecraft:leather_chestplate",
+        "name": {
+            "text": "炎を追う狩人の狩猟服(上)",
+            "color": "red"
+        },
+        "lore": [
+            [
+                {
+                    "text": "2部位装備:",
+                    "color": "white"
+                }
+            ],
+            [
+                {
+                    "text": "火耐性+10% 火攻撃+10% ",
+                    "color": "red"
+                },
+                {
+                    "text": "水耐性-10% ",
+                    "color": "dark_red"
+                },
+                {
+                    "text": "移動速度+5%",
+                    "color": "white"
+                }
+            ],
+            [
+                {
+                    "text": "4部位装備:",
+                    "color": "white"
+                }
+            ],
+            [
+                {
+                    "text": "火耐性+15% 火攻撃+15% ",
+                    "color": "red"
+                },
+                {
+                    "text": "水耐性-10% ",
+                    "color": "dark_red"
+                },
+                {
+                    "text": "移動速度+10%",
+                    "color": "white"
+                }
+            ],
+            [
+                {
+                    "text": "「ある時、その者は森が燃えているのを見た。",
+                    "color": "white",
+                    "italic": "true"
+                }
+            ],
+            [
+                {
+                    "text": "その炎を追い、狩人は獣を炎から守った。」",
+                    "color": "white",
+                    "italic": "true"
+                }
+            ]
+        ],
+        "slot": "chest",
+        "trigger": "equipping",
+        "mpCost": 0,
+        "canUsedGod": [
+            "Urban",
+            "Nyaptov",
+            "Rumor"
+        ],
+        "customNbt": {
+            "type": "compound",
+            "value": {
+                "AttributeModifiers": {
+                    "type": "list",
+                    "value": [
+                        {
+                            "type": "compound",
+                            "value": {
+                                "Slot": {
+                                    "type": "string",
+                                    "value": "chest"
+                                }
+                            }
+                        },
+                        {
+                            "type": "compound",
+                            "value": {
+                                "Slot": {
+                                    "type": "string",
+                                    "value": "chest"
+                                }
+                            }
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "id": 917,
+        "item": "minecraft:leather_leggings",
+        "name": {
+            "text": "炎を追う狩人の狩猟服(下)",
+            "color": "red"
+        },
+        "lore": [
+            [
+                {
+                    "text": "2部位装備:",
+                    "color": "white"
+                }
+            ],
+            [
+                {
+                    "text": "火耐性+10% 火攻撃+10% ",
+                    "color": "red"
+                },
+                {
+                    "text": "水耐性-10% ",
+                    "color": "dark_red"
+                },
+                {
+                    "text": "移動速度+5%",
+                    "color": "white"
+                }
+            ],
+            [
+                {
+                    "text": "4部位装備:",
+                    "color": "white"
+                }
+            ],
+            [
+                {
+                    "text": "火耐性+15% 火攻撃+15% ",
+                    "color": "red"
+                },
+                {
+                    "text": "水耐性-10% ",
+                    "color": "dark_red"
+                },
+                {
+                    "text": "移動速度+10%",
+                    "color": "white"
+                }
+            ],
+            [
+                {
+                    "text": "「その炎を辿り、緑が消えた場所を見つけ、",
+                    "color": "white",
+                    "italic": "true"
+                }
+            ],
+            [
+                {
+                    "text": "そこで狩人は炎の原因を悟った。」",
+                    "color": "white",
+                    "italic": "true"
+                }
+            ]
+        ],
+        "slot": "legs",
+        "trigger": "equipping",
+        "mpCost": 0,
+        "canUsedGod": [
+            "Urban",
+            "Nyaptov",
+            "Rumor"
+        ],
+        "customNbt": {
+            "type": "compound",
+            "value": {
+                "AttributeModifiers": {
+                    "type": "list",
+                    "value": [
+                        {
+                            "type": "compound",
+                            "value": {
+                                "Slot": {
+                                    "type": "string",
+                                    "value": "legs"
+                                }
+                            }
+                        },
+                        {
+                            "type": "compound",
+                            "value": {
+                                "Slot": {
+                                    "type": "string",
+                                    "value": "legs"
+                                }
+                            }
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "id": 918,
+        "item": "minecraft:leather_boots",
+        "name": {
+            "text": "炎を追う狩人の靴",
+            "color": "red"
+        },
+        "lore": [
+            [
+                {
+                    "text": "2部位装備:",
+                    "color": "white"
+                }
+            ],
+            [
+                {
+                    "text": "火耐性+10% 火攻撃+10% ",
+                    "color": "red"
+                },
+                {
+                    "text": "水耐性-10% ",
+                    "color": "dark_red"
+                },
+                {
+                    "text": "移動速度+5%",
+                    "color": "white"
+                }
+            ],
+            [
+                {
+                    "text": "4部位装備:",
+                    "color": "white"
+                }
+            ],
+            [
+                {
+                    "text": "火耐性+15% 火攻撃+15% ",
+                    "color": "red"
+                },
+                {
+                    "text": "水耐性-10% ",
+                    "color": "dark_red"
+                },
+                {
+                    "text": "移動速度+10%",
+                    "color": "white"
+                }
+            ],
+            [
+                {
+                    "text": "「狩人は炎の原因を狩った。",
+                    "color": "white",
+                    "italic": "true"
+                }
+            ],
+            [
+                {
+                    "text": "そして彼は怨嗟の炎の一部となった。」",
+                    "color": "white",
+                    "italic": "true"
+                }
+            ]
+        ],
+        "slot": "feet",
+        "trigger": "equipping",
+        "mpCost": 0,
+        "canUsedGod": [
+            "Urban",
+            "Nyaptov",
+            "Rumor"
+        ],
+        "customNbt": {
+            "type": "compound",
+            "value": {
+                "AttributeModifiers": {
+                    "type": "list",
+                    "value": [
+                        {
+                            "type": "compound",
+                            "value": {
+                                "Slot": {
+                                    "type": "string",
+                                    "value": "feet"
+                                }
+                            }
+                        },
+                        {
+                            "type": "compound",
+                            "value": {
+                                "Slot": {
+                                    "type": "string",
+                                    "value": "feet"
+                                }
+                            }
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "id": 920,
+        "item": "minecraft:leather_boots",
+        "name": {
+            "text": "ダル・イ・サリオン",
+            "color": "light_purple",
+            "italic": true
+        },
+        "lore": [
+            {
+                "text": "それを履く者に不浄を避け"
+            },
+            {
+                "text": "並外れた速度を与える力を与える"
+            }
+        ],
+        "slot": "feet",
+        "trigger": "onDamage",
+        "mpCost": 0,
+        "localCooldown": 90,
+        "disableCooldownMessage": true,
+        "canUsedGod": [
+            "Flora",
+            "Nyaptov",
+            "Rumor"
+        ],
+        "customNbt": {
+            "type": "compound",
+            "value": {
+                "AttributeModifiers": {
+                    "type": "list",
+                    "value": [
+                        {
+                            "type": "compound",
+                            "value": {
+                                "Slot": {
+                                    "type": "string",
+                                    "value": "feet"
+                                }
+                            }
+                        },
+                        {
+                            "type": "compound",
+                            "value": {
+                                "Slot": {
+                                    "type": "string",
+                                    "value": "feet"
+                                }
+                            }
+                        },
+                        {
+                            "type": "compound",
+                            "value": {
+                                "Slot": {
+                                    "type": "string",
+                                    "value": "feet"
+                                }
+                            }
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "id": 927,
+        "item": "stick",
+        "name": {
+            "text": "レクシエルの忠誠",
+            "color": "green"
+        },
+        "lore": [
+            {
+                "text": "忠誠を感じさせる剣"
+            },
+            {
+                "text": "持ち主を亡くしてなお、その忠誠が薄れることはない"
+            },
+            {
+                "text": "確率で相手に致命的なダメージを与える"
+            }
+        ],
+        "slot": "mainhand",
+        "trigger": "onAttackByMelee",
+        "attackInfo": {
+            "damage": [
+                "???"
+            ],
+            "attackType": [
+                "Physical"
+            ],
+            "elementType": [
+                "None"
+            ],
+            "isRangeAttack": "never"
+        },
+        "mpCost": 15,
+        "localCooldown": 10,
+        "canUsedGod": [
+            "Flora",
+            "Urban",
+            "Rumor"
+        ]
+    },
+    {
+        "id": 928,
+        "item": "minecraft:stick",
+        "name": {
+            "text": "アンク",
+            "color": "gold",
+            "bold": true
+        },
+        "lore": [
+            {
+                "text": "生命を象ったお守り"
+            },
+            {
+                "text": "敵を倒したとき、確率で回復できる"
+            }
+        ],
+        "slot": "hotbar",
+        "trigger": "onKilled",
+        "condition": {
+            "text": "15%の確率で発動"
+        },
+        "mpCost": 0,
+        "localCooldown": 400,
+        "disableCooldownMessage": true,
+        "canUsedGod": [
+            "Urban",
+            "Nyaptov",
+            "Wi-ki"
+        ]
+    },
+    {
+        "id": 930,
+        "item": "stick",
+        "name": {
+            "text": "Z旗",
+            "color": "white"
+        },
+        "lore": [
+            {
+                "text": "攻撃力が25%上がり、防御力が35%下がる。"
+            },
+            {
+                "text": "皇國ノ興廢此ノ一戰ニ在リ、",
+                "color": "dark_purple",
+                "italic": "true"
+            },
+            {
+                "text": "各員一層奮勵努力セヨ",
+                "color": "dark_purple",
+                "italic": "true"
+            }
+        ],
+        "slot": "hotbar",
+        "trigger": "equipping",
+        "mpCost": 0,
+        "canUsedGod": [
+            "Flora",
+            "Urban",
+            "Wi-ki",
+            "Rumor"
+        ]
+    },
+    {
+        "id": 931,
+        "item": "minecraft:stick",
+        "name": {
+            "text": "D・U・T・Y",
+            "color": "red"
+        },
+        "lore": [
+            {
+                "text": "攻撃対象に周囲の敵の数に応じたダメージを与える"
+            },
+            {
+                "text": "England expects that every",
+                "italic": "true",
+                "color": "dark_purple"
+            },
+            {
+                "text": "man will do his duty",
+                "italic": "true",
+                "color": "dark_purple"
+            }
+        ],
+        "slot": "hotbar",
+        "trigger": "onAttackByMelee",
+        "attackInfo": {
+            "damage": [
+                80,
+                800
+            ],
+            "attackType": [
+                "Physical"
+            ],
+            "elementType": [
+                "Fire"
+            ],
+            "isRangeAttack": "never"
+        },
+        "mpCost": 5,
+        "localCooldown": 20,
+        "disableCooldownMessage": true,
+        "canUsedGod": [
+            "Flora",
+            "Urban",
+            "Nyaptov",
+            "Wi-ki",
+            "Rumor"
+        ]
+    },
+    {
+        "id": 932,
+        "item": "minecraft:stick",
+        "name": [
+            {
+                "text": "Equal Speed Charlie London",
+                "color": "dark_aqua",
+                "italic": false
+            }
+        ],
+        "lore": [
+            {
+                "text": "装備時移動速度が上昇する。"
+            }
+        ],
+        "slot": "hotbar",
+        "trigger": "equipping",
+        "mpCost": 0,
+        "canUsedGod": [
+            "Flora",
+            "Urban",
+            "Nyaptov",
+            "Wi-ki",
+            "Rumor"
+        ]
+    },
+    {
+        "id": 933,
+        "item": "minecraft:stick",
+        "name": {
+            "text": "オートトーチ"
+        },
+        "lore": [
+            {
+                "text": "暗い場所で自動で松明を置くぞ！"
+            },
+            {
+                "text": "めんどくさい作業からはおさらば！"
+            },
+            {
+                "text": "A型の人使用禁止",
+                "color": "gray",
+                "strikethrough": true
+            }
+        ],
+        "costText": [
+            {
+                "translate": "block.minecraft.torch"
+            },
+            {
+                "text": " x1"
+            }
+        ],
+        "slot": "hotbar",
+        "trigger": "passive",
+        "mpCost": 0,
+        "localCooldown": 20,
+        "disableCooldownMessage": true,
+        "canUsedGod": "ALL"
+    },
+    {
+        "id": 934,
+        "item": "minecraft:leather_helmet",
+        "name": {
+            "text": "アイディアル",
+            "color": "#E6FFF4",
+            "underlined": true
+        },
+        "lore": [
+            {
+                "text": "最も理想的な装備",
+                "color": "#FF78ED"
+            },
+            {
+                "text": "全ての耐性を持ちあらゆる状況に",
+                "color": "#FF78ED"
+            },
+            {
+                "text": "対応出来る万能な防具",
+                "color": "#FF78ED"
+            },
+            {
+                "text": "全耐性+5%",
+                "color": "white"
+            }
+        ],
+        "slot": "head",
+        "trigger": "equipping",
+        "mpCost": 0,
+        "canUsedGod": "ALL",
+        "customNbt": {
+            "type": "compound",
+            "value": {
+                "AttributeModifiers": {
+                    "type": "list",
+                    "value": [
+                        {
+                            "type": "compound",
+                            "value": {
+                                "Slot": {
+                                    "type": "string",
+                                    "value": "head"
+                                }
+                            }
+                        },
+                        {
+                            "type": "compound",
+                            "value": {
+                                "Slot": {
+                                    "type": "string",
+                                    "value": "head"
+                                }
+                            }
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "id": 935,
+        "item": "minecraft:leather_chestplate",
+        "name": {
+            "text": "アイディアル",
+            "color": "#E6FFF4",
+            "underlined": true
+        },
+        "lore": [
+            {
+                "text": "最も理想的な装備",
+                "color": "#FF78ED"
+            },
+            {
+                "text": "全ての耐性を持ちあらゆる状況に",
+                "color": "#FF78ED"
+            },
+            {
+                "text": "対応出来る万能な防具",
+                "color": "#FF78ED"
+            },
+            {
+                "text": "全耐性+5%",
+                "color": "white"
+            }
+        ],
+        "slot": "chest",
+        "trigger": "equipping",
+        "mpCost": 0,
+        "canUsedGod": "ALL",
+        "customNbt": {
+            "type": "compound",
+            "value": {
+                "AttributeModifiers": {
+                    "type": "list",
+                    "value": [
+                        {
+                            "type": "compound",
+                            "value": {
+                                "Slot": {
+                                    "type": "string",
+                                    "value": "chest"
+                                }
+                            }
+                        },
+                        {
+                            "type": "compound",
+                            "value": {
+                                "Slot": {
+                                    "type": "string",
+                                    "value": "chest"
+                                }
+                            }
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "id": 936,
+        "item": "minecraft:leather_leggings",
+        "name": {
+            "text": "アイディアル",
+            "color": "#E6FFF4",
+            "underlined": true
+        },
+        "lore": [
+            {
+                "text": "最も理想的な装備",
+                "color": "#FF78ED"
+            },
+            {
+                "text": "全ての耐性を持ちあらゆる状況に",
+                "color": "#FF78ED"
+            },
+            {
+                "text": "対応出来る万能な防具",
+                "color": "#FF78ED"
+            },
+            {
+                "text": "全耐性+5%",
+                "color": "white"
+            }
+        ],
+        "slot": "legs",
+        "trigger": "equipping",
+        "mpCost": 0,
+        "canUsedGod": "ALL",
+        "customNbt": {
+            "type": "compound",
+            "value": {
+                "AttributeModifiers": {
+                    "type": "list",
+                    "value": [
+                        {
+                            "type": "compound",
+                            "value": {
+                                "Slot": {
+                                    "type": "string",
+                                    "value": "legs"
+                                }
+                            }
+                        },
+                        {
+                            "type": "compound",
+                            "value": {
+                                "Slot": {
+                                    "type": "string",
+                                    "value": "legs"
+                                }
+                            }
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "id": 937,
+        "item": "minecraft:leather_boots",
+        "name": {
+            "text": "アイディアル",
+            "color": "#E6FFF4",
+            "underlined": true
+        },
+        "lore": [
+            {
+                "text": "最も理想的な装備",
+                "color": "#FF78ED"
+            },
+            {
+                "text": "全ての耐性を持ちあらゆる状況に",
+                "color": "#FF78ED"
+            },
+            {
+                "text": "対応出来る万能な防具",
+                "color": "#FF78ED"
+            },
+            {
+                "text": "全耐性+5%",
+                "color": "white"
+            }
+        ],
+        "slot": "feet",
+        "trigger": "equipping",
+        "mpCost": 0,
+        "canUsedGod": "ALL",
+        "customNbt": {
+            "type": "compound",
+            "value": {
+                "AttributeModifiers": {
+                    "type": "list",
+                    "value": [
+                        {
+                            "type": "compound",
+                            "value": {
+                                "Slot": {
+                                    "type": "string",
+                                    "value": "feet"
+                                }
+                            }
+                        },
+                        {
+                            "type": "compound",
+                            "value": {
+                                "Slot": {
+                                    "type": "string",
+                                    "value": "feet"
+                                }
+                            }
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "id": 948,
+        "item": "minecraft:ender_eye",
+        "name": {
+            "text": "FT-139 RIFLE",
+            "color": "#00A3FF",
+            "bold": true,
+            "underlined": true
+        },
+        "lore": [
+            {
+                "text": "エネルギー弾を発射するアサルトライフル"
+            },
+            {
+                "text": "命中精度は低いが、スニークをして発砲することで"
+            },
+            {
+                "text": "安定した精度を出すことができる"
+            },
+            {
+                "text": " "
+            },
+            {
+                "text": "リロード可能な神器だ"
+            }
+        ],
+        "remainingCount": 30,
+        "slot": "mainhand",
+        "trigger": "onClick",
+        "attackInfo": {
+            "damage": [
+                50,
+                175
+            ],
+            "attackType": [
+                "Magic"
+            ],
+            "elementType": [
+                "Thunder"
+            ],
+            "isRangeAttack": "never",
+            "attackRange": 30
+        },
+        "mpCost": 0,
+        "localCooldown": 2,
+        "disableCooldownMessage": true,
+        "canUsedGod": [
+            "Urban",
+            "Wi-ki",
+            "Rumor"
+        ],
+        "customNbt": {
+            "type": "compound",
+            "value": {
+                "AttributeModifiers": {
+                    "type": "list",
+                    "value": [
+                        {
+                            "type": "compound",
+                            "value": {
+                                "Slot": {
+                                    "type": "string",
+                                    "value": "mainhand"
+                                }
+                            }
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "id": 949,
+        "item": "minecraft:stick",
+        "name": {
+            "text": "FT-139 RIFLE<Reload!!>",
+            "color": "#00A3FF",
+            "bold": true,
+            "underlined": true
+        },
+        "lore": [
+            {
+                "text": "エネルギー弾を発射するアサルトライフル"
+            },
+            {
+                "text": "命中精度は低いが、スニークをして発砲することで"
+            },
+            {
+                "text": "安定した精度を出すことができる"
+            },
+            {
+                "text": " "
+            },
+            {
+                "text": "弾が入っていない"
+            }
+        ],
+        "remainingCount": 1,
+        "slot": "mainhand",
+        "trigger": "sneak2s",
+        "mpCost": 120,
+        "canUsedGod": [
+            "Urban",
+            "Wi-ki",
+            "Rumor"
+        ]
+    },
+    {
+        "id": 950,
+        "item": "minecraft:stick",
+        "name": {
+            "text": "カボチャの怨念の残滓",
+            "color": "#FFAA00"
+        },
+        "lore": [
+            [
+                {
+                    "text": "僅かに残ったジャック・オ・ランタンの魂",
+                    "color": "#D900FF"
+                }
+            ],
+            [
+                {
+                    "text": "魂を吸収することで僅かに力を取り戻し幽かに輝く",
+                    "color": "#D900FF"
+                }
+            ],
+            [
+                {
+                    "text": "効果発動時",
+                    "color": "#D900FF"
+                }
+            ],
+            [
+                {
+                    "text": "満腹度を回復し、移動速度上昇と暗視を30秒得る。",
+                    "color": "#D900FF"
+                }
+            ]
+        ],
+        "slot": "hotbar",
+        "trigger": "onKilledByMelee",
+        "mpCost": 10,
+        "localCooldown": 300,
+        "disableCooldownMessage": true,
+        "canUsedGod": [
+            "Flora",
+            "Urban",
+            "Nyaptov",
+            "Wi-ki",
+            "Rumor"
+        ]
+    },
+    {
+        "id": 952,
+        "item": "minecraft:carrot_on_a_stick",
+        "name": {
+            "text": "狂月の杖",
+            "color": "white"
+        },
+        "lore": [
+            [
+                {
+                    "text": "ルナティックメイジの持っていた杖",
+                    "color": "gray",
+                    "italic": "true"
+                }
+            ],
+            [
+                {
+                    "text": "この杖の持つ強大な魔力をもってしても、",
+                    "color": "gray",
+                    "italic": "true"
+                }
+            ],
+            [
+                {
+                    "text": "彼の者にとっては枷でしかなかった。",
+                    "color": "gray",
+                    "italic": "true"
+                }
+            ],
+            [
+                {
+                    "text": "使用時、強力な魔法を放つと同時に、",
+                    "color": "white"
+                }
+            ],
+            [
+                {
+                    "text": "ヒット時自身に",
+                    "color": "white"
+                },
+                {
+                    "text": "魔法攻撃+10%",
+                    "color": "dark_purple"
+                },
+                {
+                    "text": "を15秒間付与する。",
+                    "color": "white"
+                }
+            ]
+        ],
+        "slot": "auto",
+        "trigger": "onClick",
+        "attackInfo": {
+            "damage": [
+                2000
+            ],
+            "attackType": [
+                "Magic"
+            ],
+            "elementType": [
+                "None"
+            ],
+            "isRangeAttack": "every",
+            "attackRange": 32
+        },
+        "mpCost": 50,
+        "localCooldown": 600,
+        "canUsedGod": [
+            "Flora",
+            "Nyaptov",
+            "Wi-ki"
+        ]
+    },
+    {
+        "id": 953,
+        "item": "carrot_on_a_stick",
+        "name": {
+            "text": "メテオレイン",
+            "color": "light_purple"
+        },
+        "lore": [
+            {
+                "text": "燃え盛る流星が天から降り注ぐ！",
+                "color": "white",
+                "italic": false
+            },
+            {
+                "text": "\"破壊の星々に願いを\"",
+                "color": "gray",
+                "italic": false
+            }
+        ],
+        "slot": "auto",
+        "trigger": "onClick",
+        "attackInfo": {
+            "damage": [
+                "1000×30"
+            ],
+            "attackType": [
+                "Magic"
+            ],
+            "elementType": [
+                "Fire"
+            ],
+            "isRangeAttack": "every",
+            "attackRange": 32
+        },
+        "specialCooldown": 3600,
+        "mpCost": 200,
+        "canUsedGod": [
+            "Urban",
+            "Wi-ki"
+        ]
+    },
+    {
+        "id": 954,
+        "item": "minecraft:stick",
+        "name": {
+            "text": "逆さパラシュート",
+            "color": "yellow"
+        },
+        "lore": [
+            {
+                "text": "ゆっくりと落ちることができる。上に。"
+            }
+        ],
+        "remainingCount": 15,
+        "slot": "hotbar",
+        "trigger": "equipping",
+        "mpCost": 25,
+        "canUsedGod": [
+            "Urban",
+            "Nyaptov",
+            "Wi-ki"
+        ]
+    },
+    {
+        "id": 959,
+        "item": "minecraft:stick",
+        "name": {
+            "text": "旋風の鞘",
+            "color": "#7DFF9B"
+        },
+        "lore": [
+            {
+                "text": "刀ではなく旋風を収めている鞘",
+                "color": "#B0FFC5"
+            },
+            {
+                "text": "その旋風を抜いた時、前を塞ぐ者を吹き飛ばす。",
+                "color": "#B0FFC5"
+            },
+            {
+                "text": "多く携えるほど旋風は勢いを増す。",
+                "color": "#B0FFC5"
+            }
+        ],
+        "slot": "hotbar",
+        "trigger": "onAttackByMelee",
+        "mpCost": 5,
+        "localCooldown": 5,
+        "disableCooldownMessage": true,
+        "canUsedGod": [
+            "Flora",
+            "Urban",
+            "Nyaptov",
+            "Rumor"
+        ]
+    },
+    {
+        "id": 960,
+        "item": "minecraft:stick",
+        "name": {
+            "text": "重装のチャーム"
+        },
+        "lore": [
+            {
+                "text": "防御力が上がるが、移動速度が下がる"
+            },
+            {
+                "text": "\"避けられないなら耐えればいい\"",
+                "color": "gray"
+            }
+        ],
+        "slot": "hotbar",
+        "trigger": "equipping",
+        "mpCost": 0,
+        "canUsedGod": "ALL"
+    },
+    {
+        "id": 961,
+        "item": "minecraft:stick",
+        "name": {
+            "text": "軽装のチャーム"
+        },
+        "lore": [
+            {
+                "text": "移動速度が上がるが、防御力が下がる"
+            },
+            {
+                "text": "\"耐えられないなら避ければいい\"",
+                "color": "gray"
+            }
+        ],
+        "slot": "hotbar",
+        "trigger": "equipping",
+        "mpCost": 0,
+        "canUsedGod": "ALL"
+    },
+    {
+        "id": 966,
+        "item": "shield",
+        "name": {
+            "text": "プロテクション",
+            "color": "gray"
+        },
+        "lore": [
+            {
+                "text": "未知の金属が使用された盾"
+            },
+            {
+                "text": "構えている間攻撃を35%軽減するが"
+            },
+            {
+                "text": "攻撃力及び移動速度が低下する"
+            }
+        ],
+        "slot": "offhand",
+        "trigger": "itemUse",
+        "mpCost": 1,
+        "canUsedGod": "ALL",
+        "customNbt": {
+            "type": "compound",
+            "value": {
+                "HideFlags": {
+                    "type": "int",
+                    "value": 63
+                }
+            }
+        }
+    },
+    {
+        "id": 967,
+        "item": "shield",
+        "name": {
+            "text": "エンハンスド・プロテクション",
+            "color": "blue"
+        },
+        "lore": [
+            {
+                "text": "未知の金属が使用された盾"
+            },
+            {
+                "text": "...を更に強化したものと思われる"
+            },
+            {
+                "text": "構えている間攻撃を55%軽減するが"
+            },
+            {
+                "text": "攻撃力及び移動速度が低下する"
+            }
+        ],
+        "slot": "offhand",
+        "trigger": "itemUse",
+        "mpCost": 2,
+        "canUsedGod": "ALL",
+        "customNbt": {
+            "type": "compound",
+            "value": {
+                "HideFlags": {
+                    "type": "int",
+                    "value": 63
+                }
+            }
+        }
+    },
+    {
+        "id": 971,
+        "item": "minecraft:player_head",
+        "name": {
+            "text": "レーザーアイヘルメット",
+            "color": "green"
+        },
+        "lore": [
+            {
+                "text": "レーザーアイ形をしたヘルメット"
+            },
+            {
+                "text": "ビームを放出することができる"
+            }
+        ],
+        "slot": "head",
+        "trigger": "keepSneak2s",
+        "attackInfo": {
+            "damage": [
+                20,
+                50
+            ],
+            "attackType": [
+                "Magic"
+            ],
+            "elementType": [
+                "Thunder"
+            ],
+            "isRangeAttack": "never",
+            "attackRange": 30
+        },
+        "mpCost": 15,
+        "localCooldown": 5,
+        "disableCooldownMessage": true,
+        "canUsedGod": [
+            "Flora",
+            "Urban",
+            "Nyaptov",
+            "Wi-ki",
+            "Rumor"
+        ],
+        "customNbt": {
+            "type": "compound",
+            "value": {
+                "AttributeModifiers": {
+                    "type": "list",
+                    "value": [
+                        {
+                            "type": "compound",
+                            "value": {
+                                "Slot": {
+                                    "type": "string",
+                                    "value": "head"
+                                }
+                            }
+                        },
+                        {
+                            "type": "compound",
+                            "value": {
+                                "Slot": {
+                                    "type": "string",
+                                    "value": "head"
+                                }
+                            }
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "id": 973,
+        "item": "carrot_on_a_stick",
+        "name": {
+            "text": "コール: バラージュスピリット",
+            "color": "light_purple"
+        },
+        "lore": [
+            {
+                "text": "付近の敵に魔法攻撃を行う精霊を呼び出す。",
+                "color": "white"
+            },
+            {
+                "text": "既に召喚した状態では使用できない。",
+                "color": "white"
+            },
+            {
+                "text": "\"私が手伝ってあげる！\"",
+                "color": "gray"
+            }
+        ],
+        "attackInfo": {
+            "damage": [
+                "100-150"
+            ],
+            "attackType": [
+                "Magic"
+            ],
+            "elementType": [
+                "None"
+            ],
+            "isRangeAttack": "never"
+        },
+        "slot": "auto",
+        "trigger": "onClick",
+        "mpCost": 30,
+        "localCooldown": 600,
+        "disableCooldownMessage": true,
+        "canUsedGod": [
+            "Flora",
+            "Nyaptov",
+            "Rumor"
+        ]
+    },
+    {
+        "id": 976,
+        "item": "carrot_on_a_stick",
+        "name": {
+            "text": "ブレイブソード",
+            "color": "light_purple"
+        },
+        "lore": [
+            {
+                "text": "複数の敵を巻き込む、強力な斬撃を放つ。"
+            },
+            {
+                "text": "\"勇気を刃に込めて！\"",
+                "color": "gray"
+            }
+        ],
+        "attackInfo": {
+            "damage": [
+                "300-350 / 250-300"
+            ],
+            "attackType": [
+                "Physical"
+            ],
+            "elementType": [
+                "None"
+            ],
+            "isRangeAttack": "never"
+        },
+        "slot": "auto",
+        "trigger": "onClick",
+        "mpCost": 15,
+        "localCooldown": 5,
+        "disableCooldownMessage": true,
+        "canUsedGod": "ALL",
+        "customNbt": {
+            "type": "compound",
+            "value": {
+                "AttributeModifiers": {
+                    "type": "list",
+                    "value": [
+                        {
+                            "type": "compound",
+                            "value": {
+                                "Slot": {
+                                    "type": "string",
+                                    "value": "mainhand"
+                                }
+                            }
+                        },
+                        {
+                            "type": "compound",
+                            "value": {
+                                "Slot": {
+                                    "type": "string",
+                                    "value": "mainhand"
+                                }
+                            }
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "id": 978,
+        "item": "minecraft:stick",
+        "name": [
+            {
+                "text": "火",
+                "color": "red"
+            },
+            {
+                "text": "のチャーム",
+                "color": "white"
+            }
+        ],
+        "lore": [
+            [
+                {
+                    "text": "火属性",
+                    "color": "red"
+                },
+                {
+                    "text": "の攻撃力が5%上昇する。",
+                    "color": "white"
+                }
+            ]
+        ],
+        "slot": "hotbar",
+        "trigger": "equipping",
+        "mpCost": 0,
+        "canUsedGod": "ALL"
+    },
+    {
+        "id": 979,
+        "item": "minecraft:stick",
+        "name": [
+            {
+                "text": "水",
+                "color": "aqua"
+            },
+            {
+                "text": "のチャーム",
+                "color": "white"
+            }
+        ],
+        "lore": [
+            [
+                {
+                    "text": "水属性",
+                    "color": "aqua"
+                },
+                {
+                    "text": "の攻撃力が5%上昇する。",
+                    "color": "white"
+                }
+            ]
+        ],
+        "slot": "hotbar",
+        "trigger": "equipping",
+        "mpCost": 0,
+        "canUsedGod": "ALL"
+    },
+    {
+        "id": 980,
+        "item": "minecraft:stick",
+        "name": [
+            {
+                "text": "雷",
+                "color": "yellow"
+            },
+            {
+                "text": "のチャーム",
+                "color": "white"
+            }
+        ],
+        "lore": [
+            [
+                {
+                    "text": "雷属性",
+                    "color": "yellow"
+                },
+                {
+                    "text": "の攻撃力が5%上昇する。",
+                    "color": "white"
+                }
+            ]
+        ],
+        "slot": "hotbar",
+        "trigger": "equipping",
+        "mpCost": 0,
+        "canUsedGod": "ALL"
+    },
+    {
+        "id": 981,
+        "item": "minecraft:carrot_on_a_stick",
+        "name": {
+            "text": "ソウルファイアバースト",
+            "color": "red"
+        },
+        "lore": [
+            [
+                {
+                    "text": "前方に爆発する火の玉を放つ。",
+                    "color": "white"
+                }
+            ],
+            [
+                {
+                    "text": "火の玉はしばらくすると、5つの小さな火球に分裂する。",
+                    "color": "white"
+                }
+            ],
+            {
+                "text": "\"行けぇッ！\"",
+                "color": "gray"
+            }
+        ],
+        "slot": "auto",
+        "trigger": "onClick",
+        "attackInfo": {
+            "damage": [
+                "900-1200 / 300-400×5"
+            ],
+            "attackType": [
+                "Magic"
+            ],
+            "elementType": [
+                "Fire"
+            ]
+        },
+        "mpCost": 40,
+        "localCooldown": 40,
+        "canUsedGod": [
+            "Urban",
+            "Nyaptov"
+        ]
+    },
+    {
+        "id": 986,
+        "item": "stick",
+        "name": {
+            "text": "癒術勲章",
+            "color": "green"
+        },
+        "lore": [
+            {
+                "text": "攻撃力が35%減少するが、"
+            },
+            {
+                "text": "体力及び魔力の回復量が20%上昇する"
+            },
+            {
+                "text": "\"癒しの力を役立てる貴方へ\"",
+                "color": "gray"
+            }
+        ],
+        "slot": "hotbar",
+        "trigger": "equipping",
+        "mpCost": 150,
+        "mpRequire": 0,
+        "canUsedGod": [
+            "Flora",
+            "Nyaptov",
+            "Rumor"
         ]
     }
 ]
