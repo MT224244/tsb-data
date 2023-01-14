@@ -3,10 +3,11 @@ import { cmp, valid } from 'semver';
 import { ByteTag, CompoundTag, IntTag, ListTag, parseSnbt, StringTag } from '../snbtParser.ts';
 import { AttackType, ElementType, God, IsRangeAttack, SacredTreasure, SlotId, TriggerId } from './sacred_treasure.d.ts';
 
-const [version] = Deno.args;
+const [repo, version] = Deno.args;
+console.log('Target Repository:', repo);
 console.log('Target Version:', version);
 
-const githubZipUrl = `https://api.github.com/repos/ProjectTSB/TheSkyBlessing/zipball/${version}`;
+const githubZipUrl = `https://api.github.com/repos/${repo}/zipball/${version}`;
 
 const zip = new ZipReader(new HttpReader(githubZipUrl));
 const entries = await zip.getEntries();
