@@ -1,0 +1,7 @@
+{
+    "name": "tsb-data",
+    "version": "0.1.0",
+    "description": "TSBのDatapackから必要なデータを取得します",
+    "author": "MT224244",
+    "private": true
+}

@@ -1,0 +1,82 @@
+name: 'Data'
+
+on:
+    workflow_dispatch:
+    schedule:
+      - cron: '*/5 * * * *'
+    repository_dispatch:
+        types:
+          - 'Data-repeat'
+
+env:
+    GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    GITHUB_NAME: actions-user
+    GITHUB_EMAIL: actions@github.com
+
+jobs:
+    version:
+        runs-on: ubuntu-latest
+        outputs:
+            value: ${{ steps.version.outputs.value }}
+        steps:
+          - uses: actions/checkout@master
+          - uses: denoland/setup-deno@v1
+            with:
+                deno-version: vx.x.x
+
+          - id: version
+            run: |
+                version=$(deno task version $TSB_REPO $SELF_REPO)
+                echo "${version}"
+                echo "value=${version}" >> $GITHUB_OUTPUT
+            env:
+                TSB_REPO: 'ProjectTSB/TheSkyBlessing'
+                SELF_REPO: ${{ github.repository }}
+    data:
+        runs-on: ubuntu-latest
+        needs: version
+        steps:
+          - uses: actions/checkout@master
+          - uses: denoland/setup-deno@v1
+            with:
+                deno-version: vx.x.x
+
+          - name: Sacred Treasure ${{ needs.version.outputs.value }}
+            run: deno task sacred_treasure ${{ needs.version.outputs.value }}
+
+          - name: Git Config
+            run: |
+                git config user.name ${{ env.GITHUB_NAME }}
+                git config user.email ${{ env.GITHUB_EMAIL }}
+
+          - name: Git Commit
+            run: |
+                git pull -p
+                git add -f sacred_treasure.json
+                git stash -u
+                git checkout data
+                set +e
+                git stash pop
+                git checkout --theirs .
+                git add .
+                git commit --allow-empty-message -m ''
+                set -e
+
+          - name: Git Tag ${{ needs.version.outputs.value }}
+            if: needs.version.outputs.value != 'master'
+            run: |
+                git tag ${{ needs.version.outputs.value }}
+                git push origin ${{ needs.version.outputs.value }}
+
+          - name: Git Push
+            run: |
+                git push origin data
+
+          - name: Repeat Request
+            if: needs.version.outputs.value != 'master'
+            run: |
+                curl \
+                --request POST 'https://api.github.com/repos/${{ github.repository }}/dispatches' \
+                --header 'Authorization: Bearer ${{ env.GITHUB_TOKEN }}' \
+                --header 'Content-Type: application/json' \
+                --data-raw '{ "event_type": "Data-repeat" }'

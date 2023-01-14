@@ -1,0 +1,8 @@
+{
+  "imports": {
+    "semver": "https://deno.land/std@0.171.0/semver/mod.ts",
+    "zipjs": "https://deno.land/x/zipjs@v2.6.61/index.js",
+    "nbt-ts": "https://esm.sh/v102/nbt-ts@2.0.2"
+  },
+  "scopes": {}
+}
