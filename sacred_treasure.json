@@ -4945,9 +4945,7 @@
                     "text": "どっかで見た白いドラゴンを呼び出す呼び鈴。"
                 }
             ],
-            [
-                {}
-            ],
+            "",
             [
                 {
                     "text": "「着地時に乗り捨ては申し訳ないがNG」",
@@ -6331,9 +6329,7 @@
                     "text": "チェンソー"
                 }
             ],
-            [
-                {}
-            ],
+            "",
             [
                 {
                     "text": "魔力を注ぎ込みエンジンをふかせ",
@@ -11416,9 +11412,7 @@
                     "color": "gray"
                 }
             ],
-            [
-                {}
-            ],
+            "",
             [
                 {
                     "text": "前方に星を発射する",
@@ -14106,5 +14100,221 @@
             "Nyaptov",
             "Rumor"
         ]
+    },
+    {
+        "id": 1011,
+        "item": "minecraft:stick",
+        "name": {
+            "text": "研がれた木の剣",
+            "color": "white"
+        },
+        "lore": [
+            {
+                "text": "神々の砥石で研がれたその剣は",
+                "color": "gray"
+            },
+            {
+                "text": "邪悪な敵に立ち向かうのに、十分なほどの鋭さを持つ。",
+                "color": "gray"
+            }
+        ],
+        "remainingCount": 80,
+        "slot": "mainhand",
+        "trigger": "onAttackByMelee",
+        "attackInfo": {
+            "damage": [
+                20
+            ],
+            "attackType": [
+                "Physical"
+            ],
+            "elementType": [
+                "None"
+            ],
+            "isRangeAttack": "never"
+        },
+        "mpCost": 0,
+        "localCooldown": 15,
+        "canUsedGod": "ALL"
+    },
+    {
+        "id": 1012,
+        "item": "minecraft:stick",
+        "name": {
+            "text": "研がれた石の剣",
+            "color": "white"
+        },
+        "lore": [
+            {
+                "text": "神々の砥石で研がれたその剣は",
+                "color": "gray"
+            },
+            {
+                "text": "邪悪な敵に立ち向かうのに、十分なほどの鋭さを持つ。",
+                "color": "gray"
+            }
+        ],
+        "costText": 80,
+        "slot": "mainhand",
+        "trigger": "onAttackByMelee",
+        "attackInfo": {
+            "damage": [
+                45
+            ],
+            "attackType": [
+                "Physical"
+            ],
+            "elementType": [
+                "None"
+            ],
+            "isRangeAttack": "never"
+        },
+        "mpCost": 0,
+        "localCooldown": 15,
+        "canUsedGod": "ALL"
+    },
+    {
+        "id": 1013,
+        "item": "minecraft:stick",
+        "name": {
+            "text": "研がれた鉄の剣",
+            "color": "white"
+        },
+        "lore": [
+            {
+                "text": "神々の砥石で研がれたその剣は",
+                "color": "gray"
+            },
+            {
+                "text": "邪悪な敵に立ち向かうのに、十分なほどの鋭さを持つ。",
+                "color": "gray"
+            }
+        ],
+        "remainingCount": 80,
+        "slot": "mainhand",
+        "trigger": "onAttackByMelee",
+        "attackInfo": {
+            "damage": [
+                45
+            ],
+            "attackType": [
+                "Physical"
+            ],
+            "elementType": [
+                "None"
+            ],
+            "isRangeAttack": "never"
+        },
+        "mpCost": 0,
+        "localCooldown": 15,
+        "canUsedGod": "ALL"
+    },
+    {
+        "id": 1014,
+        "item": "minecraft:stick",
+        "name": {
+            "text": "研がれた金の剣",
+            "color": "white"
+        },
+        "lore": [
+            {
+                "text": "神々の砥石で研がれたその剣は",
+                "color": "gray"
+            },
+            {
+                "text": "邪悪な敵に立ち向かうのに、十分なほどの鋭さを持つ。",
+                "color": "gray"
+            }
+        ],
+        "remainingCount": 80,
+        "slot": "mainhand",
+        "trigger": "onAttackByMelee",
+        "attackInfo": {
+            "damage": [
+                150
+            ],
+            "attackType": [
+                "Physical"
+            ],
+            "elementType": [
+                "None"
+            ],
+            "isRangeAttack": "never"
+        },
+        "mpCost": 0,
+        "localCooldown": 15,
+        "canUsedGod": "ALL"
+    },
+    {
+        "id": 1015,
+        "item": "minecraft:stick",
+        "name": {
+            "text": "研がれたダイヤモンドの剣",
+            "color": "white"
+        },
+        "lore": [
+            {
+                "text": "神々の砥石で研がれたその剣は",
+                "color": "gray"
+            },
+            {
+                "text": "邪悪な敵に立ち向かうのに、十分なほどの鋭さを持つ。",
+                "color": "gray"
+            }
+        ],
+        "remainingCount": 80,
+        "slot": "mainhand",
+        "trigger": "onAttackByMelee",
+        "attackInfo": {
+            "damage": [
+                300
+            ],
+            "attackType": [
+                "Physical"
+            ],
+            "elementType": [
+                "None"
+            ],
+            "isRangeAttack": "never"
+        },
+        "mpCost": 0,
+        "localCooldown": 15,
+        "canUsedGod": "ALL"
+    },
+    {
+        "id": 1016,
+        "item": "minecraft:stick",
+        "name": {
+            "text": "研がれたネザライトの剣",
+            "color": "white"
+        },
+        "lore": [
+            {
+                "text": "神々の砥石で研がれたその剣は",
+                "color": "gray"
+            },
+            {
+                "text": "邪悪な敵に立ち向かうのに、十分なほどの鋭さを持つ。",
+                "color": "gray"
+            }
+        ],
+        "remainingCount": 80,
+        "slot": "mainhand",
+        "trigger": "onAttackByMelee",
+        "attackInfo": {
+            "damage": [
+                500
+            ],
+            "attackType": [
+                "Physical"
+            ],
+            "elementType": [
+                "None"
+            ],
+            "isRangeAttack": "never"
+        },
+        "mpCost": 0,
+        "localCooldown": 15,
+        "canUsedGod": "ALL"
     }
 ]
