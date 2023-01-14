@@ -87,7 +87,6 @@
                 "text": "まれに人間性の過剰摂取により暴走し、亡者となる"
             }
         ],
-        "remainingCount": 1,
         "slot": "auto",
         "trigger": "itemUse",
         "mpCost": 0,
@@ -667,7 +666,10 @@
         },
         "lore": [
             {
-                "text": "いともった？"
+                "text": "使用すると最初の島に帰る"
+            },
+            {
+                "text": "「いともった？」"
             }
         ],
         "remainingCount": 1,
@@ -1715,7 +1717,7 @@
         "item": "minecraft:carrot_on_a_stick",
         "name": [
             {
-                "text": "MP抽出機",
+                "text": "MP抽出装置",
                 "color": "light_purple"
             }
         ],
@@ -1727,7 +1729,7 @@
             ],
             [
                 {
-                    "text": "1部は天使の取り分として蒸発することがある"
+                    "text": "一部は天使の取り分となることがある"
                 }
             ]
         ],
@@ -10963,6 +10965,105 @@
         }
     },
     {
+        "id": 736,
+        "item": "minecraft:leather_helmet",
+        "name": {
+            "text": "水兵の帽子",
+            "color": "#3DFFF2"
+        },
+        "lore": [
+            [
+                {
+                    "text": "どこからか潮の香りと紅茶の香りがする。",
+                    "color": "#A3F9FF",
+                    "italic": "true"
+                }
+            ],
+            [
+                {
+                    "text": "物理攻撃+7.5% ",
+                    "color": "dark_green"
+                },
+                {
+                    "text": "水攻撃+7.5%",
+                    "color": "aqua"
+                }
+            ],
+            [
+                {
+                    "text": "移動速度+7.5% ",
+                    "color": "white"
+                },
+                {
+                    "text": "魔法攻撃-15%",
+                    "color": "dark_red"
+                }
+            ]
+        ],
+        "slot": "head",
+        "trigger": "equipping",
+        "mpCost": 0,
+        "canUsedGod": [
+            "Flora",
+            "Urban",
+            "Rumor"
+        ],
+        "customNbt": {
+            "type": "compound",
+            "value": {
+                "AttributeModifiers": {
+                    "type": "list",
+                    "value": [
+                        {
+                            "type": "compound",
+                            "value": {
+                                "Slot": {
+                                    "type": "string",
+                                    "value": "head"
+                                }
+                            }
+                        },
+                        {
+                            "type": "compound",
+                            "value": {
+                                "Slot": {
+                                    "type": "string",
+                                    "value": "head"
+                                }
+                            }
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "id": 741,
+        "item": "minecraft:stick",
+        "name": {
+            "text": "奈落保険証",
+            "color": "gray"
+        },
+        "lore": [
+            {
+                "text": "奈落に落ちた時、貴方に救いの手を差し伸べる"
+            },
+            {
+                "text": "\"こんな状態からでも入れる保険ってあるんですか！？\"",
+                "color": "gray"
+            }
+        ],
+        "remainingCount": 20,
+        "slot": "hotbar",
+        "trigger": "passive",
+        "mpCost": 0,
+        "canUsedGod": [
+            "Nyaptov",
+            "Wi-ki",
+            "Rumor"
+        ]
+    },
+    {
         "id": 745,
         "item": "minecraft:stick",
         "name": {
@@ -11970,26 +12071,25 @@
         "lore": [
             {
                 "text": "鮮やかに彩られた雨乞いに使われた杖。",
-                "color": "aqua"
+                "color": "aqua",
+                "italic": "true"
             },
             {
                 "text": "ひとたび振るえば辺りに祝福の雨を降らすという。",
-                "color": "aqua"
+                "color": "aqua",
+                "italic": "true"
             },
             {
                 "text": "雨は癒やしをもたらし、時には罪を洗い流す。",
-                "color": "aqua"
+                "color": "aqua",
+                "italic": "true"
             },
             {
                 "text": "使用時、雨の降るエリアを設置する。",
                 "color": "blue"
             },
             {
-                "text": "エリア内の存在に対して",
-                "color": "blue"
-            },
-            {
-                "text": "敵Mobにはダメージを与え",
+                "text": "エリアは定期的に敵Mobにはダメージを与え",
                 "color": "blue"
             },
             {
@@ -13510,7 +13610,7 @@
         "trigger": "onClick",
         "attackInfo": {
             "damage": [
-                "1000×30"
+                "2000×60"
             ],
             "attackType": [
                 "Magic"
@@ -13521,7 +13621,7 @@
             "isRangeAttack": "every",
             "attackRange": 32
         },
-        "specialCooldown": 3600,
+        "specialCooldown": 1800,
         "mpCost": 200,
         "canUsedGod": [
             "Urban",
@@ -14154,7 +14254,7 @@
                 "color": "gray"
             }
         ],
-        "costText": 80,
+        "remainingCount": 80,
         "slot": "mainhand",
         "trigger": "onAttackByMelee",
         "attackInfo": {
@@ -14195,7 +14295,7 @@
         "trigger": "onAttackByMelee",
         "attackInfo": {
             "damage": [
-                45
+                70
             ],
             "attackType": [
                 "Physical"
