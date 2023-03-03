@@ -1229,7 +1229,7 @@
     },
     {
         "id": 107,
-        "item": "carrot_on_a_stick",
+        "item": "minecraft:carrot_on_a_stick",
         "name": [
             {
                 "text": "ディスペンサー・キャノン",
@@ -2497,7 +2497,7 @@
     },
     {
         "id": 210,
-        "item": "carrot_on_a_stick",
+        "item": "minecraft:carrot_on_a_stick",
         "name": [
             {
                 "text": "テラ",
@@ -2719,7 +2719,8 @@
             ],
             "elementType": [
                 "None"
-            ]
+            ],
+            "bypassResist": false
         },
         "mpCost": 120,
         "localCooldown": 600,
@@ -3426,7 +3427,7 @@
     },
     {
         "id": 253,
-        "item": "glass_pane",
+        "item": "minecraft:glass_pane",
         "name": {
             "text": "ホーリー・バリア",
             "color": "white"
@@ -4306,7 +4307,7 @@
     },
     {
         "id": 295,
-        "item": "carrot_on_a_stick",
+        "item": "minecraft:carrot_on_a_stick",
         "name": {
             "text": "コール: エレメンタル・ファミリア",
             "color": "aqua"
@@ -5730,7 +5731,7 @@
     },
     {
         "id": 382,
-        "item": "golden_axe",
+        "item": "minecraft:golden_axe",
         "name": {
             "text": "ハルウララ",
             "color": "light_purple",
@@ -7749,7 +7750,7 @@
     },
     {
         "id": 573,
-        "item": "stick",
+        "item": "minecraft:stick",
         "name": {
             "text": "ファイナル・プリズム",
             "color": "light_purple",
@@ -11468,7 +11469,7 @@
     },
     {
         "id": 801,
-        "item": "nether_star",
+        "item": "minecraft:nether_star",
         "name": {
             "text": "謎の赤い秘石",
             "color": "red",
@@ -11501,7 +11502,7 @@
     },
     {
         "id": 822,
-        "item": "carrot_on_a_stick",
+        "item": "minecraft:carrot_on_a_stick",
         "name": {
             "text": "星の音",
             "color": "aqua"
@@ -11653,7 +11654,7 @@
     },
     {
         "id": 840,
-        "item": "carrot_on_a_stick",
+        "item": "minecraft:carrot_on_a_stick",
         "name": {
             "text": "ハニービーステッキ",
             "color": "#FFBD24"
@@ -11736,7 +11737,7 @@
     },
     {
         "id": 860,
-        "item": "elytra",
+        "item": "minecraft:elytra",
         "name": {
             "text": "えんじぇるうぃんぐ",
             "color": "#FFFFFF"
@@ -11981,7 +11982,7 @@
     },
     {
         "id": 898,
-        "item": "stick",
+        "item": "minecraft:stick",
         "name": {
             "text": "疾風のペンダント",
             "color": "aqua"
@@ -12015,7 +12016,7 @@
     },
     {
         "id": 899,
-        "item": "stick",
+        "item": "minecraft:stick",
         "name": {
             "text": "火炎のリング",
             "color": "red"
@@ -12038,7 +12039,7 @@
     },
     {
         "id": 905,
-        "item": "carrot_on_a_stick",
+        "item": "minecraft:carrot_on_a_stick",
         "name": {
             "text": "転移の書",
             "color": "light_purple"
@@ -12169,7 +12170,7 @@
     },
     {
         "id": 911,
-        "item": "netherite_helmet",
+        "item": "minecraft:netherite_helmet",
         "name": {
             "text": "リアクティブアーマー(頭)",
             "color": "red",
@@ -12240,7 +12241,7 @@
     },
     {
         "id": 912,
-        "item": "netherite_chestplate",
+        "item": "minecraft:netherite_chestplate",
         "name": {
             "text": "リアクティブアーマー(胴)",
             "color": "red",
@@ -12311,7 +12312,7 @@
     },
     {
         "id": 913,
-        "item": "netherite_leggings",
+        "item": "minecraft:netherite_leggings",
         "name": {
             "text": "リアクティブアーマー(足)",
             "color": "red",
@@ -12382,7 +12383,7 @@
     },
     {
         "id": 914,
-        "item": "netherite_boots",
+        "item": "minecraft:netherite_boots",
         "name": {
             "text": "リアクティブアーマー(靴)",
             "color": "red",
@@ -12917,7 +12918,7 @@
     },
     {
         "id": 927,
-        "item": "stick",
+        "item": "minecraft:stick",
         "name": {
             "text": "レクシエルの忠誠",
             "color": "green"
@@ -12987,7 +12988,7 @@
     },
     {
         "id": 930,
-        "item": "stick",
+        "item": "minecraft:stick",
         "name": {
             "text": "Z旗",
             "color": "white"
@@ -13589,7 +13590,7 @@
     },
     {
         "id": 953,
-        "item": "carrot_on_a_stick",
+        "item": "minecraft:carrot_on_a_stick",
         "name": {
             "text": "メテオレイン",
             "color": "light_purple"
@@ -13753,7 +13754,7 @@
     },
     {
         "id": 966,
-        "item": "shield",
+        "item": "minecraft:shield",
         "name": {
             "text": "プロテクション",
             "color": "gray"
@@ -13785,7 +13786,7 @@
     },
     {
         "id": 967,
-        "item": "shield",
+        "item": "minecraft:shield",
         "name": {
             "text": "エンハンスド・プロテクション",
             "color": "blue"
@@ -13890,7 +13891,7 @@
     },
     {
         "id": 973,
-        "item": "carrot_on_a_stick",
+        "item": "minecraft:carrot_on_a_stick",
         "name": {
             "text": "コール: バラージュスピリット",
             "color": "light_purple"
@@ -13934,7 +13935,7 @@
     },
     {
         "id": 976,
-        "item": "carrot_on_a_stick",
+        "item": "minecraft:carrot_on_a_stick",
         "name": {
             "text": "ブレイブソード",
             "color": "light_purple"
@@ -14174,7 +14175,7 @@
     },
     {
         "id": 986,
-        "item": "stick",
+        "item": "minecraft:stick",
         "name": {
             "text": "癒術勲章",
             "color": "green"
