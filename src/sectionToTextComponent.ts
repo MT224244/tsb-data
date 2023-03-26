@@ -1,4 +1,4 @@
-import { TextComponent } from './sacred_treasure/sacred_treasure.d.ts';
+import { TextComponent } from './artifact/artifact.d.ts';
 
 export const sectionToTextComponent = (textOrComponent: string | TextComponent | TextComponent[]): TextComponent | TextComponent[] => {
     if (textOrComponent instanceof Array) {

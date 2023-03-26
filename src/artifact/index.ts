@@ -1,7 +1,7 @@
 import { TextWriter, HttpReader, ZipReader } from 'zipjs';
 import { cmp, valid } from 'semver';
 import { ByteTag, CompoundTag, IntTag, ListTag, NBTag, parseSnbt, StringTag } from '../snbtParser.ts';
-import { AttackType, ElementType, God, IsRangeAttack, SacredTreasure, SlotId, TriggerId } from './sacred_treasure.d.ts';
+import { AttackType, ElementType, God, IsRangeAttack, SacredTreasure, SlotId, TriggerId } from './artifact.d.ts';
 import { sectionToTextComponent } from '../sectionToTextComponent.ts';
 
 const [repo, version] = Deno.args;
@@ -13,7 +13,7 @@ const githubZipUrl = `https://api.github.com/repos/${repo}/zipball/${version}`;
 const zip = new ZipReader(new HttpReader(githubZipUrl));
 const entries = await zip.getEntries();
 
-const giveRegex = /\/Asset\/data\/asset\/functions\/sacred_treasure\/([^/]*)\/give\/2.give.mcfunction$/;
+const giveRegex = /\/Asset\/data\/asset\/functions\/(?:sacred_treasure|artifact)\/([^/]*)\/give\/2.give.mcfunction$/;
 const stEntries = [...entries.filter(x => giveRegex.test(x.filename))];
 const result = await Promise.all(stEntries.map(async entry => {
     const lines = (await entry
@@ -43,7 +43,7 @@ const result = await Promise.all(stEntries.map(async entry => {
 
     const stData: SacredTreasure = Object.create(null);
     for (const line of lines) {
-        const match = /data modify storage asset:sacred_treasure ([^ ]*) set value (.*)$/.exec(line);
+        const match = /data modify storage asset:(?:sacred_treasure|artifact) ([^ ]*) set value (.*)$/.exec(line);
         if (!match || match.length < 3) continue;
 
         const attackInfoDamage = (tag: NBTag) => {
@@ -212,7 +212,7 @@ const result = await Promise.all(stEntries.map(async entry => {
 }));
 
 Deno.writeFileSync(
-    'sacred_treasure.json',
+    'artifacts.json',
     new TextEncoder().encode(
         JSON.stringify(result, undefined, 4)
     )

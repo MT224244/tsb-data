@@ -40,7 +40,7 @@ jobs:
                 deno-version: vx.x.x
 
           - name: Sacred Treasure ${{ needs.version.outputs.value }}
-            run: deno task sacred_treasure ${{ env.TSB_REPO }} ${{ needs.version.outputs.value }}
+            run: deno task artifact ${{ env.TSB_REPO }} ${{ needs.version.outputs.value }}
 
           - name: Git Config
             run: |
@@ -50,7 +50,7 @@ jobs:
           - name: Git Commit
             run: |
                 git pull -p
-                git add -f sacred_treasure.json
+                git add -f artifact.json
                 git stash -u
                 git checkout data
                 set +e
