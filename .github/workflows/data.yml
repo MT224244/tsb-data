@@ -50,7 +50,7 @@ jobs:
           - name: Git Commit
             run: |
                 git pull -p
-                git add -f artifact.json
+                git add -f artifacts.json
                 git stash -u
                 git checkout data
                 set +e
