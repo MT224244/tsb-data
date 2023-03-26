@@ -3,7 +3,7 @@ name: 'Data'
 on:
     workflow_dispatch:
     schedule:
-      - cron: '*/5 * * * *'
+      - cron: '*/15 * * * *'
     repository_dispatch:
         types:
           - 'Data-repeat'
