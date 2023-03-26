@@ -65,10 +65,20 @@ export type God =
     | 'Wi-ki'
     | 'Rumor';
 
-export type TextComponent = Record<string, string>;
+export type TextComponent = {
+    text?: string;
+    color?: string;
+    bold?: boolean;
+    italic?: boolean;
+    underlined?: boolean;
+    strikethrough?: boolean;
+    obfuscated?: boolean;
+    storage?: string;
+    nbt?: string;
+};
 
 export type AttackInfo = {
-    damage?: unknown | unknown[];
+    damage?: (TextComponent | TextComponent[])[];
     attackType?: AttackType[];
     elementType?: ElementType[];
     bypassResist?: boolean;
@@ -79,13 +89,13 @@ export type AttackInfo = {
 export type SacredTreasure = {
     id: number;
     item: string;
-    name: TextComponent;
-    lore: TextComponent[];
-    costText?: TextComponent;
+    name: TextComponent | TextComponent[];
+    lore: (TextComponent | TextComponent[])[];
+    costText?: TextComponent | TextComponent[];
     remainingCount?: number;
     slot: SlotId;
     trigger: TriggerId;
-    condition?: TextComponent;
+    condition?: TextComponent | TextComponent[];
     attackInfo?: AttackInfo;
     mpCost: number;
     mpRequire?: number;

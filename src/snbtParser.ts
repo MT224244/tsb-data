@@ -168,7 +168,7 @@ export class LongArrayTag extends TagBase<'long_array', BigInt64Array> {
     }
 }
 
-type NBTag =
+export type NBTag =
     | ByteTag
     // | BooleanTag
     | ShortTag

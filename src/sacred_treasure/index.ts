@@ -1,7 +1,8 @@
 import { TextWriter, HttpReader, ZipReader } from 'zipjs';
 import { cmp, valid } from 'semver';
-import { ByteTag, CompoundTag, IntTag, ListTag, parseSnbt, StringTag } from '../snbtParser.ts';
+import { ByteTag, CompoundTag, IntTag, ListTag, NBTag, parseSnbt, StringTag } from '../snbtParser.ts';
 import { AttackType, ElementType, God, IsRangeAttack, SacredTreasure, SlotId, TriggerId } from './sacred_treasure.d.ts';
+import { sectionToTextComponent } from '../sectionToTextComponent.ts';
 
 const [repo, version] = Deno.args;
 console.log('Target Repository:', repo);
@@ -45,6 +46,49 @@ const result = await Promise.all(stEntries.map(async entry => {
         const match = /data modify storage asset:sacred_treasure ([^ ]*) set value (.*)$/.exec(line);
         if (!match || match.length < 3) continue;
 
+        const attackInfoDamage = (tag: NBTag) => {
+            if (!stData.attackInfo) stData.attackInfo = {};
+
+            if (tag instanceof ListTag) {
+                stData.attackInfo.damage = tag.value.map(x => sectionToTextComponent(`${x.value}`));
+            }
+            else {
+                stData.attackInfo.damage = [sectionToTextComponent(`${tag.value}`)];
+            }
+        };
+        const attackInfoAttackType = (tag: NBTag) => {
+            if (!stData.attackInfo) stData.attackInfo = {};
+
+            const list = tag.value as StringTag[];
+            stData.attackInfo.attackType = list.map(x => x.value as AttackType);
+        };
+        const attackInfoElementType = (tag: NBTag) => {
+            if (!stData.attackInfo) stData.attackInfo = {};
+
+            const list = tag.value as StringTag[];
+            stData.attackInfo.elementType = list.map(x => x.value as ElementType);
+        };
+        const attackInfoBypassResist = (tag: NBTag) => {
+            if (!stData.attackInfo) stData.attackInfo = {};
+
+            if (tag instanceof StringTag) {
+                stData.attackInfo.bypassResist = Boolean(tag.value);
+            }
+            else {
+                stData.attackInfo.bypassResist = tag.value === 1;
+            }
+        };
+        const attackInfoIsRangeAttack = (tag: NBTag) => {
+            if (!stData.attackInfo) stData.attackInfo = {};
+
+            stData.attackInfo.isRangeAttack = tag.value as IsRangeAttack;
+        };
+        const attackInfoAttackRange = (tag: NBTag) => {
+            if (!stData.attackInfo) stData.attackInfo = {};
+
+            stData.attackInfo.attackRange = sectionToTextComponent(`${tag.value}`);
+        };
+
         const funcs: Record<string, (value: string) => void> = {
             'ID': value => {
                 stData.id = parseSnbt<IntTag>(value).value;
@@ -54,13 +98,17 @@ const result = await Promise.all(stEntries.map(async entry => {
             },
             'Name': value => {
                 const json = parseSnbt<StringTag>(value).value;
-                stData.name = JSON.parse(json);
+                stData.name = sectionToTextComponent(JSON.parse(json));
             },
             'Lore': value => {
                 const arr = parseSnbt<ListTag<StringTag>>(value).value;
                 stData.lore = arr.map(x => {
                     try {
-                        return JSON.parse(fix(x.value));
+                        const c = JSON.parse(fix(x.value));
+                        if (c instanceof Array) {
+                            return c.map(x => sectionToTextComponent(x));
+                        }
+                        return sectionToTextComponent(c);
                     }
                     catch (err) {
                         console.error('err:', x.value);
@@ -108,81 +156,19 @@ const result = await Promise.all(stEntries.map(async entry => {
                 const isRangeAttack = tag.value.get('IsRangeAttack');
                 const attackRange = tag.value.get('AttackRange');
 
-                if (damage) {
-                    if (damage instanceof ListTag) {
-                        stData.attackInfo.damage = damage.value.map(x => x.value);
-                    }
-                    else {
-                        stData.attackInfo.damage = damage.value;
-                    }
-                }
-                if (attackType) {
-                    const list = attackType.value as StringTag[];
-                    stData.attackInfo.attackType = list.map(x => x.value as AttackType);
-                }
-                if (elementType) {
-                    const list = elementType.value as StringTag[];
-                    stData.attackInfo.elementType = list.map(x => x.value as ElementType);
-                }
-                if (bypassResist) {
-                    if (bypassResist instanceof StringTag) {
-                        stData.attackInfo.bypassResist = Boolean(bypassResist.value);
-                    }
-                    else {
-                        stData.attackInfo.bypassResist = bypassResist.value === 1;
-                    }
-                }
-                if (isRangeAttack) {
-                    stData.attackInfo.isRangeAttack = isRangeAttack.value as IsRangeAttack;
-                }
-                if (attackRange) {
-                    stData.attackInfo.attackRange = attackRange.value;
-                }
+                if (damage) attackInfoDamage(damage);
+                if (attackType) attackInfoAttackType(attackType);
+                if (elementType) attackInfoElementType(elementType);
+                if (bypassResist) attackInfoBypassResist(bypassResist);
+                if (isRangeAttack) attackInfoIsRangeAttack(isRangeAttack);
+                if (attackRange) attackInfoAttackRange(attackRange);
             },
-            'AttackInfo.Damage': value => {
-                if (!stData.attackInfo) stData.attackInfo = {};
-
-                const tag = parseSnbt(value);
-                if (tag instanceof ListTag) {
-                    stData.attackInfo.damage = tag.value.map(x => x.value);
-                }
-                else {
-                    stData.attackInfo.damage = tag.value;
-                }
-            },
-            'AttackInfo.AttackType': value => {
-                if (!stData.attackInfo) stData.attackInfo = {};
-
-                const list = parseSnbt<ListTag<StringTag>>(value).value;
-                stData.attackInfo.attackType = list.map(x => x.value as AttackType);
-            },
-            'AttackInfo.ElementType': value => {
-                if (!stData.attackInfo) stData.attackInfo = {};
-
-                const list = parseSnbt<ListTag<StringTag>>(value).value;
-                stData.attackInfo.elementType = list.map(x => x.value as ElementType);
-            },
-            'AttackInfo.BypassResist': value => {
-                if (!stData.attackInfo) stData.attackInfo = {};
-
-                const tag = parseSnbt<ByteTag | StringTag>(value);
-                if (tag instanceof StringTag) {
-                    stData.attackInfo.bypassResist = Boolean(tag.value);
-                }
-                else {
-                    stData.attackInfo.bypassResist = tag.value === 1;
-                }
-            },
-            'AttackInfo.IsRangeAttack': value => {
-                if (!stData.attackInfo) stData.attackInfo = {};
-
-                stData.attackInfo.isRangeAttack = parseSnbt<StringTag>(value).value as IsRangeAttack;
-            },
-            'AttackInfo.AttackRange': value => {
-                if (!stData.attackInfo) stData.attackInfo = {};
-
-                stData.attackInfo.attackRange = parseSnbt(value).value;
-            },
+            'AttackInfo.Damage': value => attackInfoDamage(parseSnbt(value)),
+            'AttackInfo.AttackType': value => attackInfoAttackType(parseSnbt(value)),
+            'AttackInfo.ElementType': value => attackInfoElementType(parseSnbt(value)),
+            'AttackInfo.BypassResist': value => attackInfoBypassResist(parseSnbt(value)),
+            'AttackInfo.IsRangeAttack': value => attackInfoIsRangeAttack(parseSnbt(value)),
+            'AttackInfo.AttackRange': value => attackInfoAttackRange(parseSnbt(value)),
             'MPCost': value => {
                 stData.mpCost = parseSnbt<IntTag>(value).value;
             },
