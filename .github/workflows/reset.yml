@@ -1,0 +1,35 @@
+name: 'Reset'
+
+on:
+    workflow_dispatch:
+
+env:
+    GITHUB_NAME: actions-user
+    GITHUB_EMAIL: actions@github.com
+
+jobs:
+    reset:
+        runs-on: ubuntu-latest
+        steps:
+          - uses: actions/checkout@master
+
+          - name: Git Config
+            run: |
+                git config user.name ${{ env.GITHUB_NAME }}
+                git config user.email ${{ env.GITHUB_EMAIL }}
+
+          - name: Delete Branch and All Tags
+            run: |
+                git fetch -p --tags
+                versions=$(git tag --column)
+                git push --delete origin data $versions
+
+          - name: Create Branch
+            run: |
+                git checkout --orphan data
+                git reset --hard
+                git commit --allow-empty --allow-empty-message -m ''
+
+          - name: Git Push
+            run: |
+                git push -u origin data
