@@ -156,9 +156,12 @@ export class CompoundTag extends TagBase<'compound', Map<string, NBTag>> {
     }
 
     toJSON() {
-        return [...this.value].reduce((l, [k, v]) => {
-            return Object.assign(l, { [k]: v })
-        }, {});
+        return {
+            type: this.type,
+            value: [...this.value].reduce((l, [k, v]) => {
+                return Object.assign(l, { [k]: v })
+            }, {}),
+        };
     }
 }
 
