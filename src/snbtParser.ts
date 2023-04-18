@@ -21,6 +21,11 @@ const createTag = (tag: Tag): NBTag => {
         return new DoubleTag(tag);
     }
     else if (typeof tag === 'string') {
+        // WARNING: "true" と true の区別が出来ないので、仕方なく一律でByteTagにする
+        if (['true', 'false'].includes(tag)) {
+            return new ByteTag(new Byte(tag === 'true' ? 1 : 0));
+        }
+
         return new StringTag(tag);
     }
     else if (tag instanceof Array) {
@@ -97,6 +102,13 @@ export class IntTag extends TagBase<'int', number> {
     constructor(tag: Int) {
         super('int', tag.value);
     }
+
+    toJSON() {
+        return {
+            type: this.type,
+            value: this.value,
+        };
+    }
 }
 export class LongTag extends TagBase<'long', bigint> {
     constructor(value: bigint) {
@@ -144,11 +156,9 @@ export class CompoundTag extends TagBase<'compound', Map<string, NBTag>> {
     }
 
     toJSON() {
-        return [...this.value]
-            .reduce((prev, [key, val]) => Object.assign(prev, {
-                type: this.type,
-                value: { [key]: val }
-            }), {});
+        return [...this.value].reduce((l, [k, v]) => {
+            return Object.assign(l, { [k]: v })
+        }, {});
     }
 }
 
@@ -156,15 +166,36 @@ export class ByteArrayTag extends TagBase<'byte_array', Int8Array> {
     constructor(values: Int8Array) {
         super('byte_array', values);
     }
+
+    toJSON() {
+        return {
+            type: this.type,
+            value: [...this.value],
+        };
+    }
 }
 export class IntArrayTag extends TagBase<'int_array', Int32Array> {
     constructor(values: Int32Array) {
         super('int_array', values);
     }
+
+    toJSON() {
+        return {
+            type: this.type,
+            value: [...this.value],
+        };
+    }
 }
 export class LongArrayTag extends TagBase<'long_array', BigInt64Array> {
     constructor(values: BigInt64Array) {
         super('long_array', values);
+    }
+
+    toJSON() {
+        return {
+            type: this.type,
+            value: [...this.value],
+        };
     }
 }
 
