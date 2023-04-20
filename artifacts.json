@@ -19709,7 +19709,7 @@
         ],
         "remainingCount": 1,
         "slot": "mainhand",
-        "trigger": "sneak2s",
+        "trigger": "sneak1s",
         "mpCost": 120,
         "canUsedGod": [
             "Urban",
@@ -20517,6 +20517,54 @@
         "localCooldown": 40,
         "canUsedGod": [
             "Urban",
+            "Nyaptov"
+        ]
+    },
+    {
+        "id": 985,
+        "item": "minecraft:carrot_on_a_stick",
+        "name": {
+            "text": "Ark of the Sanctuary",
+            "color": "gold",
+            "bold": true,
+            "underlined": true
+        },
+        "lore": [
+            {
+                "text": "慈しみを象徴する剣"
+            },
+            {
+                "text": "憐れみ深い神への賛歌を奏でる"
+            }
+        ],
+        "slot": "auto",
+        "trigger": "onClick",
+        "attackInfo": {
+            "damage": [
+                {
+                    "text": "80"
+                },
+                {
+                    "text": "250"
+                }
+            ],
+            "attackType": [
+                "Magic"
+            ],
+            "elementType": [
+                "None"
+            ],
+            "isRangeAttack": "every",
+            "attackRange": {
+                "text": "4"
+            }
+        },
+        "mpCost": 15,
+        "localCooldown": 8,
+        "disableCooldownMessage": true,
+        "canUsedGod": [
+            "Urban",
+            "Wi-ki",
             "Nyaptov"
         ]
     },
