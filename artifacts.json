@@ -87,7 +87,6 @@
                 "text": "まれに人間性の過剰摂取により暴走し、亡者となる"
             }
         ],
-        "remainingCount": 1,
         "slot": "auto",
         "trigger": "itemUse",
         "mpCost": 0,
@@ -676,7 +675,10 @@
         },
         "lore": [
             {
-                "text": "いともった？"
+                "text": "使用すると最初の島に帰る"
+            },
+            {
+                "text": "「いともった？」"
             }
         ],
         "remainingCount": 1,
@@ -1313,7 +1315,7 @@
     },
     {
         "id": 107,
-        "item": "carrot_on_a_stick",
+        "item": "minecraft:carrot_on_a_stick",
         "name": [
             {
                 "text": "ディスペンサー・キャノン",
@@ -1853,7 +1855,7 @@
         "item": "minecraft:carrot_on_a_stick",
         "name": [
             {
-                "text": "MP抽出機",
+                "text": "MP抽出装置",
                 "color": "light_purple"
             }
         ],
@@ -1865,7 +1867,7 @@
             ],
             [
                 {
-                    "text": "1部は天使の取り分として蒸発することがある"
+                    "text": "一部は天使の取り分となることがある"
                 }
             ]
         ],
@@ -2866,7 +2868,7 @@
     },
     {
         "id": 210,
-        "item": "carrot_on_a_stick",
+        "item": "minecraft:carrot_on_a_stick",
         "name": [
             {
                 "text": "テラ",
@@ -3158,7 +3160,8 @@
             ],
             "elementType": [
                 "None"
-            ]
+            ],
+            "bypassResist": false
         },
         "mpCost": 120,
         "localCooldown": 600,
@@ -3944,7 +3947,7 @@
     },
     {
         "id": 253,
-        "item": "glass_pane",
+        "item": "minecraft:glass_pane",
         "name": {
             "text": "ホーリー・バリア",
             "color": "white"
@@ -4888,7 +4891,7 @@
     },
     {
         "id": 295,
-        "item": "carrot_on_a_stick",
+        "item": "minecraft:carrot_on_a_stick",
         "name": {
             "text": "コール: エレメンタル・ファミリア",
             "color": "aqua"
@@ -6572,7 +6575,7 @@
     },
     {
         "id": 382,
-        "item": "golden_axe",
+        "item": "minecraft:golden_axe",
         "name": {
             "text": "ハルウララ",
             "color": "light_purple",
@@ -9431,6 +9434,10 @@
                     "type": "int",
                     "value": 64
                 },
+                "Unbreakable": {
+                    "type": "byte",
+                    "value": 1
+                },
                 "Enchantments": {
                     "type": "list",
                     "value": [
@@ -9615,6 +9622,10 @@
                     "type": "int",
                     "value": 64
                 },
+                "Unbreakable": {
+                    "type": "byte",
+                    "value": 1
+                },
                 "Enchantments": {
                     "type": "list",
                     "value": [
@@ -9790,6 +9801,10 @@
                 "HideFlags": {
                     "type": "int",
                     "value": 64
+                },
+                "Unbreakable": {
+                    "type": "byte",
+                    "value": 1
                 },
                 "Enchantments": {
                     "type": "list",
@@ -9970,6 +9985,10 @@
                     "type": "int",
                     "value": 64
                 },
+                "Unbreakable": {
+                    "type": "byte",
+                    "value": 1
+                },
                 "Enchantments": {
                     "type": "list",
                     "value": [
@@ -10126,7 +10145,7 @@
     },
     {
         "id": 573,
-        "item": "stick",
+        "item": "minecraft:stick",
         "name": {
             "text": "ファイナル・プリズム",
             "color": "light_purple",
@@ -16169,6 +16188,172 @@
         }
     },
     {
+        "id": 736,
+        "item": "minecraft:leather_helmet",
+        "name": {
+            "text": "水兵の帽子",
+            "color": "#3DFFF2"
+        },
+        "lore": [
+            [
+                {
+                    "text": "どこからか潮の香りと紅茶の香りがする。",
+                    "color": "#A3F9FF",
+                    "italic": "true"
+                }
+            ],
+            [
+                {
+                    "text": "物理攻撃+7.5% ",
+                    "color": "dark_green"
+                },
+                {
+                    "text": "水攻撃+7.5%",
+                    "color": "aqua"
+                }
+            ],
+            [
+                {
+                    "text": "移動速度+7.5% ",
+                    "color": "white"
+                },
+                {
+                    "text": "魔法攻撃-15%",
+                    "color": "dark_red"
+                }
+            ]
+        ],
+        "slot": "head",
+        "trigger": "equipping",
+        "mpCost": 0,
+        "canUsedGod": [
+            "Flora",
+            "Urban",
+            "Rumor"
+        ],
+        "customNbt": {
+            "type": "compound",
+            "value": {
+                "HideFlags": {
+                    "type": "int",
+                    "value": 68
+                },
+                "display": {
+                    "type": "compound",
+                    "value": {
+                        "color": {
+                            "type": "int",
+                            "value": 10746367
+                        }
+                    }
+                },
+                "Unbreakable": {
+                    "type": "byte",
+                    "value": 1
+                },
+                "AttributeModifiers": {
+                    "type": "list",
+                    "value": [
+                        {
+                            "type": "compound",
+                            "value": {
+                                "AttributeName": {
+                                    "type": "string",
+                                    "value": "generic.armor"
+                                },
+                                "Name": {
+                                    "type": "string",
+                                    "value": "generic.armor"
+                                },
+                                "Amount": {
+                                    "type": "int",
+                                    "value": 5
+                                },
+                                "Operation": {
+                                    "type": "int",
+                                    "value": 0
+                                },
+                                "UUID": {
+                                    "type": "int_array",
+                                    "value": [
+                                        1,
+                                        1,
+                                        736,
+                                        6
+                                    ]
+                                },
+                                "Slot": {
+                                    "type": "string",
+                                    "value": "head"
+                                }
+                            }
+                        },
+                        {
+                            "type": "compound",
+                            "value": {
+                                "AttributeName": {
+                                    "type": "string",
+                                    "value": "generic.armor_toughness"
+                                },
+                                "Name": {
+                                    "type": "string",
+                                    "value": "generic.armor_toughness"
+                                },
+                                "Amount": {
+                                    "type": "double",
+                                    "value": 2.5
+                                },
+                                "Operation": {
+                                    "type": "int",
+                                    "value": 0
+                                },
+                                "UUID": {
+                                    "type": "int_array",
+                                    "value": [
+                                        1,
+                                        1,
+                                        736,
+                                        6
+                                    ]
+                                },
+                                "Slot": {
+                                    "type": "string",
+                                    "value": "head"
+                                }
+                            }
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "id": 741,
+        "item": "minecraft:stick",
+        "name": {
+            "text": "奈落保険証",
+            "color": "gray"
+        },
+        "lore": [
+            {
+                "text": "奈落に落ちた時、貴方に救いの手を差し伸べる"
+            },
+            {
+                "text": "\"こんな状態からでも入れる保険ってあるんですか！？\"",
+                "color": "gray"
+            }
+        ],
+        "remainingCount": 20,
+        "slot": "hotbar",
+        "trigger": "passive",
+        "mpCost": 0,
+        "canUsedGod": [
+            "Nyaptov",
+            "Wi-ki",
+            "Rumor"
+        ]
+    },
+    {
         "id": 745,
         "item": "minecraft:stick",
         "name": {
@@ -16406,6 +16591,10 @@
                         }
                     }
                 },
+                "Unbreakable": {
+                    "type": "byte",
+                    "value": 1
+                },
                 "AttributeModifiers": {
                     "type": "list",
                     "value": [
@@ -16542,6 +16731,10 @@
                             "value": 3716235
                         }
                     }
+                },
+                "Unbreakable": {
+                    "type": "byte",
+                    "value": 1
                 },
                 "AttributeModifiers": {
                     "type": "list",
@@ -16717,7 +16910,7 @@
     },
     {
         "id": 801,
-        "item": "nether_star",
+        "item": "minecraft:nether_star",
         "name": {
             "text": "謎の赤い秘石",
             "color": "red",
@@ -16750,7 +16943,7 @@
     },
     {
         "id": 822,
-        "item": "carrot_on_a_stick",
+        "item": "minecraft:carrot_on_a_stick",
         "name": {
             "text": "星の音",
             "color": "aqua"
@@ -16910,7 +17103,7 @@
     },
     {
         "id": 840,
-        "item": "carrot_on_a_stick",
+        "item": "minecraft:carrot_on_a_stick",
         "name": {
             "text": "ハニービーステッキ",
             "color": "#FFBD24"
@@ -17003,7 +17196,7 @@
     },
     {
         "id": 860,
-        "item": "elytra",
+        "item": "minecraft:elytra",
         "name": {
             "text": "えんじぇるうぃんぐ",
             "color": "#FFFFFF"
@@ -17358,7 +17551,7 @@
     },
     {
         "id": 898,
-        "item": "stick",
+        "item": "minecraft:stick",
         "name": {
             "text": "疾風のペンダント",
             "color": "aqua"
@@ -17395,7 +17588,7 @@
     },
     {
         "id": 899,
-        "item": "stick",
+        "item": "minecraft:stick",
         "name": {
             "text": "火炎のリング",
             "color": "red"
@@ -17418,7 +17611,7 @@
     },
     {
         "id": 905,
-        "item": "carrot_on_a_stick",
+        "item": "minecraft:carrot_on_a_stick",
         "name": {
             "text": "転移の書",
             "color": "light_purple"
@@ -17451,26 +17644,25 @@
         "lore": [
             {
                 "text": "鮮やかに彩られた雨乞いに使われた杖。",
-                "color": "aqua"
+                "color": "aqua",
+                "italic": "true"
             },
             {
                 "text": "ひとたび振るえば辺りに祝福の雨を降らすという。",
-                "color": "aqua"
+                "color": "aqua",
+                "italic": "true"
             },
             {
                 "text": "雨は癒やしをもたらし、時には罪を洗い流す。",
-                "color": "aqua"
+                "color": "aqua",
+                "italic": "true"
             },
             {
                 "text": "使用時、雨の降るエリアを設置する。",
                 "color": "blue"
             },
             {
-                "text": "エリア内の存在に対して",
-                "color": "blue"
-            },
-            {
-                "text": "敵Mobにはダメージを与え",
+                "text": "エリアは定期的に敵Mobにはダメージを与え",
                 "color": "blue"
             },
             {
@@ -17560,7 +17752,7 @@
     },
     {
         "id": 911,
-        "item": "netherite_helmet",
+        "item": "minecraft:netherite_helmet",
         "name": {
             "text": "リアクティブアーマー(頭)",
             "color": "red",
@@ -17685,7 +17877,7 @@
     },
     {
         "id": 912,
-        "item": "netherite_chestplate",
+        "item": "minecraft:netherite_chestplate",
         "name": {
             "text": "リアクティブアーマー(胴)",
             "color": "red",
@@ -17810,7 +18002,7 @@
     },
     {
         "id": 913,
-        "item": "netherite_leggings",
+        "item": "minecraft:netherite_leggings",
         "name": {
             "text": "リアクティブアーマー(足)",
             "color": "red",
@@ -17935,7 +18127,7 @@
     },
     {
         "id": 914,
-        "item": "netherite_boots",
+        "item": "minecraft:netherite_boots",
         "name": {
             "text": "リアクティブアーマー(靴)",
             "color": "red",
@@ -18843,7 +19035,7 @@
                                 },
                                 "Amount": {
                                     "type": "double",
-                                    "value": 0.7
+                                    "value": 0.3
                                 },
                                 "Operation": {
                                     "type": "int",
@@ -18871,7 +19063,7 @@
     },
     {
         "id": 927,
-        "item": "stick",
+        "item": "minecraft:stick",
         "name": {
             "text": "レクシエルの忠誠",
             "color": "green"
@@ -18943,7 +19135,7 @@
     },
     {
         "id": 930,
-        "item": "stick",
+        "item": "minecraft:stick",
         "name": {
             "text": "Z旗",
             "color": "white"
@@ -19928,7 +20120,7 @@
     },
     {
         "id": 953,
-        "item": "carrot_on_a_stick",
+        "item": "minecraft:carrot_on_a_stick",
         "name": {
             "text": "メテオレイン",
             "color": "light_purple"
@@ -19950,7 +20142,7 @@
         "attackInfo": {
             "damage": [
                 {
-                    "text": "1000×30"
+                    "text": "2000×60"
                 }
             ],
             "attackType": [
@@ -19964,7 +20156,7 @@
                 "text": "32"
             }
         },
-        "specialCooldown": 3600,
+        "specialCooldown": 1800,
         "mpCost": 200,
         "canUsedGod": [
             "Urban",
@@ -20096,7 +20288,7 @@
     },
     {
         "id": 966,
-        "item": "shield",
+        "item": "minecraft:shield",
         "name": {
             "text": "プロテクション",
             "color": "gray"
@@ -20132,7 +20324,7 @@
     },
     {
         "id": 967,
-        "item": "shield",
+        "item": "minecraft:shield",
         "name": {
             "text": "エンハンスド・プロテクション",
             "color": "blue"
@@ -20330,7 +20522,7 @@
     },
     {
         "id": 973,
-        "item": "carrot_on_a_stick",
+        "item": "minecraft:carrot_on_a_stick",
         "name": {
             "text": "コール: バラージュスピリット",
             "color": "light_purple"
@@ -20376,7 +20568,7 @@
     },
     {
         "id": 976,
-        "item": "carrot_on_a_stick",
+        "item": "minecraft:carrot_on_a_stick",
         "name": {
             "text": "ブレイブソード",
             "color": "light_purple"
@@ -20684,7 +20876,7 @@
     },
     {
         "id": 986,
-        "item": "stick",
+        "item": "minecraft:stick",
         "name": {
             "text": "癒術勲章",
             "color": "green"
@@ -20766,7 +20958,7 @@
                 "color": "gray"
             }
         ],
-        "costText": 80,
+        "remainingCount": 80,
         "slot": "mainhand",
         "trigger": "onAttackByMelee",
         "attackInfo": {
@@ -20810,7 +21002,7 @@
         "attackInfo": {
             "damage": [
                 {
-                    "text": "45"
+                    "text": "70"
                 }
             ],
             "attackType": [
