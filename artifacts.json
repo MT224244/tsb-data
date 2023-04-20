@@ -20000,6 +20000,34 @@
         ]
     },
     {
+        "id": 958,
+        "item": "minecraft:carrot_on_a_stick",
+        "name": {
+            "text": "神々の砥石",
+            "color": "aqua"
+        },
+        "lore": [
+            {
+                "text": "その砥石で砥がれた剣は、"
+            },
+            {
+                "text": "邪悪な敵をも切る鋭さを持つ"
+            },
+            {
+                "text": "砥ぐ際に、材質に応じたMP最大値を必要とする"
+            }
+        ],
+        "remainingCount": 4,
+        "slot": "offhand",
+        "trigger": "onClick",
+        "condition": {
+            "text": "メインハンドに剣を持っている"
+        },
+        "mpCost": 0,
+        "localCooldown": 100,
+        "canUsedGod": "ALL"
+    },
+    {
         "id": 959,
         "item": "minecraft:stick",
         "name": {
