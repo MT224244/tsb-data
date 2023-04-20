@@ -1,8 +1,8 @@
 {
   "imports": {
+    "@deno-minecraft/nbt/": "https://cdn.jsdelivr.net/gh/janispritzkau/deno-minecraft@f0d3d355/nbt/",
     "semver": "https://deno.land/std@0.181.0/semver/mod.ts",
-    "zipjs": "https://deno.land/x/zipjs@2.6.81/index.js",
-    "nbt-ts": "https://esm.sh/v113/nbt-ts@2.0.2"
+    "zipjs": "https://deno.land/x/zipjs@2.6.81/index.js"
   },
   "scopes": {}
 }

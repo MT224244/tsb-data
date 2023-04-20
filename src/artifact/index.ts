@@ -1,6 +1,7 @@
 import { TextWriter, HttpReader, ZipReader } from 'zipjs';
 import { cmp, valid } from 'semver';
-import { ByteTag, CompoundTag, IntTag, ListTag, NBTag, parseSnbt, StringTag } from '../snbtParser.ts';
+import { ByteTag, CompoundTag, IntTag, ListTag, StringTag, Tag } from '@deno-minecraft/nbt/tag.ts';
+import { parseSnbt } from '../snbtParser.ts';
 import { AttackType, ElementType, God, IsRangeAttack, SacredTreasure, SlotId, TriggerId } from './artifact.d.ts';
 import { sectionToTextComponent } from '../sectionToTextComponent.ts';
 
@@ -46,78 +47,80 @@ const result = await Promise.all(stEntries.map(async entry => {
         const match = /data modify storage asset:(?:sacred_treasure|artifact) ([^ ]*) set value (.*)$/.exec(line);
         if (!match || match.length < 3) continue;
 
-        const attackInfoDamage = (tag: NBTag) => {
+        const attackInfoDamage = (tag: Tag) => {
             if (!stData.attackInfo) stData.attackInfo = {};
 
             if (tag instanceof ListTag) {
-                stData.attackInfo.damage = tag.value.map(x => sectionToTextComponent(`${x.value}`));
+                stData.attackInfo.damage = tag.valueOf().map((x: Tag) =>
+                    sectionToTextComponent(`${x.valueOf()}`),
+                );
             }
             else {
-                stData.attackInfo.damage = [sectionToTextComponent(`${tag.value}`)];
+                stData.attackInfo.damage = [sectionToTextComponent(`${tag.valueOf()}`)];
             }
         };
-        const attackInfoAttackType = (tag: NBTag) => {
+        const attackInfoAttackType = (tag: Tag) => {
             if (!stData.attackInfo) stData.attackInfo = {};
 
-            const list = tag.value as StringTag[];
-            stData.attackInfo.attackType = list.map(x => x.value as AttackType);
+            const list = tag.valueOf() as StringTag[];
+            stData.attackInfo.attackType = list.map(x => x.valueOf() as AttackType);
         };
-        const attackInfoElementType = (tag: NBTag) => {
+        const attackInfoElementType = (tag: Tag) => {
             if (!stData.attackInfo) stData.attackInfo = {};
 
-            const list = tag.value as StringTag[];
-            stData.attackInfo.elementType = list.map(x => x.value as ElementType);
+            const list = tag.valueOf() as StringTag[];
+            stData.attackInfo.elementType = list.map(x => x.valueOf() as ElementType);
         };
-        const attackInfoBypassResist = (tag: NBTag) => {
+        const attackInfoBypassResist = (tag: Tag) => {
             if (!stData.attackInfo) stData.attackInfo = {};
 
             if (tag instanceof StringTag) {
-                stData.attackInfo.bypassResist = Boolean(tag.value);
+                stData.attackInfo.bypassResist = Boolean(tag.valueOf());
             }
             else {
-                stData.attackInfo.bypassResist = tag.value === 1;
+                stData.attackInfo.bypassResist = tag.valueOf() === 1;
             }
         };
-        const attackInfoIsRangeAttack = (tag: NBTag) => {
+        const attackInfoIsRangeAttack = (tag: Tag) => {
             if (!stData.attackInfo) stData.attackInfo = {};
 
-            stData.attackInfo.isRangeAttack = tag.value as IsRangeAttack;
+            stData.attackInfo.isRangeAttack = tag.valueOf() as IsRangeAttack;
         };
-        const attackInfoAttackRange = (tag: NBTag) => {
+        const attackInfoAttackRange = (tag: Tag) => {
             if (!stData.attackInfo) stData.attackInfo = {};
 
-            stData.attackInfo.attackRange = sectionToTextComponent(`${tag.value}`);
+            stData.attackInfo.attackRange = sectionToTextComponent(`${tag.valueOf()}`);
         };
 
         const funcs: Record<string, (value: string) => void> = {
             'ID': value => {
-                stData.id = parseSnbt<IntTag>(value).value;
+                stData.id = parseSnbt<IntTag>(value).valueOf();
             },
             'Item': value => {
-                stData.item = parseSnbt<StringTag>(value).value;
+                stData.item = parseSnbt<StringTag>(value).valueOf();
             },
             'Name': value => {
-                const json = parseSnbt<StringTag>(value).value;
+                const json = parseSnbt<StringTag>(value).valueOf();
                 stData.name = sectionToTextComponent(JSON.parse(json));
             },
             'Lore': value => {
-                const arr = parseSnbt<ListTag<StringTag>>(value).value;
+                const arr = parseSnbt<ListTag<StringTag>>(value).valueOf();
                 stData.lore = arr.map(x => {
                     try {
-                        const c = JSON.parse(fix(x.value));
+                        const c = JSON.parse(fix(x.valueOf()));
                         if (c instanceof Array) {
                             return c.map(x => sectionToTextComponent(x));
                         }
                         return sectionToTextComponent(c);
                     }
                     catch (err) {
-                        console.error('err:', x.value);
+                        console.error('err:', x.valueOf());
                         return err.message;
                     }
                 });
             },
             'CostText': value => {
-                const json = parseSnbt<StringTag>(value).value;
+                const json = parseSnbt<StringTag>(value).valueOf();
                 try {
                     stData.costText = JSON.parse(fix(json));
                 }
@@ -127,16 +130,16 @@ const result = await Promise.all(stEntries.map(async entry => {
                 }
             },
             'RemainingCount': value => {
-                stData.remainingCount = parseSnbt<IntTag>(value).value;
+                stData.remainingCount = parseSnbt<IntTag>(value).valueOf();
             },
             'Slot': value => {
-                stData.slot = parseSnbt<StringTag>(value).value as SlotId;
+                stData.slot = parseSnbt<StringTag>(value).valueOf() as SlotId;
             },
             'Trigger': value => {
-                stData.trigger = parseSnbt<StringTag>(value).value as TriggerId;
+                stData.trigger = parseSnbt<StringTag>(value).valueOf() as TriggerId;
             },
             'Condition': value => {
-                const json = parseSnbt<StringTag>(value).value;
+                const json = parseSnbt<StringTag>(value).valueOf();
                 try {
                     stData.condition = JSON.parse(fix(json));
                 }
@@ -149,12 +152,12 @@ const result = await Promise.all(stEntries.map(async entry => {
                 stData.attackInfo = {};
 
                 const tag = parseSnbt<CompoundTag>(value);
-                const damage = tag.value.get('Damage');
-                const attackType = tag.value.get('AttackType');
-                const elementType = tag.value.get('ElementType');
-                const bypassResist = tag.value.get('BypassResist');
-                const isRangeAttack = tag.value.get('IsRangeAttack');
-                const attackRange = tag.value.get('AttackRange');
+                const damage = tag.valueOf().get('Damage');
+                const attackType = tag.valueOf().get('AttackType');
+                const elementType = tag.valueOf().get('ElementType');
+                const bypassResist = tag.valueOf().get('BypassResist');
+                const isRangeAttack = tag.valueOf().get('IsRangeAttack');
+                const attackRange = tag.valueOf().get('AttackRange');
 
                 if (damage) attackInfoDamage(damage);
                 if (attackType) attackInfoAttackType(attackType);
@@ -170,33 +173,28 @@ const result = await Promise.all(stEntries.map(async entry => {
             'AttackInfo.IsRangeAttack': value => attackInfoIsRangeAttack(parseSnbt(value)),
             'AttackInfo.AttackRange': value => attackInfoAttackRange(parseSnbt(value)),
             'MPCost': value => {
-                stData.mpCost = parseSnbt<IntTag>(value).value;
+                stData.mpCost = parseSnbt<IntTag>(value).valueOf();
             },
             'MPRequire': value => {
-                stData.mpRequire = parseSnbt<IntTag>(value).value;
+                stData.mpRequire = parseSnbt<IntTag>(value).valueOf();
             },
             'LocalCooldown': value => {
-                stData.localCooldown = parseSnbt<IntTag>(value).value;
+                stData.localCooldown = parseSnbt<IntTag>(value).valueOf();
             },
             'SpecialCooldown': value => {
-                stData.specialCooldown = parseSnbt<IntTag>(value).value;
+                stData.specialCooldown = parseSnbt<IntTag>(value).valueOf();
             },
             'DisableCooldownMessage': value => {
-                const tag = parseSnbt<ByteTag | StringTag>(value);
-                if (tag instanceof StringTag) {
-                    stData.disableCooldownMessage = Boolean(tag.value);
-                }
-                else {
-                    stData.disableCooldownMessage = tag.value === 1;
-                }
+                const tag = parseSnbt<ByteTag>(value);
+                stData.disableCooldownMessage = tag.valueOf() === 1;
             },
             'CanUsedGod': value => {
                 const tag = parseSnbt<ListTag<StringTag> | StringTag>(value);
                 if (tag instanceof StringTag) {
-                    stData.canUsedGod = tag.value as 'ALL';
+                    stData.canUsedGod = tag.valueOf() as 'ALL';
                 }
                 else {
-                    stData.canUsedGod = tag.value.map(x => x.value as God);
+                    stData.canUsedGod = tag.valueOf().map(x => x.valueOf() as God);
                 }
             },
             'CustomNBT': value => {
@@ -214,6 +212,12 @@ const result = await Promise.all(stEntries.map(async entry => {
 Deno.writeFileSync(
     'artifacts.json',
     new TextEncoder().encode(
-        JSON.stringify(result, undefined, 4)
-    )
+        JSON.stringify(
+            result,
+            (_, v) => typeof v === 'bigint' ? v.toString() + 'n' : v,
+            4,
+        ),
+    ),
 );
+
+Deno.exit();
