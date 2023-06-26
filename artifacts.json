@@ -2915,6 +2915,8 @@
                 "italic": false
             }
         ],
+        "slot": "auto",
+        "trigger": "onClick",
         "attackInfo": {
             "damage": [
                 {
@@ -2929,8 +2931,6 @@
             ],
             "isRangeAttack": "never"
         },
-        "slot": "auto",
-        "trigger": "onClick",
         "mpCost": 15,
         "localCooldown": 30,
         "disableCooldownMessage": true,
@@ -3052,7 +3052,6 @@
         ],
         "slot": "auto",
         "trigger": "onClick",
-        "mpCost": 80,
         "attackInfo": {
             "damage": [
                 {
@@ -3070,6 +3069,7 @@
                 "text": "80"
             }
         },
+        "mpCost": 80,
         "localCooldown": 60,
         "canUsedGod": [
             "Urban",
@@ -4910,6 +4910,8 @@
                 "color": "gray"
             }
         ],
+        "slot": "auto",
+        "trigger": "onClick",
         "attackInfo": {
             "damage": [
                 {
@@ -4926,8 +4928,6 @@
             ],
             "isRangeAttack": "never"
         },
-        "slot": "auto",
-        "trigger": "onClick",
         "mpCost": 100,
         "localCooldown": 600,
         "disableCooldownMessage": false,
@@ -20156,8 +20156,8 @@
                 "text": "32"
             }
         },
-        "specialCooldown": 1800,
         "mpCost": 200,
+        "specialCooldown": 1800,
         "canUsedGod": [
             "Urban",
             "Wi-ki"
@@ -20541,6 +20541,8 @@
                 "color": "gray"
             }
         ],
+        "slot": "auto",
+        "trigger": "onClick",
         "attackInfo": {
             "damage": [
                 {
@@ -20555,8 +20557,6 @@
             ],
             "isRangeAttack": "never"
         },
-        "slot": "auto",
-        "trigger": "onClick",
         "mpCost": 30,
         "localCooldown": 600,
         "disableCooldownMessage": false,
@@ -20582,6 +20582,8 @@
                 "color": "gray"
             }
         ],
+        "slot": "auto",
+        "trigger": "onClick",
         "attackInfo": {
             "damage": [
                 {
@@ -20596,8 +20598,6 @@
             ],
             "isRangeAttack": "never"
         },
-        "slot": "auto",
-        "trigger": "onClick",
         "mpCost": 15,
         "localCooldown": 5,
         "disableCooldownMessage": true,
