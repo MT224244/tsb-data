@@ -13908,6 +13908,34 @@
         ]
     },
     {
+        "id": 702,
+        "item": "minecraft:stick",
+        "name": {
+            "text": "光照のランプ",
+            "color": "gold"
+        },
+        "lore": [
+            {
+                "text": "周囲を明るく照らすランプ。",
+                "color": "white"
+            },
+            {
+                "text": "自身と周囲のプレイヤーに対して",
+                "color": "white"
+            },
+            {
+                "text": "暗視を付与し、盲目と暗闇を解除する。",
+                "color": "white"
+            }
+        ],
+        "slot": "hotbar",
+        "trigger": "passive",
+        "mpCost": 0,
+        "localCooldown": 200,
+        "disableCooldownMessage": true,
+        "canUsedGod": "ALL"
+    },
+    {
         "id": 703,
         "item": "minecraft:leather_helmet",
         "name": {
@@ -13917,8 +13945,8 @@
         "lore": [
             [
                 {
-                    "text": "魔法使いが普段身に着けている帽子",
-                    "color": "#651DA3"
+                    "text": "魔法使いが普段身に着けている帽子。",
+                    "color": "gray"
                 }
             ],
             [
@@ -13935,19 +13963,7 @@
             ],
             [
                 {
-                    "text": "物理耐性",
-                    "color": "dark_green"
-                },
-                {
-                    "text": "-2.5% ",
-                    "color": "dark_red"
-                },
-                {
-                    "text": "物理攻撃",
-                    "color": "dark_green"
-                },
-                {
-                    "text": "-2.5%",
+                    "text": "物理耐性-2.5% 物理攻撃-2.5%",
                     "color": "dark_red"
                 }
             ]
@@ -14067,8 +14083,8 @@
         "lore": [
             [
                 {
-                    "text": "魔法使いが普段身に着けているローブ",
-                    "color": "#651DA3"
+                    "text": "魔法使いが普段身に着けているローブ。",
+                    "color": "gray"
                 }
             ],
             [
@@ -14085,19 +14101,7 @@
             ],
             [
                 {
-                    "text": "物理耐性",
-                    "color": "dark_green"
-                },
-                {
-                    "text": "-2.5% ",
-                    "color": "dark_red"
-                },
-                {
-                    "text": "物理攻撃",
-                    "color": "dark_green"
-                },
-                {
-                    "text": "-2.5%",
+                    "text": "物理耐性-2.5% 物理攻撃-2.5%",
                     "color": "dark_red"
                 }
             ]
@@ -14217,8 +14221,8 @@
         "lore": [
             [
                 {
-                    "text": "魔法使いが普段身に着けているローブ",
-                    "color": "#651DA3"
+                    "text": "魔法使いが普段身に着けているローブ。",
+                    "color": "gray"
                 }
             ],
             [
@@ -14235,19 +14239,7 @@
             ],
             [
                 {
-                    "text": "物理耐性",
-                    "color": "dark_green"
-                },
-                {
-                    "text": "-2.5% ",
-                    "color": "dark_red"
-                },
-                {
-                    "text": "物理攻撃",
-                    "color": "dark_green"
-                },
-                {
-                    "text": "-2.5%",
+                    "text": "物理耐性-2.5% 物理攻撃-2.5%",
                     "color": "dark_red"
                 }
             ]
@@ -14367,8 +14359,8 @@
         "lore": [
             [
                 {
-                    "text": "魔法使いが普段身に着けている靴",
-                    "color": "#651DA3"
+                    "text": "魔法使いが普段身に着けている靴。",
+                    "color": "gray"
                 }
             ],
             [
@@ -14385,19 +14377,7 @@
             ],
             [
                 {
-                    "text": "物理耐性",
-                    "color": "dark_green"
-                },
-                {
-                    "text": "-2.5% ",
-                    "color": "dark_red"
-                },
-                {
-                    "text": "物理攻撃",
-                    "color": "dark_green"
-                },
-                {
-                    "text": "-2.5%",
+                    "text": "物理耐性-2.5% 物理攻撃-2.5%",
                     "color": "dark_red"
                 }
             ]
@@ -14517,8 +14497,8 @@
         "lore": [
             [
                 {
-                    "text": "魔導士が普段身に着けている帽子",
-                    "color": "#360F57"
+                    "text": "魔導士が普段身に着けている帽子。",
+                    "color": "gray"
                 }
             ],
             [
@@ -14535,19 +14515,7 @@
             ],
             [
                 {
-                    "text": "物理耐性",
-                    "color": "dark_green"
-                },
-                {
-                    "text": "-5% ",
-                    "color": "dark_red"
-                },
-                {
-                    "text": "物理攻撃",
-                    "color": "dark_green"
-                },
-                {
-                    "text": "-5%",
+                    "text": "物理耐性-5% 物理攻撃-5%",
                     "color": "dark_red"
                 }
             ]
@@ -14667,8 +14635,8 @@
         "lore": [
             [
                 {
-                    "text": "魔導士が普段身に着けているローブ",
-                    "color": "#360F57"
+                    "text": "魔導士が普段身に着けているローブ。",
+                    "color": "gray"
                 }
             ],
             [
@@ -14685,19 +14653,7 @@
             ],
             [
                 {
-                    "text": "物理耐性",
-                    "color": "dark_green"
-                },
-                {
-                    "text": "-5% ",
-                    "color": "dark_red"
-                },
-                {
-                    "text": "物理攻撃",
-                    "color": "dark_green"
-                },
-                {
-                    "text": "-5%",
+                    "text": "物理耐性-5% 物理攻撃-5%",
                     "color": "dark_red"
                 }
             ]
@@ -14817,8 +14773,8 @@
         "lore": [
             [
                 {
-                    "text": "魔導士が普段身に着けているローブ",
-                    "color": "#360F57"
+                    "text": "魔導士が普段身に着けているローブ。",
+                    "color": "gray"
                 }
             ],
             [
@@ -14835,19 +14791,7 @@
             ],
             [
                 {
-                    "text": "物理耐性",
-                    "color": "dark_green"
-                },
-                {
-                    "text": "-5% ",
-                    "color": "dark_red"
-                },
-                {
-                    "text": "物理攻撃",
-                    "color": "dark_green"
-                },
-                {
-                    "text": "-5%",
+                    "text": "物理耐性-5% 物理攻撃-5%",
                     "color": "dark_red"
                 }
             ]
@@ -14967,8 +14911,8 @@
         "lore": [
             [
                 {
-                    "text": "魔導士が普段身に着けている靴",
-                    "color": "#360F57"
+                    "text": "魔導士が普段身に着けている靴。",
+                    "color": "gray"
                 }
             ],
             [
@@ -14985,19 +14929,7 @@
             ],
             [
                 {
-                    "text": "物理耐性",
-                    "color": "dark_green"
-                },
-                {
-                    "text": "-5% ",
-                    "color": "dark_red"
-                },
-                {
-                    "text": "物理攻撃",
-                    "color": "dark_green"
-                },
-                {
-                    "text": "-5%",
+                    "text": "物理耐性-5% 物理攻撃-5%",
                     "color": "dark_red"
                 }
             ]
