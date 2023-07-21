@@ -16463,6 +16463,37 @@
         }
     },
     {
+        "id": 772,
+        "item": "minecraft:stick",
+        "name": {
+            "text": "イルカのお守り",
+            "color": "#96FFFC"
+        },
+        "lore": [
+            {
+                "text": "水面を跳ねるイルカを模したお守り。",
+                "color": "white"
+            },
+            [
+                {
+                    "text": "持っていると水中を悠々と泳ぐことができる。",
+                    "color": "white"
+                }
+            ]
+        ],
+        "slot": "hotbar",
+        "trigger": "passive",
+        "mpCost": 0,
+        "localCooldown": 200,
+        "disableCooldownMessage": true,
+        "canUsedGod": [
+            "Flora",
+            "Urban",
+            "Wi-ki",
+            "Rumor"
+        ]
+    },
+    {
         "id": 776,
         "item": "minecraft:leather_chestplate",
         "name": {
