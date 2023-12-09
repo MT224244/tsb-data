@@ -2823,5 +2823,35 @@
             "Nyaptov",
             "Rumor"
         ]
+    },
+    {
+        "id": 1032,
+        "item": "minecraft:stick",
+        "name": [
+            {
+                "text": "生命",
+                "color": "#ff6c6a"
+            },
+            {
+                "text": "のチャーム",
+                "color": "white"
+            }
+        ],
+        "lore": [
+            [
+                {
+                    "text": "最大体力",
+                    "color": "#ff6c6a"
+                },
+                {
+                    "text": "が25%上昇する。",
+                    "color": "white"
+                }
+            ]
+        ],
+        "slot": "hotbar",
+        "trigger": "equipping",
+        "mpCost": 0,
+        "canUsedGod": "ALL"
     }
 ]
